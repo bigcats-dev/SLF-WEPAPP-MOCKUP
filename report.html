@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>กองทุนเงินให้กู้ยืมเพื่อการศึกษา (กยศ.)</title>
+	<link rel="icon" type="image/x-icon" href="images/icon.jpg">
+	<link href="css/bootstrap.min2.css" rel="stylesheet">  
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" /> 
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>  
+
+	<link href="css/style.css" rel="stylesheet">      
+
+   
+    </head>
+    <body> 
+        <!-- Header -->
+        <header> 
+            <nav class="navbar fixed-top">
+                <div class="w-100 text-white d-flex justify-content-between align-items-center">
+                    <div>
+                        <img src="images/favicon.png" class="me-2" alt=""><strong>ระบบรับชำระเงินกู้ยืมคืน กองทุนเงินให้กู้ยืมเพื่อการศึกษาผ่านกรมสรรพากร (e-PaySLF)</strong>
+                    </div>
+                    <div class="text-end mb-x">
+                        <i class="far fa-user-circle"></i> วรรณา พาสุข
+                        <br>
+                         <b>Admin</b>
+                    </div>
+                    <div class="pc-x">
+                        <div class="bar-m">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+
+
+        <main>
+            <div class="container-fluid p-0"> 
+                <div id="menu-container"></div>
+            </div>
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        
+                        <!-- Search Box -->
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="row g-3">
+                                    <div class="col-md-3">
+                                        <label class="form-label">วันที่ลงพื้นที่ (ตั้งแต่)</label>
+                                        <input type="date" class="form-control">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label class="form-label">วันที่ลงพื้นที่ (ถึง)</label>
+                                        <input type="date" class="form-control">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="form-label">ภาค</label>
+                                        <select class="form-select">
+                                            <option value="">ทั้งหมด</option>
+                                            <option>เหนือ</option>
+                                            <option>กลาง</option>
+                                            <option>อีสาน</option>
+                                            <option>ใต้</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="form-label">จังหวัด</label>
+                                        <select class="form-select">
+                                            <option value="">ทั้งหมด</option>
+                                            <option>เชียงใหม่</option>
+                                            <option>กรุงเทพฯ</option>
+                                            <option>ขอนแก่น</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <label class="form-label">ทีม</label>
+                                        <select class="form-select">
+                                            <option value="">ทั้งหมด</option>
+                                            <option>ทีม A</option>
+                                            <option>ทีม B</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 text-center mt-3">
+                                        <button class="btn btn-outline-secondary me-2">ล้างเงื่อนไข</button>
+                                        <button class="btn btn-primary"><i class="fal fa-search"></i> ค้นหา</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Table -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle mb-0">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th style="width:60px;">ลำดับ</th>
+                                                <th>วันที่ลงพื้นที่</th>
+                                                <th>จังหวัด</th>
+                                                <th>ภาค</th>
+                                                <th>ทีม</th>
+                                                <th>รายละเอียด</th>
+                                                <th class="text-center">รายงาน</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>12/02/2569</td>
+                                                <td>เชียงใหม่</td>
+                                                <td>เหนือ</td>
+                                                <td>ทีม A</td>
+                                                <td>ตรวจเยี่ยมลูกหนี้</td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-outline-primary me-1">ดูรายงาน</button>
+                                                    <button class="btn btn-sm btn-outline-danger">PDF</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>15/02/2569</td>
+                                                <td>ขอนแก่น</td>
+                                                <td>อีสาน</td>
+                                                <td>ทีม B</td>
+                                                <td>ติดตามหนี้ค้าง</td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-outline-primary me-1">ดูรายงาน</button>
+                                                    <button class="btn btn-sm btn-outline-danger">PDF</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>18/02/2569</td>
+                                                <td>กรุงเทพฯ</td>
+                                                <td>กลาง</td>
+                                                <td>ทีม A</td>
+                                                <td>ประชุมหน่วยงานพื้นที่</td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-outline-primary me-1">ดูรายงาน</button>
+                                                    <button class="btn btn-sm btn-outline-danger">PDF</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>20/02/2569</td>
+                                                <td>นครราชสีมา</td>
+                                                <td>อีสาน</td>
+                                                <td>ทีม C</td>
+                                                <td>ลงทะเบียนลูกหนี้ใหม่</td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-outline-primary me-1">ดูรายงาน</button>
+                                                    <button class="btn btn-sm btn-outline-danger">PDF</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>22/02/2569</td>
+                                                <td>สงขลา</td>
+                                                <td>ใต้</td>
+                                                <td>ทีม B</td>
+                                                <td>ตรวจสอบเอกสารสัญญา</td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-outline-primary me-1">ดูรายงาน</button>
+                                                    <button class="btn btn-sm btn-outline-danger">PDF</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>25/02/2569</td>
+                                                <td>พิษณุโลก</td>
+                                                <td>เหนือ</td>
+                                                <td>ทีม A</td>
+                                                <td>ติดตามผลการชำระ</td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-outline-primary me-1">ดูรายงาน</button>
+                                                    <button class="btn btn-sm btn-outline-danger">PDF</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>27/02/2569</td>
+                                                <td>สุราษฎร์ธานี</td>
+                                                <td>ใต้</td>
+                                                <td>ทีม C</td>
+                                                <td>ให้คำแนะนำลูกหนี้</td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-outline-primary me-1">ดูรายงาน</button>
+                                                    <button class="btn btn-sm btn-outline-danger">PDF</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>01/03/2569</td>
+                                                <td>อุดรธานี</td>
+                                                <td>อีสาน</td>
+                                                <td>ทีม B</td>
+                                                <td>เก็บข้อมูลภาคสนาม</td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-outline-primary me-1">ดูรายงาน</button>
+                                                    <button class="btn btn-sm btn-outline-danger">PDF</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>03/03/2569</td>
+                                                <td>ราชบุรี</td>
+                                                <td>กลาง</td>
+                                                <td>ทีม A</td>
+                                                <td>ตรวจพื้นที่เสี่ยง</td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-outline-primary me-1">ดูรายงาน</button>
+                                                    <button class="btn btn-sm btn-outline-danger">PDF</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>05/03/2569</td>
+                                                <td>ชลบุรี</td>
+                                                <td>กลาง</td>
+                                                <td>ทีม C</td>
+                                                <td>สรุปผลการลงพื้นที่</td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-outline-primary me-1">ดูรายงาน</button>
+                                                    <button class="btn btn-sm btn-outline-danger">PDF</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>    
+ 
+
+        <script src="js/jquery.min.js"></script> 
+        <script src="js/popper.min.js" ></script>
+        <script src="js/bootstrap.bundle.min.js"></script>    
+        <script src="js/menu-mobile.js"></script> 
+        <script src="js/menu.js"></script>   
+        <script>
+        renderMenu("menu-container");
+        </script>
+
+ 
+      
+
+    </body>
+</html>

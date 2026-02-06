@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>กองทุนเงินให้กู้ยืมเพื่อการศึกษา (กยศ.)</title>
+	<link rel="icon" type="image/x-icon" href="images/icon.jpg">
+	<link href="css/bootstrap.min2.css" rel="stylesheet">  
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" /> 
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>  
+
+	<link href="css/style.css" rel="stylesheet">      
+
+   
+    </head>
+    <body> 
+        <!-- Header -->
+        <header> 
+            <nav class="navbar fixed-top">
+                <div class="w-100 text-white d-flex justify-content-between align-items-center">
+                    <div>
+                        <img src="images/favicon.png" class="me-2" alt=""><strong>ระบบรับชำระเงินกู้ยืมคืน กองทุนเงินให้กู้ยืมเพื่อการศึกษาผ่านกรมสรรพากร (e-PaySLF)</strong>
+                    </div>
+                    <div class="text-end mb-x">
+                        <i class="far fa-user-circle"></i> วรรณา พาสุข
+                        <br>
+                         <b>Admin</b>
+                    </div>
+                    <div class="pc-x">
+                        <div class="bar-m">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+
+
+        <main>
+           
+            <div class="container-fluid p-0"> 
+                <div id="menu-container"></div>
+            </div>
+            
+            <div class="container-fluid p-4 pt-2">
+
+                <!-- Header -->
+                <div class="mb-4 mb-x">
+                    <h3 class="mb-0">Dashboard</h3>
+                    <small class="text-muted">ภาพรวมการลงพื้นที่ รอบ 01/69</small>
+                </div>
+                
+                <!-- KPI Cards -->
+                <div class="row g-3 mb-4">
+                    <div class="col-md-3 col-6">
+                        <div class="card shadow-sm border-0">
+                            <div class="card-body">
+                                <small class="text-muted">จังหวัดทั้งหมด</small>
+                                <h4 class="mb-0 text-primary">8</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="card shadow-sm border-0">
+                            <div class="card-body">
+                                <small class="text-muted">สถานที่ทั้งหมด</small>
+                                <h4 class="mb-0 text-success">42</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="card shadow-sm border-0">
+                            <div class="card-body">
+                                <small class="text-muted">ลงพื้นที่แล้ว</small>
+                                <h4 class="mb-0 text-success">26</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="card shadow-sm border-0">
+                            <div class="card-body">
+                                <small class="text-muted">ยังไม่ลงพื้นที่</small>
+                                <h4 class="mb-0 text-warning">16</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card shadow-sm mb-2 pc-x">
+                    <div class="card-body">
+                        <h6 class="mb-3">🧭 เส้นทางวันนี้</h6>
+                        <div class="list-group">
+                            <div class="list-group-item">
+                                <strong>จุดที่ 1</strong><br>
+                                บ. ABC จำกัด<br>
+                                09:00
+                                <a href="m-check-in.html" class="btn btn-sm btn-success float-end">Check-in</a>
+                            </div>
+                            <div class="list-group-item">
+                                <strong>จุดที่ 2</strong><br>
+                                หจก. XYZ<br>
+                                14:00
+                                <a href="m-check-in.html" class="btn btn-sm btn-success float-end">Check-in</a>
+                            </div>
+                            <div class="list-group-item">
+                                <strong>จุดที่ 3</strong><br>
+                                บริษัท 123<br>
+                                16:00
+                                <a href="m-check-in.html" class="btn btn-sm btn-success float-end">Check-in</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Progress + Pie -->
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-header bg-white">
+                                ความคืบหน้ารวม
+                            </div>
+                            <div class="card-body">
+                                <div class="progress mb-3" style="height:10px;">
+                                    <div class="progress-bar bg-success" style="width:62%"></div>
+                                </div>
+                                <p class="mb-0">ดำเนินการแล้ว <strong>26 / 42</strong> สถานที่</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-header bg-white">
+                                สถานะการลงพื้นที่
+                            </div>
+                            <div class="card-body">
+                                <canvas id="statusPie"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bar Chart -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-white">
+                        จำนวนสถานที่แยกตามจังหวัด
+                    </div>
+                    <div class="card-body">
+                        <canvas id="provinceBar"></canvas>
+                    </div>
+                </div>
+
+                <!-- Recent Activities -->
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white">
+                        การลงพื้นที่ล่าสุด
+                    </div>
+                    <div class="card-body p-0">
+                        <table class="table table-hover mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>จังหวัด</th>
+                                    <th>บริษัท</th>
+                                    <th>วันที่</th>
+                                    <th>สถานะ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>เชียงใหม่</td>
+                                    <td>บ. ABC จำกัด</td>
+                                    <td>12/01/2569</td>
+                                    <td><span class="badge bg-success">เสร็จแล้ว</span></td>
+                                </tr>
+                                <tr>
+                                    <td>ลำพูน</td>
+                                    <td>หจก. 123</td>
+                                    <td>13/01/2569</td>
+                                    <td><span class="badge bg-warning text-dark">รอดำเนินการ</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>    
+ 
+
+        <script src="js/jquery.min.js"></script> 
+        <script src="js/popper.min.js" ></script>
+        <script src="js/bootstrap.bundle.min.js"></script>   
+        <script src="js/menu.js"></script>   
+        <script src="js/menu-mobile.js"></script>   
+        <script>
+        renderMenu("menu-container");
+        </script>
+ 
+        <script>
+        new Chart(document.getElementById('statusPie'), {
+            type: 'doughnut',
+            data: {
+                labels: ['ลงพื้นที่แล้ว', 'ยังไม่ลงพื้นที่'],
+                datasets: [{
+                    data: [26, 16],
+                    backgroundColor: ['#198754', '#ffc107']
+                }]
+            },
+            options: {
+                plugins: { legend: { position: 'bottom' } }
+            }
+        });
+
+        new Chart(document.getElementById('provinceBar'), {
+            type: 'bar',
+            data: {
+                labels: ['เชียงใหม่', 'ลำพูน', 'ลำปาง', 'แพร่', 'น่าน'],
+                datasets: [{
+                    label: 'จำนวนสถานที่',
+                    data: [12, 6, 8, 9, 7],
+                    backgroundColor: '#0d6efd'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } }
+            }
+        });
+        </script>
+
+    </body>
+</html>

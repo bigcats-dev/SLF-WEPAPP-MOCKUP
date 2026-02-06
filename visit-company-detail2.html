@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>กองทุนเงินให้กู้ยืมเพื่อการศึกษา (กยศ.)</title>
+	<link rel="icon" type="image/x-icon" href="images/icon.jpg">
+	<link href="css/bootstrap.min2.css" rel="stylesheet">  
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" /> 
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>  
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+	<link href="css/style.css" rel="stylesheet">      
+
+   
+    </head>
+    <body> 
+        <!-- Header -->
+        <header> 
+            <nav class="navbar fixed-top">
+                <div class="w-100 text-white d-flex justify-content-between align-items-center">
+                    <div>
+                        <img src="images/favicon.png" class="me-2" alt=""><strong>ระบบรับชำระเงินกู้ยืมคืน กองทุนเงินให้กู้ยืมเพื่อการศึกษาผ่านกรมสรรพากร (e-PaySLF)</strong>
+                    </div>
+                    <div class="text-end mb-x">
+                        <i class="far fa-user-circle"></i> วรรณา พาสุข
+                        <br>
+                         <b>Admin</b>
+                    </div>
+                    <div class="pc-x">
+                        <div class="bar-m">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+
+
+        <main>
+            <div class="container-fluid p-0"> 
+                <div id="menu-container"></div>
+            </div>
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="card mb-3">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">บ. ABC จำกัด</h5>
+                                <span class="badge bg-warning text-dark">ยังไม่ลงพื้นที่</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card mb-3">
+                                    <div class="card-header">ข้อมูลบริษัท</div>
+                                    <div class="card-body">
+                                        <p><strong>ที่อยู่:</strong><br>
+                                            123 หมู่ 4 ต.สุเทพ อ.เมือง จ.เชียงใหม่
+                                        </p>
+                                        <p><strong>ผู้ติดต่อ:</strong> นายสมชาย ใจดี</p>
+                                        <p><strong>ตำแหน่ง:</strong> ผู้จัดการฝ่ายบุคคล</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">กำหนดการลงพื้นที่</div>
+                                    <div class="card-body">
+                                        <p><strong>วันที่:</strong> 13/01/2569</p>
+                                        <p><strong>เวลา:</strong> 14:00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <div class="card-header">แผนที่สถานที่</div>
+                                    <div class="card-body text-center text-muted">
+                                        <iframe
+                                            src="https://www.google.com/maps?q=18.7883,98.9853&hl=th&z=15&output=embed"
+                                            width="100%"
+                                            height="250"
+                                            style="border:0;"
+                                            allowfullscreen
+                                            loading="lazy">
+                                        </iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>    
+ 
+
+        <script src="js/jquery.min.js"></script> 
+        <script src="js/popper.min.js" ></script>
+        <script src="js/bootstrap.bundle.min.js"></script>   
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script src="js/menu.js"></script>   
+        <script src="js/menu-mobile.js"></script>   
+        <script>
+        renderMenu("menu-container");
+        </script>
+ 
+        <script>
+            // 1. สร้าง Map (ศูนย์กลางภาคเหนือ)
+            const map = L.map('map').setView([18.7883, 98.9853], 8);
+
+            // 2. โหลดแผนที่ OpenStreetMap
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+
+            // 3. ข้อมูลสถานที่ (mock data)
+            const locations = [
+                {
+                name: 'บ. ABC จำกัด',
+                lat: 18.7883,
+                lng: 98.9853,
+                visited: true
+                },
+                {
+                name: 'บ. XYZ จำกัด',
+                lat: 18.9100,
+                lng: 99.0100,
+                visited: true
+                },
+                {
+                name: 'หจก. 123',
+                lat: 18.7500,
+                lng: 99.0500,
+                visited: false
+                },
+                {
+                name: 'บ. DEF จำกัด',
+                lat: 18.6000,
+                lng: 99.0000,
+                visited: false
+                }
+            ];
+
+            // 4. Icon แยกตามสถานะ
+            const greenIcon = new L.Icon({
+                iconUrl: 'https://maps.gstatic.com/mapfiles/ms2/micons/green-dot.png',
+                iconSize: [32, 32],
+                iconAnchor: [16, 32]
+            });
+
+            const grayIcon = new L.Icon({
+                iconUrl: 'https://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png',
+                iconSize: [32, 32],
+                iconAnchor: [16, 32]
+            });
+
+            // 5. วาง Pins
+            const routeLatLngs = [];
+
+            locations.forEach(loc => {
+                const marker = L.marker(
+                [loc.lat, loc.lng],
+                { icon: loc.visited ? greenIcon : grayIcon }
+                ).addTo(map);
+
+                marker.bindPopup(`<strong>${loc.name}</strong><br>
+                สถานะ: ${loc.visited ? 'ลงพื้นที่แล้ว' : 'ยังไม่ลงพื้นที่'}
+                `);
+
+                routeLatLngs.push([loc.lat, loc.lng]);
+            });
+
+            // 6. วาด Route
+            const routeLine = L.polyline(routeLatLngs, {
+                color: 'blue',
+                weight: 4,
+                opacity: 0.7
+            }).addTo(map);
+
+            // 7. ซูมให้เห็นทั้งหมด
+            map.fitBounds(routeLine.getBounds());
+        </script>
+
+
+    </body>
+</html>

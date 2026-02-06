@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>กองทุนเงินให้กู้ยืมเพื่อการศึกษา (กยศ.)</title>
+	<link rel="icon" type="image/x-icon" href="images/icon.jpg">
+	<link href="css/bootstrap.min2.css" rel="stylesheet">  
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" /> 
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>  
+
+	<link href="css/style.css" rel="stylesheet">      
+
+   
+    </head>
+    <body> 
+        <!-- Header -->
+        <header> 
+            <nav class="navbar fixed-top">
+                <div class="w-100 text-white d-flex justify-content-between align-items-center">
+                    <div>
+                        <img src="images/favicon.png" class="me-2" alt=""><strong>ระบบรับชำระเงินกู้ยืมคืน กองทุนเงินให้กู้ยืมเพื่อการศึกษาผ่านกรมสรรพากร (e-PaySLF)</strong>
+                    </div>
+                    <div class="text-end mb-x">
+                        <i class="far fa-user-circle"></i> วรรณา พาสุข
+                        <br>
+                         <b>Admin</b>
+                    </div>
+                    <div class="pc-x">
+                        <div class="bar-m">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+
+
+        <main>
+            <div class="container-fluid p-0">
+                <!-- Tabs -->
+                <ul class="nav nav-tabs mb-3 menutx mb-x">
+                    <li class="nav-item active"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="visit-list.html">รายการลงพื้นที่</a></li>  
+                    <li class="nav-item"><a class="nav-link" href="team-list.html">ทีมลงพื้นที่</a></li>  
+                    <li class="nav-item"><a class="nav-link" href="report.html">รายงานการลงพื้นที่</a></li>  
+                </ul>  
+            </div>
+             
+            <div class="container py-3">
+                <!-- Header -->
+                <div class="mb-3">
+                    <h5>จุดที่ 1 : บ. ABC จำกัด</h5>
+                    <span class="badge bg-info">09:00</span>
+                    <span class="badge bg-secondary">เชียงใหม่</span>
+                </div>
+                <!-- Check-in -->
+                <div class="card mb-3 shadow-sm">
+                    <div class="card-body text-center">
+                        <button class="btn btn-success btn-lg w-100">
+                        Check-in
+                        </button>
+                        <small class="text-muted d-block mt-2">
+                        ระบบจะบันทึกเวลาและพิกัดอัตโนมัติ
+                        </small>
+                    </div>
+                </div>
+                <!-- Upload Photo -->
+                <div class="card mb-3 shadow-sm">
+                    <div class="card-body">
+                        <h6>ถ่ายรูปสถานที่</h6>
+                        <input type="file" class="form-control" multiple>
+                        <small class="text-muted">สามารถเพิ่มได้หลายรูป</small>
+                        <!-- Mock Gallery -->
+                        <div class="row mt-3">
+                            <div class="col-4">
+                                <div class="border text-center py-4 text-muted">รูป</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="border text-center py-4 text-muted">รูป</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Form -->
+                <div class="card mb-3 shadow-sm">
+                    <div class="card-body">
+                        <h6>ข้อมูลผู้ติดต่อ</h6>
+                        <div class="mb-2">
+                            <label class="form-label">ชื่อผู้ติดต่อ</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">ตำแหน่ง</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">รายละเอียดเพิ่มเติม</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">ที่อยู่ (กรณีเปลี่ยน)</label>
+                            <textarea class="form-control" rows="2"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- Signature -->
+                <div class="card mb-3 shadow-sm">
+                    <div class="card-body">
+                        <h6>ลายเซ็นนายจ้าง</h6>
+                        <div class="border text-center text-muted py-5">
+                            พื้นที่สำหรับเซ็น (Signature Pad)
+                        </div>
+                    </div>
+                </div>
+                <!-- Actions -->
+                <div class="d-grid gap-2 mb-4">
+                    <button class="btn btn-primary btn-lg">
+                    บันทึกสถานที่นี้
+                    </button> 
+                </div>
+            </div>
+        </main>    
+ 
+
+        <script src="js/jquery.min.js"></script> 
+        <script src="js/popper.min.js" ></script>
+        <script src="js/bootstrap.bundle.min.js"></script>   
+        <script src="js/menu-mobile.js"></script>   
+ 
+        <script>
+        new Chart(document.getElementById('statusPie'), {
+            type: 'doughnut',
+            data: {
+                labels: ['ลงพื้นที่แล้ว', 'ยังไม่ลงพื้นที่'],
+                datasets: [{
+                    data: [26, 16],
+                    backgroundColor: ['#198754', '#ffc107']
+                }]
+            },
+            options: {
+                plugins: { legend: { position: 'bottom' } }
+            }
+        });
+
+        new Chart(document.getElementById('provinceBar'), {
+            type: 'bar',
+            data: {
+                labels: ['เชียงใหม่', 'ลำพูน', 'ลำปาง', 'แพร่', 'น่าน'],
+                datasets: [{
+                    label: 'จำนวนสถานที่',
+                    data: [12, 6, 8, 9, 7],
+                    backgroundColor: '#0d6efd'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } }
+            }
+        });
+        </script>
+
+    </body>
+</html>

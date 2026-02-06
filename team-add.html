@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>กองทุนเงินให้กู้ยืมเพื่อการศึกษา (กยศ.)</title>
+	<link rel="icon" type="image/x-icon" href="images/icon.jpg">
+	<link href="css/bootstrap.min2.css" rel="stylesheet">  
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" /> 
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>  
+
+	<link href="css/style.css" rel="stylesheet">      
+
+   
+    </head>
+    <body> 
+        <!-- Header -->
+        <header> 
+            <nav class="navbar fixed-top">
+                <div class="w-100 text-white d-flex justify-content-between align-items-center">
+                    <div>
+                        <img src="images/favicon.png" class="me-2" alt=""><strong>ระบบรับชำระเงินกู้ยืมคืน กองทุนเงินให้กู้ยืมเพื่อการศึกษาผ่านกรมสรรพากร (e-PaySLF)</strong>
+                    </div>
+                    <div class="text-end mb-x">
+                        <i class="far fa-user-circle"></i> วรรณา พาสุข
+                        <br>
+                         <b>Admin</b>
+                    </div>
+                    <div class="pc-x">
+                        <div class="bar-m">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+
+
+        <main>
+           <div class="container-fluid p-0"> 
+                <div id="menu-container"></div>
+            </div>
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="mb-3">
+                            <h4>สร้างทีมลงพื้นที่</h4>
+                            <p class="text-muted mb-0">กำหนดทีมสำหรับใช้ในรอบลงพื้นที่</p>
+                        </div>
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <!-- Team Name -->
+                                <div class="mb-3">
+                                    <label class="form-label">ชื่อทีม</label>
+                                    <input type="text" class="form-control" placeholder="เช่น ทีมภาคเหนือ A">
+                                </div>
+                                <!-- Region -->
+                                <div class="mb-3">
+                                    <label class="form-label">ภาค</label>
+                                    <select class="form-select">
+                                        <option selected disabled>-- เลือกภาค --</option>
+                                        <option>ภาคเหนือ</option>
+                                        <option>ภาคกลาง</option>
+                                        <option>ภาคอีสาน</option>
+                                        <option>ภาคใต้</option>
+                                    </select>
+                                </div>
+                                <!-- Provinces -->
+                                <div class="mb-3">
+                                    <label class="form-label">จังหวัดที่รับผิดชอบ</label>
+                                    <select class="form-select" multiple>
+                                        <option>เชียงใหม่</option>
+                                        <option>ลำพูน</option>
+                                        <option>ลำปาง</option>
+                                        <option>เชียงราย</option>
+                                    </select>
+                                    <small class="text-muted">เลือกได้มากกว่า 1 จังหวัด</small>
+                                </div>
+                                <!-- Members -->
+                                <div class="mb-3">
+                                    <label class="form-label">สมาชิกทีม</label>
+                                    <div class="list-group">
+                                        <label class="list-group-item">
+                                        <input class="form-check-input me-2" type="checkbox">
+                                        นายสมชาย ใจดี <small class="text-muted">(หัวหน้าทีม)</small>
+                                        </label>
+                                        <label class="list-group-item">
+                                        <input class="form-check-input me-2" type="checkbox">
+                                        น.ส.สุดา มีสุข
+                                        </label>
+                                        <label class="list-group-item">
+                                        <input class="form-check-input me-2" type="checkbox">
+                                        นายวิทยา เดินไว
+                                        </label>
+                                    </div>
+                                </div>
+                                <!-- Actions -->
+                                <hr>
+                                <div class="d-flex justify-content-start gap-2">
+                                    <button class="btn btn-primary">  บันทึกทีม</button>
+                                    <button class="btn btn-outline-secondary">ยกเลิก</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>    
+ 
+
+        <script src="js/jquery.min.js"></script> 
+        <script src="js/popper.min.js" ></script>
+        <script src="js/bootstrap.bundle.min.js"></script>   
+        <script src="js/menu-mobile.js"></script>   
+        <script src="js/menu.js"></script>   
+        <script>
+        renderMenu("menu-container");
+        </script>
+ 
+      
+
+    </body>
+</html>
