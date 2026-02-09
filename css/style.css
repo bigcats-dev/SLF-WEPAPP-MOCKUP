@@ -1,9 +1,25 @@
 :root {
-  --primary-main: #4987F1;   
-  --primary-main2: #5681BF;  
-  --primary-main3: #0B3353;   
-  --primary-main4: #001323;   
-  --text-black: #1A1A1A; 
+  --kys-primary-blue: #1F3C88;   /* น้ำเงินเข้ม – ความน่าเชื่อถือ */
+  --kys-primary-blue-hover2: #162E6F; 
+  --kys-primary-blue-hover: #2546A6; 
+  --kys-accent-red: #C62828;     /* แดง – ใช้เน้นปุ่ม แจ้งเตือน */
+  --kys-white: #FFFFFF;         /* ขาว – พื้นหลัก */
+  --kys-light-gray: #F5F6FA;    /* เทาอ่อน – พื้น section */
+  --kys-text-dark: #1E1E1E;      /* ตัวอักษรหลัก */
+  --kys-text-muted: #6B7280;    /* ตัวอักษรรอง */
+  --kys-border-gray: #E5E7EB;   /* เส้นขอบ ตาราง */
+  --kys-info-blue: #2563EB;    /* ลิงก์ / info */
+  --kys-success-green: #16A34A;/* สถานะสำเร็จ */
+  --kys-warning-orange: #F59E0B;/* แจ้งเตือน */ 
+
+  
+  --kys-primary: #1F3C88;
+  --kys-primary-hover: #162E6F;
+  --kys-bg: #F5F7FB;
+  --kys-card: #FFFFFF;
+  --kys-border: #E5E7EB;
+  --kys-muted: #6B7280;
+
 }   
 a{
   text-decoration: none !important; 
@@ -14,20 +30,20 @@ a:hover{
 body{
   font-family: "Sarabun", sans-serif;
   font-style: normal;   
-  background-color: #f1f1f1;
+  background-color: var(--kys-light-gray);
   padding-top: 80px;
 }    
 nav{
   /* background-image: linear-gradient(to right, #0071cd, #1165be, #1959b0, #1d4da1, #1f4293); */
-  background-color: #1F3C88;
+  background: linear-gradient(90deg, #1F3C88, #243E8F);
   padding: 0px 20px  !important;
   height: 80px;
 }
 .menutx{
-  background-color: #f6f6f6;  
+  background-color: #fff;  
 } 
 .menutx .nav-item.active{
-  background-color: #548ab4; 
+  background-color: var(--kys-primary-blue-hover);
   color: #fff;
 }
 .menutx .nav-item a{ 
@@ -47,7 +63,7 @@ nav{
   color: #fff;
 }
 .menutx .nav-item:hover { 
-  background-color: #548ab4;
+  background-color: var(--kys-primary-blue);
 }
 .menutx .nav-item:hover a{ 
   color: #fff;
@@ -397,6 +413,197 @@ ul.form-stepper li a .form-stepper-circle {
 } 
 .logow{
   height: 55px;
+}.section-title {
+  font-weight: 600;
+  color: var(--kys-primary-blue);
+}
+
+.info-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.info-row .label {
+  font-size: 0.85rem;
+  color: #6B7280;
+  margin-bottom: 2px;
+}
+
+.info-row .value {
+  font-size: 0.95rem;
+  color: #111827;
+}
+.kys-tabs {
+  border-bottom: 1px solid var(--kys-border-gray);
+  gap: 6px;
+}
+
+.kys-tabs .nav-link {
+  border: none;
+  border-radius: 10px 10px 0 0;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  color: var(--kys-text-muted);
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+/* hover */
+.kys-tabs .nav-link:hover {
+  color: var(--kys-primary-blue);
+  background-color: rgba(31, 60, 136, 0.06);
+}
+
+/* active */
+.kys-tabs .nav-link.active {
+  color: #fff;
+  background-color: var(--kys-primary-blue);
+  box-shadow: 0 -2px 0 var(--kys-primary-blue);
+}
+
+/* focus */
+.kys-tabs .nav-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(31, 60, 136, 0.25);
+}
+.tab-content-w{
+  background-color: white;
+  padding: 20px;
+}
+.tab-content-w .tab-content{
+  border-top-left-radius: 0px; 
+} 
+.kys-tabs li:focus{
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.kys-tabs .nav-link.active:focus{
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.team-table thead th {
+  background-color: #F1F5FB;
+  color: var(--kys-primary-blue);
+  font-weight: 600;
+  border-bottom: 1px solid var(--kys-border-gray);
+}
+
+.team-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.team-table tbody tr:hover {
+  background-color: rgba(31, 60, 136, 0.04);
+}
+
+/* badge ตำแหน่ง */
+.role-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.role-badge.leader {
+  background-color: rgba(31, 60, 136, 0.12);
+  color: var(--kys-primary-blue);
+}
+
+.role-badge.staff {
+  background-color: rgba(37, 99, 235, 0.12);
+  color: #1D4ED8;
+}
+
+.role-badge.field {
+  background-color: rgba(22, 163, 74, 0.12);
+  color: #166534;
+}
+
+/* ลิงก์โทร */
+.phone-link {
+  color: var(--kys-primary-blue);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.phone-link:hover {
+  text-decoration: underline;
+}
+.kpi-card {
+  border: none;
+  border-radius: 14px;
+  background: var(--kys-card);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(31,60,136,.15);
+}
+
+.kpi-card h4 {
+  font-weight: 700;
+}
+.card-header {
+  font-weight: 600;
+  color: var(--kys-primary);
+  border-bottom: 1px solid var(--kys-border);
+}
+.table thead th {
+  background-color: #F1F5FB;
+  color: var(--kys-primary);
+  font-weight: 600;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(31,60,136,.04);
+}
+.badge {
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-weight: 500;
+}
+
+.bg-success {
+  background-color: rgba(22,163,74,.15) !important;
+  color: #166534;
+}
+
+.bg-warning {
+  background-color: rgba(245,158,11,.18) !important;
+  color: #92400E;
+}
+.card {
+  border-radius: 16px;
+}
+
+h3 {
+  color: var(--kys-primary);
+}
+
+.text-primary {
+  color: var(--kys-primary) !important;
+}
+
+.btn-primary {
+  background-color: var(--kys-primary);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--kys-primary-hover);
+}
+#provinceMap {
+    border-radius: 0 0 12px 12px;
+}
+
+.leaflet-popup-content {
+    font-family: 'Sarabun', sans-serif;
+    font-size: 14px;
 }
 
 /*  
