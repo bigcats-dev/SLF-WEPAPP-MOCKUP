@@ -27,7 +27,7 @@
             <nav class="navbar fixed-top">
                 <div class="w-100 text-white d-flex justify-content-between align-items-center">
                     <div>
-                        <img src="images/favicon.png" class="me-2" alt=""><strong>ระบบติดตามองค์กรนายจ้าง สำหรับ
+                        <img src="images/logo.webp" class="me-2 logow" alt=""><strong>ระบบติดตามองค์กรนายจ้าง สำหรับ
 การลงพื้นที่</strong>
                     </div>
                     <div class="text-end mb-x">
@@ -62,23 +62,48 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <!-- ซ้าย -->
-                            <div class="col-md-6">
+                        <ul class="nav nav-tabs  " id="companyTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-company" type="button">
+                                    ข้อมูลบริษัท
+                                </button>
+                            </li>
 
-                                <div class="card mb-3">
-                                    <div class="card-header">ข้อมูลการ Check-in</div>
-                                    <div class="card-body">
-                                        <p><strong>เวลา Check-in:</strong> 12/01/2569 เวลา 09:05</p>
-                                        <p><strong>พิกัด:</strong> 18.7883, 98.9853</p>
-                                    </div>
-                                </div>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-visit-1" type="button">
+                                    ผลการลงพื้นที่ ครั้งที่ 1
+                                </button>
+                            </li>
 
-                                <div class="card mb-3">
-                                    <div class="card-header fw-semibold">
-                                        ข้อมูลผู้ติดต่อ
-                                    </div>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-visit-2" type="button">
+                                    ผลการลงพื้นที่ ครั้งที่ 2
+                                </button>
+                            </li>
 
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-files" type="button">
+                                    รูปถ่ายและเอกสาร
+                                </button>
+                            </li>
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-team" type="button">
+                                    ทีมลงพื้นที่
+                                </button>
+                            </li>
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-map" type="button">
+                                    แผนที่
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+
+                            <!-- ข้อมูลบริษัท -->
+                            <div class="tab-pane fade show active" id="tab-company">
+                                <div class="card ">  
                                     <div class="card-body">
                                         <p class="mb-1">
                                             <strong>ชื่อ:</strong> นายสมชาย ใจดี
@@ -103,7 +128,76 @@
                                         </p>
                                     </div>
                                 </div>
+                            </div>
 
+                            <!-- ผลการลงพื้นที่ ครั้งที่ 1 -->
+                            <div class="tab-pane fade" id="tab-visit-1">
+                                <div class="card mb-3">
+                                    <div class="card-header">ข้อมูลการ Check-in</div>
+                                    <div class="card-body">
+                                        <p><strong>เวลา Check-in:</strong> 12/01/2569 เวลา 09:05</p>
+                                        <p><strong>พิกัด:</strong> 18.7883, 98.9853</p>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p><strong>วันที่ลงพื้นที่:</strong> 12/01/2569</p>
+                                        <p><strong>ผลการตรวจ:</strong> พบการดำเนินกิจการปกติ</p>
+                                        <p><strong>หมายเหตุ:</strong> ขอเอกสารเพิ่มเติม</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ผลการลงพื้นที่ ครั้งที่ 2 -->
+                            <div class="tab-pane fade" id="tab-visit-2">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p class="text-muted mb-0">ยังไม่มีการลงพื้นที่ครั้งที่ 2</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- รูปถ่ายและเอกสาร -->
+                            <div class="tab-pane fade" id="tab-files">
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <ul class="mb-0">
+                                            <li>หนังสือแจ้งตรวจสถานประกอบการ.pdf</li>
+                                            <li>รูปสถานที่หน้าอาคาร.jpg</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="card mb-3">
+                                    <div class="card-header">รูปถ่ายสถานที่</div>
+                                    <div class="card-body">
+                                        <div class="row g-2">
+                                            <div class="col-4">
+                                                <img src="https://ice-studio.com/wp-content/uploads/2016/03/%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%87%E0%B8%B2%E0%B8%99-004-525x350.jpg"
+                                                    class="img-fluid rounded">
+                                            </div>
+                                            <div class="col-4">
+                                                <img src="https://ice-studio.com/wp-content/uploads/2016/03/%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%87%E0%B8%B2%E0%B8%99-002-525x350.jpg"
+                                                    class="img-fluid rounded">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header">ลายเซ็นนายจ้าง</div>
+                                    <div class="card-body text-center">
+                                        <img src="https://png.pngtree.com/png-vector/20240628/ourmid/pngtree-signature-isolated-the-signature-is-neatly-written-in-black-ink-the-png-image_12728547.png"
+                                            class="img-fluid border rounded w-25">
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <!-- ทีมลงพื้นที่ -->
+                            <div class="tab-pane fade" id="tab-team">
+                                
                                 <div class="card mt-3">
                                     <div class="card-header d-flex justify-content-between align-items-center">
                                         <span>ทีมลงพื้นที่</span>
@@ -147,49 +241,23 @@
                                 </div>
                             </div>
 
-                            <!-- ขวา -->
-                            <div class="col-md-6">
-
-                                <div class="card mb-3">
-                                    <div class="card-header">แผนที่</div>
-                                    <div class="card-body text-center text-muted">
+                            <!-- แผนที่ -->
+                            <div class="tab-pane fade" id="tab-map">
+                                <div class="card">
+                                    <div class="card-body p-0">
                                         <iframe
                                             src="https://www.google.com/maps?q=18.7883,98.9853&hl=th&z=15&output=embed"
                                             width="100%"
-                                            height="250"
+                                            height="350"
                                             style="border:0;"
-                                            allowfullscreen
                                             loading="lazy">
                                         </iframe>
                                     </div>
                                 </div>
-
-                                <div class="card mb-3">
-                                    <div class="card-header">รูปถ่ายสถานที่</div>
-                                    <div class="card-body">
-                                        <div class="row g-2">
-                                            <div class="col-4">
-                                                <img src="https://ice-studio.com/wp-content/uploads/2016/03/%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%87%E0%B8%B2%E0%B8%99-004-525x350.jpg"
-                                                    class="img-fluid rounded">
-                                            </div>
-                                            <div class="col-4">
-                                                <img src="https://ice-studio.com/wp-content/uploads/2016/03/%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%87%E0%B8%B2%E0%B8%99-002-525x350.jpg"
-                                                    class="img-fluid rounded">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card">
-                                    <div class="card-header">ลายเซ็นนายจ้าง</div>
-                                    <div class="card-body text-center">
-                                        <img src="https://png.pngtree.com/png-vector/20240628/ourmid/pngtree-signature-isolated-the-signature-is-neatly-written-in-black-ink-the-png-image_12728547.png"
-                                            class="img-fluid border rounded w-25">
-                                    </div>
-                                </div>
-
                             </div>
+
                         </div>
+ 
 
                         <div class="text-end mt-3">
                             <button class="btn btn-outline-secondary">

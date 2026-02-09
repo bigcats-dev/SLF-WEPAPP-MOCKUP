@@ -18,7 +18,8 @@ body{
   padding-top: 80px;
 }    
 nav{
-  background-image: linear-gradient(to right, #0071cd, #1165be, #1959b0, #1d4da1, #1f4293);
+  /* background-image: linear-gradient(to right, #0071cd, #1165be, #1959b0, #1d4da1, #1f4293); */
+  background-color: #1F3C88;
   padding: 0px 20px  !important;
   height: 80px;
 }
@@ -394,6 +395,10 @@ ul.form-stepper li a .form-stepper-circle {
 .step.done + .line {
   background: #198754;
 } 
+.logow{
+  height: 55px;
+}
+
 /*  
   transition: 0.3s;  
 ######################################################################################################
