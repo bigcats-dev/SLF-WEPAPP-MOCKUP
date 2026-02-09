@@ -60,6 +60,9 @@ nav{
   font-size: 14px;
   text-align: end; 
 }
+.step-content .card .form-check-label{
+  text-align: start; 
+}
 .card .form-label span{
   color: red;
 }
