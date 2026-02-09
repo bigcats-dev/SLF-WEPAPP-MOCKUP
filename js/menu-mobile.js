@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <i class="far fa-times" id="closeMobileMenu"></i>
       </div>
       <ul class="mobile-menu">
-        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="index.html">Dashboard</a></li>
          
         <li><a href="visit-list.html">รายการลงพื้นที่</a></li>
         <li><a href="team-list.html">ทีมลงพื้นที่</a></li>
