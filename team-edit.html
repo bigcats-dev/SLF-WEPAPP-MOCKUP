@@ -52,16 +52,19 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
                         <div class="mb-3">
-                            <h4>สร้างทีมลงพื้นที่</h4>
+                            <h4>แก้ไขทีมลงพื้นที่</h4>
                             <p class="text-muted mb-0">กำหนดทีมสำหรับใช้ในรอบลงพื้นที่</p>
                         </div>
                         <div class="card shadow-sm">
                             <div class="card-body">
                                 <!-- Team Name -->
                                 <div class="mb-3">
+                                    <h5 class="h5">รหัสทีม : <strong>SLF0010A</strong></h5> 
+                                </div> 
+                                <div class="mb-3">
                                     <label class="form-label">ชื่อทีม</label>
                                     <input type="text" class="form-control" placeholder="เช่น ทีมภาคเหนือ A">
-                                </div> 
+                                </div>  
                                 <div class="mb-3">
                                     <label class="form-label">ภาค</label>
                                     <select class="form-select">
@@ -181,6 +184,23 @@
                                         </label>
 
                                     </div>
+                                    <hr>
+                                    <h5 class="mb-3">จัดการสมาชิกทีม</h5>
+                                    <div class="alert alert-info py-2">
+                                        เลือกสมาชิกที่ต้องการย้ายทีม
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">ย้ายไปทีม</label>
+                                        <select class="form-select" id="targetTeam">
+                                            <option value="" selected disabled>-- เลือกทีมปลายทาง --</option>
+                                            <option value="teamA">ทีมภาคเหนือ A</option>
+                                            <option value="teamB">ทีมภาคกลาง B</option>
+                                            <option value="teamC">ทีมอีสาน C</option>
+                                        </select>
+                                    </div>
+                                    <button class="btn btn-warning" onclick="moveMembers()">
+                                    ย้ายสมาชิกไปทีมที่เลือก
+                                    </button>
 
                                 </div>
 
@@ -237,6 +257,33 @@
                     leaderNameEl.textContent = radio.dataset.name;
                 });
             });
+        </script>
+        <script>
+        function moveMembers() {
+            const selectedMembers = document.querySelectorAll('.member-checkbox:checked');
+            const targetTeam = document.getElementById('targetTeam').value;
+
+            if (!targetTeam) {
+                alert('กรุณาเลือกทีมปลายทาง');
+                return;
+            }
+
+            if (selectedMembers.length === 0) {
+                alert('กรุณาเลือกสมาชิกที่ต้องการย้าย');
+                return;
+            }
+
+            // ตัวอย่าง validation
+            // ถ้าหัวหน้าทีมโดนย้าย
+            const leaderSelected = document.querySelector('.leader-radio:checked');
+            if (leaderSelected) {
+                alert('สมาชิกที่เป็นหัวหน้าทีม ต้องตั้งหัวหน้าทีมใหม่ก่อนย้าย');
+                return;
+            }
+
+            // TODO: call API move member
+            alert('ย้ายสมาชิกสำเร็จ');
+        }
         </script>
 
       

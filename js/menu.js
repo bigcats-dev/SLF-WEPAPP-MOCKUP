@@ -16,6 +16,15 @@ function renderMenu(containerId) {
   else if (currentPage === "visit-detail.html") {
     currentPage = "visit-list.html";
   } 
+  else if (currentPage === "team-add.html") {
+    currentPage = "team-list.html";
+  } 
+  else if (currentPage === "team-edit.html") {
+    currentPage = "team-list.html";
+  } 
+  else if (currentPage === "team-view.html") {
+    currentPage = "team-list.html";
+  } 
 
   const container = document.getElementById(containerId);
 
