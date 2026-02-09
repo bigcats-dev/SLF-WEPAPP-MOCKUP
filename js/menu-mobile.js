@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
       <ul class="mobile-menu">
         <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="employer-list.html">รายชื่อนายจ้าง</a></li>
+         
         <li><a href="visit-list.html">รายการลงพื้นที่</a></li>
         <li><a href="team-list.html">ทีมลงพื้นที่</a></li>
         <li><a href="report.html">รายงานการลงพื้นที่</a></li> 

@@ -1,6 +1,6 @@
 const menus = [ 
-  { label: "Dashboard", href: "dashboard.html" },
-  { label: "รายชื่อนายจ้าง", href: "employer-list.html" },
+  { label: "Dashboard", href: "index.html" },
+  // { label: "รายชื่อนายจ้าง", href: "employer-list.html" },
   { label: "รายการลงพื้นที่", href: "visit-list.html" },
   { label: "ทีมลงพื้นที่", href: "team-list.html" },
   { label: "รายการลงพื้นที่", href: "report.html" }, 
