@@ -82,108 +82,341 @@
                                     </select>
                                     <small class="text-muted">เลือกได้มากกว่า 1 จังหวัด</small>
                                 </div> 
-                                <div class="mb-3">
-                                    <label class="form-label fw-semibold">รายชื่อเจ้าหน้าที่ลงพื้นที่</label>
-
-                                    <!-- ช่องค้นหา -->
-                                    <input
-                                        type="text"
-                                        class="form-control mb-2"
-                                        placeholder="ค้นหาชื่อ / ตำแหน่ง / เบอร์โทร"
-                                        onkeyup="filterTeamMembers(this.value)"
-                                    >
-                                    <div class="mb-2">
-                                        <strong>เลือกสมาชิกแล้ว:</strong>
-                                        <span id="selectedCount" class="text-primary">0</span> คน
-                                        <span class="ms-3">
-                                            <strong>หัวหน้าทีม:</strong>
-                                            <span id="leaderName" class="text-success">ยังไม่ได้เลือก</span>
-                                        </span>
-                                    </div>
-
-                                    <!-- รายชื่อสมาชิก -->
-                                    <div class="list-group" id="teamMemberList">
-
-                                        <!-- สมาชิก -->
-                                        <label class="list-group-item d-flex align-items-start">
-                                            <input class="form-check-input me-3 mt-1 member-checkbox" type="checkbox">
-                                            <div class="flex-grow-1">
-                                                <div class="fw-semibold">
-                                                    นายสมชาย ใจดี
-                                                    <span class="badge bg-success ms-1">เลือกหัวหน้าทีม</span>
-                                                    <input type="radio" name="teamLeader" class="form-check-input ms-2 leader-radio" data-name="นายสมชาย ใจดี">
-                                                </div>
-                                                <div class="text-muted small">
-                                                    ตำแหน่ง: เจ้าหน้าที่บริหารงานทั่วไป (ฝ่ายบริหารหนี้)<br>
-                                                    โทร: 081-234-5678
-                                                </div>
-                                            </div>
+                                <div class="row"> 
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-semibold text-primary">
+                                            เจ้าหน้าที่ว่าง (ยังไม่มีทีม)
                                         </label>
 
-                                        <label class="list-group-item d-flex align-items-start">
-                                            <input class="form-check-input me-3 mt-1 member-checkbox" type="checkbox">
-                                            <div class="flex-grow-1">
-                                                <div class="fw-semibold">
-                                                    น.ส.สุดา มีสุข
-                                                    <span class="badge bg-success ms-1">เลือกหัวหน้าทีม</span>
-                                                    <input type="radio" name="teamLeader" class="form-check-input ms-2 leader-radio" data-name="น.ส.สุดา มีสุข">
-                                                </div>
-                                                <div class="text-muted small">
-                                                    ตำแหน่ง: เจ้าหน้าที่บัญชี ฝ่ายบัญชี<br>
-                                                    โทร: 089-111-2233
-                                                </div>
+                                        <div class="row g-2 mb-2"> 
+                                            <div class="col-md-7">
+                                                <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    placeholder="ค้นหาชื่อเจ้าหน้าที่"
+                                                    id="availableSearch"
+                                                    onkeyup="filterAvailable()"
+                                                >
+                                            </div> 
+                                            <div class="col-md-5">
+                                                <select
+                                                    class="form-select"
+                                                    id="positionFilter"
+                                                    onchange="filterAvailable()"
+                                                >
+                                                    <option value="">ทุกตำแหน่ง</option>
+                                                    <option value="เจ้าหน้าที่บริหารงานทั่วไป">เจ้าหน้าที่บริหารงานทั่วไป</option>
+                                                    <option value="เจ้าหน้าที่บัญชี">เจ้าหน้าที่บัญชี</option>
+                                                    <option value="เจ้าหน้าที่บังคับคดี">เจ้าหน้าที่บังคับคดี</option>
+                                                    <option value="หัวหน้ากลุ่มงานตรวจสอบปฏิบัติการ">หัวหน้ากลุ่มงานตรวจสอบปฏิบัติการ</option>
+                                                    <option value="หัวหน้ากลุ่มงานติดตามหนี้ชั้นบังคับคดี">หัวหน้ากลุ่มงานติดตามหนี้ชั้นบังคับคดี</option>
+                                                </select>
                                             </div>
+                                        </div>
+
+
+                                        <div class="mb-2 small">
+                                            เลือกแล้ว:
+                                            <span id="selectedCount" class="fw-semibold text-success">0</span> คน |
+                                            หัวหน้าทีม:
+                                            <span id="leaderName" class="fw-semibold text-success">ยังไม่ได้เลือก</span>
+                                        </div>
+
+                                        <div class="list-group" id="availableList"> 
+                                            <label class="list-group-item d-flex align-items-start">
+                                                <input class="form-check-input me-3 mt-1 member-checkbox" type="checkbox" onchange="updateSelected()">
+                                                <div class="flex-grow-1">
+                                                    <div class="fw-semibold">
+                                                        นายสมชาย ใจดี
+                                                        <input type="radio" name="teamLeader" class="form-check-input ms-2 leader-radio"
+                                                            data-name="นายสมชาย ใจดี" onchange="setLeader(this)">
+                                                        <span class="badge bg-success ms-1">หัวหน้าทีม</span>
+                                                    </div>
+                                                    <div class="text-muted small">
+                                                        เจ้าหน้าที่บริหารงานทั่วไป (ฝ่ายบริหารหนี้)<br>
+                                                        โทร: 081-234-5678
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <label class="list-group-item d-flex align-items-start">
+                                                <input class="form-check-input me-3 mt-1 member-checkbox" type="checkbox" onchange="updateSelected()">
+                                                <div class="flex-grow-1">
+                                                    <div class="fw-semibold">
+                                                        น.ส.สุดา มีสุข
+                                                        <input type="radio" name="teamLeader" class="form-check-input ms-2 leader-radio"
+                                                            data-name="น.ส.สุดา มีสุข" onchange="setLeader(this)">
+                                                        <span class="badge bg-success ms-1">หัวหน้าทีม</span>
+                                                    </div>
+                                                    <div class="text-muted small">
+                                                        เจ้าหน้าที่บัญชี ฝ่ายบัญชี<br>
+                                                        โทร: 089-111-2233
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <label class="list-group-item d-flex align-items-start">
+                                                <input class="form-check-input me-3 mt-1 member-checkbox" type="checkbox" onchange="updateSelected()">
+                                                <div class="flex-grow-1">
+                                                    <div class="fw-semibold">
+                                                        นายชัชวาล ศรีทอง
+                                                        <input type="radio" name="teamLeader" class="form-check-input ms-2 leader-radio"
+                                                            data-name="นายชัชวาล ศรีทอง" onchange="setLeader(this)">
+                                                        <span class="badge bg-success ms-1">หัวหน้าทีม</span>
+                                                    </div>
+                                                    <div class="text-muted small">
+                                                        เจ้าหน้าที่บังคับคดี ฝ่ายบังคับคดี<br>
+                                                        โทร: 086-778-9900
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <label class="list-group-item d-flex align-items-start">
+                                                <input class="form-check-input me-3 mt-1 member-checkbox" type="checkbox" onchange="updateSelected()">
+                                                <div class="flex-grow-1">
+                                                    <div class="fw-semibold">
+                                                        น.ส.กนกวรรณ พรชัย
+                                                        <input type="radio" name="teamLeader" class="form-check-input ms-2 leader-radio"
+                                                            data-name="น.ส.กนกวรรณ พรชัย" onchange="setLeader(this)">
+                                                        <span class="badge bg-success ms-1">หัวหน้าทีม</span>
+                                                    </div>
+                                                    <div class="text-muted small">
+                                                        เจ้าหน้าที่บริหารงานทั่วไป (ฝ่ายบริหารหนี้)<br>
+                                                        โทร: 082-456-8899
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <label class="list-group-item d-flex align-items-start">
+                                                <input class="form-check-input me-3 mt-1 member-checkbox" type="checkbox" onchange="updateSelected()">
+                                                <div class="flex-grow-1">
+                                                    <div class="fw-semibold">
+                                                        นายณัฐพงศ์ วัฒนกิจ
+                                                        <input type="radio" name="teamLeader" class="form-check-input ms-2 leader-radio"
+                                                            data-name="นายณัฐพงศ์ วัฒนกิจ" onchange="setLeader(this)">
+                                                        <span class="badge bg-success ms-1">หัวหน้าทีม</span>
+                                                    </div>
+                                                    <div class="text-muted small">
+                                                        เจ้าหน้าที่บังคับคดี ฝ่ายบังคับคดี<br>
+                                                        โทร: 084-999-1234
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <label class="list-group-item d-flex align-items-start">
+                                                <input class="form-check-input me-3 mt-1 member-checkbox" type="checkbox" onchange="updateSelected()">
+                                                <div class="flex-grow-1">
+                                                    <div class="fw-semibold">
+                                                        น.ส.ภัทรวดี แสงทอง
+                                                        <input type="radio" name="teamLeader" class="form-check-input ms-2 leader-radio"
+                                                            data-name="น.ส.ภัทรวดี แสงทอง" onchange="setLeader(this)">
+                                                        <span class="badge bg-success ms-1">หัวหน้าทีม</span>
+                                                    </div>
+                                                    <div class="text-muted small">
+                                                        เจ้าหน้าที่บัญชี ฝ่ายบัญชี<br>
+                                                        โทร: 088-321-4567
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <label class="list-group-item d-flex align-items-start">
+                                                <input class="form-check-input me-3 mt-1 member-checkbox" type="checkbox" onchange="updateSelected()">
+                                                <div class="flex-grow-1">
+                                                    <div class="fw-semibold">
+                                                        นายธีรพล ชัยชนะ
+                                                        <input type="radio" name="teamLeader" class="form-check-input ms-2 leader-radio"
+                                                            data-name="นายธีรพล ชัยชนะ" onchange="setLeader(this)">
+                                                        <span class="badge bg-success ms-1">หัวหน้าทีม</span>
+                                                    </div>
+                                                    <div class="text-muted small">
+                                                        เจ้าหน้าที่บริหารงานทั่วไป (ฝ่ายบริหารหนี้)<br>
+                                                        โทร: 081-777-8899
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <label class="list-group-item d-flex align-items-start">
+                                                <input class="form-check-input me-3 mt-1 member-checkbox" type="checkbox" onchange="updateSelected()">
+                                                <div class="flex-grow-1">
+                                                    <div class="fw-semibold">
+                                                        น.ส.มนัสวี พงษ์ศรี
+                                                        <input type="radio" name="teamLeader" class="form-check-input ms-2 leader-radio"
+                                                            data-name="น.ส.มนัสวี พงษ์ศรี" onchange="setLeader(this)">
+                                                        <span class="badge bg-success ms-1">หัวหน้าทีม</span>
+                                                    </div>
+                                                    <div class="text-muted small">
+                                                        เจ้าหน้าที่บัญชี ฝ่ายบัญชี<br>
+                                                        โทร: 085-222-6677
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <label class="list-group-item d-flex align-items-start">
+                                                <input class="form-check-input me-3 mt-1 member-checkbox" type="checkbox" onchange="updateSelected()">
+                                                <div class="flex-grow-1">
+                                                    <div class="fw-semibold">
+                                                        นายศุภชัย อินทร์ทอง
+                                                        <input type="radio" name="teamLeader" class="form-check-input ms-2 leader-radio"
+                                                            data-name="นายศุภชัย อินทร์ทอง" onchange="setLeader(this)">
+                                                        <span class="badge bg-success ms-1">หัวหน้าทีม</span>
+                                                    </div>
+                                                    <div class="text-muted small">
+                                                        เจ้าหน้าที่บังคับคดี ฝ่ายบังคับคดี<br>
+                                                        โทร: 083-456-1122
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <label class="list-group-item d-flex align-items-start">
+                                                <input class="form-check-input me-3 mt-1 member-checkbox" type="checkbox" onchange="updateSelected()">
+                                                <div class="flex-grow-1">
+                                                    <div class="fw-semibold">
+                                                        น.ส.อรทัย วงศ์ดี
+                                                        <input type="radio" name="teamLeader" class="form-check-input ms-2 leader-radio"
+                                                            data-name="น.ส.อรทัย วงศ์ดี" onchange="setLeader(this)">
+                                                        <span class="badge bg-success ms-1">หัวหน้าทีม</span>
+                                                    </div>
+                                                    <div class="text-muted small">
+                                                        เจ้าหน้าที่บริหารงานทั่วไป (ฝ่ายบริหารหนี้)<br>
+                                                        โทร: 089-888-4455
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div> 
+                                    <div class="col-md-6">
+                                        <label class="form-label fw-semibold text-secondary">
+                                            จ้าหน้าที่ที่มีทีมแล้ว
                                         </label>
 
-                                        <label class="list-group-item d-flex align-items-start">
-                                            <input class="form-check-input me-3 mt-1 member-checkbox" type="checkbox">
-                                            <div class="flex-grow-1">
+                                        <div class="row g-2 mb-2"> 
+                                            <div class="col-md-7">
+                                                <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    placeholder="ค้นหาชื่อเจ้าหน้าที่"
+                                                    onkeyup="filterAssigned()"
+                                                    id="assignedSearch"
+                                                >
+                                            </div> 
+                                            <div class="col-md-5">
+                                                <select
+                                                    class="form-select"
+                                                    onchange="filterAssigned()"
+                                                    id="teamFilter"
+                                                >
+                                                    <option value="">ทุกทีม</option>
+                                                    <option value="ทีมเชียงใหม่">ทีมเชียงใหม่</option>
+                                                    <option value="ทีมลำพูน">ทีมลำพูน</option>
+                                                    <option value="ทีมลำปาง">ทีมลำปาง</option>
+                                                    <option value="ทีมแพร่">ทีมแพร่</option>
+                                                    <option value="ทีมพะเยา">ทีมพะเยา</option>
+                                                    <option value="ทีมเชียงราย">ทีมเชียงราย</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="list-group" id="assignedList">
+                                            <div class="list-group-item bg-light">
                                                 <div class="fw-semibold">
                                                     นายวิทยา เดินไว
-                                                    <span class="badge bg-success ms-1">เลือกหัวหน้าทีม</span>
-                                                    <input type="radio" name="teamLeader" class="form-check-input ms-2 leader-radio" data-name="นายวิทยา เดินไว">
+                                                    <span class="badge bg-secondary ms-1">ทีมเชียงใหม่</span>
                                                 </div>
                                                 <div class="text-muted small">
-                                                    ตำแหน่ง: เจ้าหน้าที่บังคับคดี ฝ่ายบังคับคดี<br>
-                                                    โทร: 086-555-8899
+                                                    ฝ่ายบังคับคดี<br>
+                                                    หัวหน้าทีม: น.ส.พรทิพย์ ศรีสุข
                                                 </div>
                                             </div>
-                                        </label>
-
-                                        <label class="list-group-item d-flex align-items-start">
-                                            <input class="form-check-input me-3 mt-1 member-checkbox" type="checkbox">
-                                            <div class="flex-grow-1">
-                                                <div class="fw-semibold">
-                                                    น.ส.พรทิพย์ ศรีสุข
-                                                    <span class="badge bg-success ms-1">เลือกหัวหน้าทีม</span>
-                                                    <input type="radio" name="teamLeader" class="form-check-input ms-2 leader-radio" data-name="น.ส.พรทิพย์ ศรีสุข">
-                                                </div>
-                                                <div class="text-muted small">
-                                                    ตำแหน่ง: หัวหน้ากลุ่มงานติดตามหนี้ชั้นบังคับคดี ฝ่ายบังคับคดี<br>
-                                                    โทร: 082-999-0001
-                                                </div>
-                                            </div>
-                                        </label>
-
-                                        <label class="list-group-item d-flex align-items-start">
-                                            <input class="form-check-input me-3 mt-1 member-checkbox" type="checkbox">
-                                            <div class="flex-grow-1">
+                                            <div class="list-group-item bg-light">
                                                 <div class="fw-semibold">
                                                     นายปกรณ์ แสงชัย
-                                                    <span class="badge bg-success ms-1">เลือกหัวหน้าทีม</span>
-                                                    <input type="radio" name="teamLeader" class="form-check-input ms-2 leader-radio" data-name="นายปกรณ์ แสงชัย">
+                                                    <span class="badge bg-secondary ms-1">ทีมลำพูน</span>
                                                 </div>
                                                 <div class="text-muted small">
-                                                    ตำแหน่ง: หัวหน้ากลุ่มงานตรวจสอบปฏิบัติการ 1<br>
-                                                    โทร: 087-222-4455
+                                                    กลุ่มงานตรวจสอบปฏิบัติการ<br>
+                                                    หัวหน้าทีม: นายปกรณ์ แสงชัย
                                                 </div>
                                             </div>
-                                        </label>
+                                            <div class="list-group-item bg-light">
+                                                <div class="fw-semibold">
+                                                    น.ส.พรทิพย์ ศรีสุข
+                                                    <span class="badge bg-secondary ms-1">ทีมเชียงใหม่</span>
+                                                </div>
+                                                <div class="text-muted small">
+                                                    หัวหน้ากลุ่มงานติดตามหนี้ชั้นบังคับคดี<br>
+                                                    หัวหน้าทีม
+                                                </div>
+                                            </div>
+                                            <div class="list-group-item bg-light">
+                                                <div class="fw-semibold">
+                                                    นายกิตติพงศ์ วรชัย
+                                                    <span class="badge bg-secondary ms-1">ทีมลำปาง</span>
+                                                </div>
+                                                <div class="text-muted small">
+                                                    เจ้าหน้าที่บังคับคดี<br>
+                                                    หัวหน้าทีม: นายกิตติพงศ์ วรชัย
+                                                </div>
+                                            </div>
+                                            <div class="list-group-item bg-light">
+                                                <div class="fw-semibold">
+                                                    น.ส.สุภาวดี มั่นคง
+                                                    <span class="badge bg-secondary ms-1">ทีมแพร่</span>
+                                                </div>
+                                                <div class="text-muted small">
+                                                    เจ้าหน้าที่บัญชี<br>
+                                                    หัวหน้าทีม: นายชาญชัย ศรีทอง
+                                                </div>
+                                            </div>
+                                            <div class="list-group-item bg-light">
+                                                <div class="fw-semibold">
+                                                    นายชาญชัย ศรีทอง
+                                                    <span class="badge bg-secondary ms-1">ทีมแพร่</span>
+                                                </div>
+                                                <div class="text-muted small">
+                                                    หัวหน้ากลุ่มงานตรวจสอบปฏิบัติการ 1<br>
+                                                    หัวหน้าทีม
+                                                </div>
+                                            </div>
+                                            <div class="list-group-item bg-light">
+                                                <div class="fw-semibold">
+                                                    น.ส.กมลชนก ใจกล้า
+                                                    <span class="badge bg-secondary ms-1">ทีมพะเยา</span>
+                                                </div>
+                                                <div class="text-muted small">
+                                                    เจ้าหน้าที่บริหารงานทั่วไป<br>
+                                                    หัวหน้าทีม: นายธีรศักดิ์ วงศ์ดี
+                                                </div>
+                                            </div>
+                                            <div class="list-group-item bg-light">
+                                                <div class="fw-semibold">
+                                                    นายธีรศักดิ์ วงศ์ดี
+                                                    <span class="badge bg-secondary ms-1">ทีมพะเยา</span>
+                                                </div>
+                                                <div class="text-muted small">
+                                                    เจ้าหน้าที่บังคับคดี<br>
+                                                    หัวหน้าทีม
+                                                </div>
+                                            </div>
+                                            <div class="list-group-item bg-light">
+                                                <div class="fw-semibold">
+                                                    น.ส.นันทิชา พรชัย
+                                                    <span class="badge bg-secondary ms-1">ทีมเชียงราย</span>
+                                                </div>
+                                                <div class="text-muted small">
+                                                    เจ้าหน้าที่บัญชี<br>
+                                                    หัวหน้าทีม: นายอภิวัฒน์ ศรีดี
+                                                </div>
+                                            </div>
+                                            <div class="list-group-item bg-light">
+                                                <div class="fw-semibold">
+                                                    นายอภิวัฒน์ ศรีดี
+                                                    <span class="badge bg-secondary ms-1">ทีมเชียงราย</span>
+                                                </div>
+                                                <div class="text-muted small">
+                                                    เจ้าหน้าที่บริหารงานทั่วไป<br>
+                                                    หัวหน้าทีม
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                    </div>
-
-                                </div>
-
+                                        <div class="alert alert-secondary mt-2 small mb-0">
+                                            ℹ️ รายชื่อนี้แสดงเพื่อประกอบการตัดสินใจเท่านั้น  
+                                            หากต้องการย้ายทีม ให้ไปที่หน้า <strong>จัดการทีม</strong>
+                                        </div>
+                                    </div> 
+                                </div> 
                                 <hr>
                                 <div class="d-flex justify-content-start gap-2">
                                     <button class="btn btn-primary">  บันทึกทีม</button>
@@ -217,26 +450,26 @@
         }
         
         </script>
+ 
         <script>
-            const memberCheckboxes = document.querySelectorAll('.member-checkbox');
-            const leaderRadios = document.querySelectorAll('.leader-radio');
-            const selectedCountEl = document.getElementById('selectedCount');
-            const leaderNameEl = document.getElementById('leaderName');
-
-            function updateSelectedCount() {
-                const count = document.querySelectorAll('.member-checkbox:checked').length;
-                selectedCountEl.textContent = count;
+            function updateSelected() {
+                const checked = document.querySelectorAll('.member-checkbox:checked').length;
+                document.getElementById('selectedCount').innerText = checked;
             }
 
-            memberCheckboxes.forEach(cb => {
-                cb.addEventListener('change', updateSelectedCount);
-            });
+            function setLeader(radio) {
+                document.getElementById('leaderName').innerText = radio.dataset.name;
+            }
 
-            leaderRadios.forEach(radio => {
-                radio.addEventListener('change', () => {
-                    leaderNameEl.textContent = radio.dataset.name;
+            function filterList(keyword, listId) {
+                keyword = keyword.toLowerCase();
+                const items = document.querySelectorAll(`#${listId} .list-group-item`);
+                items.forEach(item => {
+                    item.style.display = item.innerText.toLowerCase().includes(keyword)
+                        ? ''
+                        : 'none';
                 });
-            });
+            }
         </script>
 
       
