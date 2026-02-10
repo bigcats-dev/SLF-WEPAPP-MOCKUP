@@ -62,17 +62,6 @@
                     <span class="badge bg-info">09:00</span>
                     <span class="badge bg-secondary">เชียงใหม่</span>
                 </div>
-                <!-- Check-in -->
-                <div class="card mb-3 shadow-sm">
-                    <div class="card-body text-center">
-                        <button class="btn btn-success btn-lg w-100">
-                        Check-in
-                        </button>
-                        <small class="text-muted d-block mt-2">
-                        ระบบจะบันทึกเวลาและพิกัดอัตโนมัติ
-                        </small>
-                    </div>
-                </div>
                 <!-- Upload Photo -->
                 <div class="card mb-3 shadow-sm">
                     <div class="card-body">
@@ -90,40 +79,105 @@
                         </div>
                     </div>
                 </div>
+                <!-- Check-in -->
+                <div class="card mb-3 shadow-sm">
+                    <div class="card-body text-center">
+                        <button class="btn btn-success btn-lg w-100">
+                        Check-in
+                        </button>
+                        <small class="text-muted d-block mt-2">
+                        ระบบจะบันทึกเวลาและพิกัดอัตโนมัติ
+                        </small>
+                    </div>
+                </div>
                 <!-- Form -->
                 <div class="card mb-3 shadow-sm">
                     <div class="card-body">
-                        <h6>ข้อมูลผู้ติดต่อ</h6>
+                        <h6 class="mb-3">รายงานการเข้าพบนายจ้าง</h6>
+
                         <div class="mb-2">
-                            <label class="form-label">ชื่อผู้ติดต่อ</label>
+                            <label class="form-label">ชื่อตัวแทนนายจ้าง</label>
                             <input type="text" class="form-control">
                         </div>
+
                         <div class="mb-2">
                             <label class="form-label">ตำแหน่ง</label>
                             <input type="text" class="form-control">
                         </div>
-                        <div class="mb-2">
+
+                        <div class="row g-2 mb-2">
+                            <div class="col-md-6">
+                                <label class="form-label">เบอร์โทร</label>
+                                <input type="tel" class="form-control" placeholder="เช่น 081-234-5678">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">อีเมล</label>
+                                <input type="email" class="form-control" placeholder="example@email.com">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
                             <label class="form-label">รายละเอียดเพิ่มเติม</label>
                             <textarea class="form-control" rows="3"></textarea>
                         </div>
+
+                        <!-- สถานะที่อยู่ -->
                         <div class="mb-2">
-                            <label class="form-label">ที่อยู่ (กรณีเปลี่ยน)</label>
-                            <textarea class="form-control" rows="2"></textarea>
+                            <label class="form-label">ที่อยู่สถานประกอบการ</label>
+
+                            <div class="form-check">
+                                <input class="form-check-input"
+                                    type="radio"
+                                    name="addressStatus"
+                                    id="addressMatch"
+                                    checked
+                                    onclick="toggleAddress(false)">
+                                <label class="form-check-label" for="addressMatch">
+                                    ที่อยู่ตรงตามฐานข้อมูล
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input"
+                                    type="radio"
+                                    name="addressStatus"
+                                    id="addressChanged"
+                                    onclick="toggleAddress(true)">
+                                <label class="form-check-label" for="addressChanged">
+                                    มีการเปลี่ยนที่อยู่
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- กรอกที่อยู่ใหม่ -->
+                        <div class="mb-2 d-none" id="newAddressBox">
+                            <label class="form-label text-danger">
+                                ที่อยู่ใหม่ (กรณีมีการเปลี่ยน)
+                            </label>
+                            <textarea class="form-control" rows="2"
+                                    placeholder="กรอกที่อยู่ใหม่ให้ครบถ้วน"></textarea>
                         </div>
                     </div>
                 </div>
+
                <div class="card mb-3 shadow-sm">
                     <div class="card-body">
                         <h6 class="mb-3">สรุปผลการลงพื้นที่</h6>
 
                         <div class="mb-3">
-                            <label class="form-label">รายละเอียดเบื้องต้น</label>
+                            <label class="form-label">สรุปผลการลงพื้นที่</label>
                             <textarea class="form-control" rows="3"
                                 placeholder="สรุปผลการตรวจสอบ สภาพสถานที่ หรือข้อสังเกต"></textarea>
                         </div>
 
-                        <!-- Checkbox ลงพื้นที่ซ้ำ -->
-                        <div class="form-check mb-2">
+                        <div class="mb-3">
+                            <label class="form-label">หมายเหตุ</label>
+                            <textarea class="form-control" rows="3"
+                                placeholder="สรุปผลการตรวจสอบ สภาพสถานที่ หรือข้อสังเกต"></textarea>
+                        </div>
+
+                      
+                        <!-- <div class="form-check mb-2">
                             <input
                                 class="form-check-input"
                                 type="checkbox"
@@ -133,9 +187,7 @@
                             <label class="form-check-label fw-semibold" for="revisitCheck">
                                 ต้องลงพื้นที่ซ้ำ
                             </label>
-                        </div>
-
-                        <!-- ฟิลด์วันที่ / เวลา (ซ่อนเริ่มต้น) -->
+                        </div> 
                         <div id="revisitFields" class="row g-2 mt-2 d-none">
                             <div class="col-md-6">
                                 <label class="form-label">วันที่ลงพื้นที่ซ้ำ</label>
@@ -145,7 +197,7 @@
                                 <label class="form-label">เวลาลงพื้นที่</label>
                                 <input type="time" class="form-control">
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>
@@ -211,6 +263,13 @@
                 field.classList.toggle('d-none', !isChecked);
             }
         </script>
+        <script>
+        function toggleAddress(show) {
+            document.getElementById("newAddressBox")
+                .classList.toggle("d-none", !show);
+        }
+        </script>
+
 
     </body>
 </html>
