@@ -681,6 +681,10 @@ h3 {
   }
   .menutx{
     display: none;
+  } 
+  .step {
+    text-align: center;
+    min-width: unset;
   }
 }   
 @media only screen and (min-width: 1025px) { 
