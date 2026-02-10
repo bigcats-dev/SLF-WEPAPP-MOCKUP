@@ -76,90 +76,161 @@
 
                         <ul class="nav nav-tabs kys-tabs" id="companyTab" role="tablist">
                             <li class="nav-item">
-                                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-company" type="button">
+                                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-appointment" type="button">
+                                    ข้อมูลการนัดหมาย
+                                </button>
+                            </li>
+
+                            <li class="nav-item">
+                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-company" type="button">
                                 ข้อมูลบริษัท
                                 </button>
                             </li>
 
                             <li class="nav-item">
                                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-visit-1" type="button">
-                                ผลการลงพื้นที่ ครั้งที่ 1
+                                ผลการลงพื้นที่
                                 </button>
-                            </li>
-
-                            <li class="nav-item">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-visit-2" type="button">
-                                ผลการลงพื้นที่ ครั้งที่ 2
-                                </button>
-                            </li>
+                            </li> 
 
                             <li class="nav-item">
                                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-files" type="button">
-                                รูปถ่ายและเอกสาร
+                                รูปถ่าย/เอกสาร/แผนที่
                                 </button>
-                            </li>
-
-                            <li class="nav-item">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-team" type="button">
-                                ทีมลงพื้นที่
-                                </button>
-                            </li>
-
-                            <li class="nav-item">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-map" type="button">
-                                แผนที่
-                                </button>
-                            </li>
+                            </li>  
                         </ul>
 
                         <div class="tab-content tab-content-w">
+                            <div class="tab-pane fade show active" id="tab-appointment">
+
+                                <div class="card  mt-3">
+                                    <div class="card-header  ">
+                                        <strong> บันทึกข้อมูลการนัดหมาย</strong>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="row g-3">
+
+                                            <!-- วันที่นัด -->
+                                            <div class="col-md-3">
+                                                <label class="form-label">วันที่นัดหมาย</label>
+                                                <input type="date" class="form-control">
+                                            </div>
+
+                                            <!-- เวลานัด -->
+                                            <div class="col-md-3">
+                                                <label class="form-label">เวลานัดหมาย</label>
+                                                <input type="time" class="form-control">
+                                            </div>
+
+                                            <!-- ชื่อผู้ติดต่อ -->
+                                            <div class="col-md-3">
+                                                <label class="form-label">ชื่อ-สกุล ผู้ติดต่อ</label>
+                                                <input type="text" class="form-control" placeholder="ชื่อ-สกุล">
+                                            </div>
+
+                                            <!-- ตำแหน่ง -->
+                                            <div class="col-md-3">
+                                                <label class="form-label">ตำแหน่ง</label>
+                                                <input type="text" class="form-control" placeholder="เช่น ผู้จัดการฝ่ายบุคคล">
+                                            </div>
+
+                                            <!-- สถานะ -->
+                                            <div class="col-md-4">
+                                                <label class="form-label">สถานะการนัดหมาย</label>
+                                                <select class="form-select">
+                                                    <option value="">-- เลือกสถานะ --</option>
+                                                    <option value="appointment">นัดหมาย</option>
+                                                    <option value="waiting">รอเข้าพบ</option>
+                                                    <option value="visited">เข้าพบแล้ว</option>
+                                                    <option value="reject">ไม่รับนัด</option>
+                                                    <option value="cant_contact">ติดต่อไม่ได้</option>
+                                                    <option value="cancel">ยกเลิก</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- หมายเหตุ -->
+                                            <div class="col-md-8">
+                                                <label class="form-label">หมายเหตุ</label>
+                                                <textarea class="form-control" rows="2"
+                                                    placeholder="เช่น ขอเลื่อนนัด / ติดต่อใหม่สัปดาห์หน้า"></textarea>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="mt-3 text-end">
+                                            <button class="btn btn-primary">
+                                                บันทึกข้อมูลการนัดหมาย
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
 
                             <!-- ข้อมูลบริษัท -->
-                            <div class="tab-pane fade show active" id="tab-company">
+                            <div class="tab-pane fade" id="tab-company">
                                 <div class="card shadow-sm border-0">
                                     <div class="card-body">
 
-                                    <!-- ข้อมูลนายจ้าง -->
-                                    <h6 class="section-title mb-3">ข้อมูลนายจ้าง</h6>
+                                        <!-- ข้อมูลนายจ้าง -->
+                                        <h6 class="section-title mb-3">ข้อมูลนายจ้าง</h6>
 
-                                    <div class="info-row">
-                                        <span class="label">ชื่อนายจ้าง</span>
-                                        <span class="value">นายสมชาย ใจดี</span>
-                                    </div>
+                                        <div class="info-row">
+                                            <span class="label">ชื่อนายจ้าง</span>
+                                            <span class="value">นายสมชาย ใจดี</span>
+                                        </div>
 
-                                    <div class="info-row">
-                                        <span class="label">TAX ID</span>
-                                        <span class="value">0105551234567</span>
-                                    </div>
+                                        <div class="info-row">
+                                            <span class="label">TAX ID</span>
+                                            <span class="value">0105551234567</span>
+                                        </div>
 
-                                    <div class="info-row">
-                                        <span class="label">ที่ตั้งบริษัท</span>
-                                        <span class="value">
-                                        123 หมู่ 4 ต.สุเทพ อ.เมือง จ.เชียงใหม่
-                                        </span>
-                                    </div>
+                                        <div class="info-row">
+                                            <span class="label">ที่ตั้งบริษัท</span>
+                                            <span class="value">
+                                            123 หมู่ 4 ต.สุเทพ อ.เมือง จ.เชียงใหม่
+                                            </span>
+                                        </div>
 
-                                    <hr class="my-4">
+                                        <hr class="my-4">
 
-                                    <!-- ข้อมูลผู้ติดต่อ -->
-                                    <h6 class="section-title mb-3">ข้อมูลผู้ติดต่อ</h6>
+                                        <!-- ข้อมูลผู้ติดต่อ --> 
+                                        <h6 class="section-title mb-3">ข้อมูลผู้ติดต่อ</h6>
 
-                                    <div class="info-row">
-                                        <span class="label">ชื่อ–สกุล</span>
-                                        <span class="value">นางสาวสุดา ใจงาม</span>
-                                    </div>
+                                        <div class="info-row">
+                                            <span class="label">ชื่อ–สกุล</span>
+                                            <span class="value">นางสาวสุดา ใจงาม</span>
+                                        </div>
 
-                                    <div class="info-row">
-                                        <span class="label">ตำแหน่ง</span>
-                                        <span class="value">ธุรการฝ่ายบุคคล</span>
-                                    </div>
+                                        <div class="info-row">
+                                            <span class="label">ตำแหน่ง</span>
+                                            <span class="value">ธุรการฝ่ายบุคคล</span>
+                                        </div>
 
-                                    <div class="info-row">
-                                        <span class="label">รายละเอียดเพิ่มเติม</span>
-                                        <span class="value">
-                                        
-                                        </span>
-                                    </div>
+                                        <div class="info-row">
+                                            <span class="label">เบอร์โทรศัพท์</span>
+                                            <span class="value">
+                                                <i class="bi bi-telephone me-1"></i>
+                                                081-234-5678
+                                            </span>
+                                        </div>
+
+                                        <div class="info-row">
+                                            <span class="label">อีเมล</span>
+                                            <span class="value">
+                                                <i class="bi bi-envelope me-1"></i>
+                                                suda.j@example.com
+                                            </span>
+                                        </div>
+
+                                        <div class="info-row">
+                                            <span class="label">รายละเอียดเพิ่มเติม</span>
+                                            <span class="value">
+                                                ติดต่อสะดวกช่วงวันทำการ 09:00–16:00 น.
+                                            </span>
+                                        </div>
+
 
                                     </div>
                                 </div>
@@ -168,95 +239,143 @@
 
                             <!-- ผลการลงพื้นที่ ครั้งที่ 1 -->
                             <div class="tab-pane fade" id="tab-visit-1">
-                                <div class="card shadow-sm border-0">
+                                <div class="card-body">
+                                    <div class="tab-content">
 
-                                    <!-- Header -->
-                                    <div class="card-header bg-transparent border-bottom">
-                                        <h6 class="mb-0 text-primary">
-                                            ผลการลงพื้นที่ ครั้งที่ 1
-                                        </h6>
-                                    </div>
+                                        <div class="tab-pane fade show active" id="visit-result"> 
+                                            <div class="row g-3 mb-4">
+                                                <div class="col-md-4">
+                                                    <small class="text-muted">วันที่ลงพื้นที่</small>
+                                                    <div>12/01/2569</div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <small class="text-muted">เวลา Check-in</small>
+                                                    <div>09:05 น.</div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <small class="text-muted">พิกัดสถานที่</small>
+                                                    <div>18.7883, 98.9853</div>
+                                                </div>
+                                            </div> 
+                                            <div class="row g-3 mb-4">
+                                                <div class="col-md-4">
+                                                    <small class="text-muted">เจ้าหน้าที่ลงพื้นที่</small>
+                                                    <div>นายวิชาญ ศรีสุข</div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <small class="text-muted">ผู้บันทึกข้อมูล</small>
+                                                    <div>นางสาวสุดา ใจงาม</div>
+                                                </div>
+                                            </div> 
+                                            <div class="mb-4">
+                                                <small class="text-muted">ผลการลงพื้นที่</small>
+                                                <div class="fw-medium">
+                                                    จากการลงพื้นที่ตรวจสอบสถานประกอบการ พบว่ามีการดำเนินกิจการจริง 
+                                                </div>
+                                            </div> 
+                                            <!-- <div class="repeat-check-box p-3 rounded bg-light">
+                                                <div class="form-check mb-2">
+                                                    <input class="form-check-input" type="checkbox" checked disabled>
+                                                    <label class="form-check-label fw-medium">
+                                                        ต้องลงพื้นที่ซ้ำอีกครั้ง
+                                                    </label>
+                                                </div>
+                                                <div class="ms-4 text-muted small">
+                                                    กำหนดลงพื้นที่ซ้ำ :
+                                                    <strong>20/01/2569 เวลา 10:30 น.</strong>
+                                                </div>
+                                            </div> -->
 
-                                    <!-- Body -->
-                                    <div class="card-body">
-
-                                        <!-- ข้อมูลทั่วไป -->
-                                        <div class="row g-3 mb-4">
-                                            <div class="col-md-4">
-                                            <small class="text-muted">วันที่ลงพื้นที่</small>
-                                            <div>12/01/2569</div>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                            <small class="text-muted">เวลา Check-in</small>
-                                            <div>09:05 น.</div>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                            <small class="text-muted">พิกัดสถานที่</small>
-                                            <div>18.7883, 98.9853</div>
-                                            </div>
-                                        </div>
-
-                                        <!-- เจ้าหน้าที่ -->
-                                        <div class="row g-3 mb-4">
-                                            <div class="col-md-4">
-                                            <small class="text-muted">เจ้าหน้าที่ลงพื้นที่</small>
-                                            <div>นายวิชาญ ศรีสุข</div>
-                                            </div>
-
-                                            <div class="col-md-8">
-                                            <small class="text-muted">ผู้บันทึกข้อมูล</small>
-                                            <div>นางสาวสุดา ใจงาม</div>
-                                            </div>
-                                        </div>
-
-                                        <!-- ผลการลงพื้นที่ -->
-                                        <div class="mb-4">
-                                            <small class="text-muted">ผลการลงพื้นที่</small>
-                                            <div class="fw-medium">
-                                            จากการลงพื้นที่ตรวจสอบสถานประกอบการตามที่อยู่ที่แจ้งไว้ พบว่ามีการดำเนินกิจการจริง 
-                                            สถานที่ตั้งเป็นสำนักงานถาวร มีพนักงานปฏิบัติงานตามปกติ ลักษณะกิจการตรงตามข้อมูลที่เคยยื่นไว้กับกองทุน 
-                                            อย่างไรก็ตาม ทางสถานประกอบการยังไม่สามารถแสดงเอกสารบางรายการได้ครบถ้วน 
-                                            เจ้าหน้าที่จึงได้แจ้งให้จัดส่งเอกสารเพิ่มเติมภายในระยะเวลาที่กำหนด 
-                                            หากไม่ดำเนินการตามกำหนด อาจมีผลต่อการพิจารณาในขั้นตอนถัดไป
-                                            </div>
-                                        </div> 
-
-                                    <!-- ตรวจสอบการลงพื้นที่ซ้ำ -->
-                                        <div class="repeat-check-box p-3 rounded">
-                                            <div class="form-check mb-2">
-                                                <input
-                                                class="form-check-input"
-                                                type="checkbox"
-                                                id="repeatVisit"
-                                                checked
-                                                disabled
-                                                >
-                                                <label class="form-check-label fw-medium" for="repeatVisit">
-                                                ต้องลงพื้นที่ซ้ำอีกครั้ง
-                                                </label>
-                                            </div>
-
-                                            <!-- แสดงเฉพาะกรณี checked -->
-                                            <div class="ms-4 text-muted small">
-                                                กำหนดลงพื้นที่ซ้ำ : <strong>20/01/2569 เวลา 10:30 น.</strong>
-                                            </div>
                                         </div>
                                     </div>
+                                </div> 
+                                <hr>
+                      
+                                <h5>ทีมลงพื้นที่</h5>
+
+                                <div class="card-body  ">
+                                    <table class="table table-sm mb-0 align-middle">
+                                        <thead>
+                                            <tr>
+                                                <th>ชื่อ - สกุล</th>
+                                                <th>ตำแหน่ง</th>
+                                                <th class="text-center">เบอร์ติดต่อ</th>
+                                                <th class="text-center">อีเมล</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="fw-medium">นายสมศักดิ์ ใจกล้า</td>
+                                                <td>หัวหน้าทีม</td>
+                                                <td class="text-center">
+                                                    <a href="tel:0812345678">081-234-5678</a>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="mailto:somsak.k@agency.go.th">somsak.k@agency.go.th</a>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="fw-medium">นางสาวปวีณา แสนดี</td>
+                                                <td>เจ้าหน้าที่ตรวจสอบ</td>
+                                                <td class="text-center">
+                                                    <a href="tel:0898765432">089-876-5432</a>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="mailto:paveena.s@agency.go.th">paveena.s@agency.go.th</a>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="fw-medium">นายธีรพล ว่องไว</td>
+                                                <td>เจ้าหน้าที่ภาคสนาม</td>
+                                                <td class="text-center">
+                                                    <a href="tel:0823456789">082-345-6789</a>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="mailto:teerapol.w@agency.go.th">teerapol.w@agency.go.th</a>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="fw-medium">นางสาวอรทัย สุขใจ</td>
+                                                <td>เจ้าหน้าที่บันทึกข้อมูล</td>
+                                                <td class="text-center">
+                                                    <a href="tel:0861112233">086-111-2233</a>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="mailto:orathai.s@agency.go.th">orathai.s@agency.go.th</a>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="fw-medium">นายภาคิน นิ่มนวล</td>
+                                                <td>เจ้าหน้าที่ประสานงาน</td>
+                                                <td class="text-center">
+                                                    <a href="tel:0845678899">084-567-8899</a>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="mailto:pakin.n@agency.go.th">pakin.n@agency.go.th</a>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="fw-medium">นางสาวกนกพร ใจเย็น</td>
+                                                <td>เจ้าหน้าที่สนับสนุนงานภาคสนาม</td>
+                                                <td class="text-center">
+                                                    <a href="tel:0879994455">087-999-4455</a>
+                                                </td>
+                                                <td class="text-center">
+                                                    <a href="mailto:kanokporn.j@agency.go.th">kanokporn.j@agency.go.th</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
                                 </div>
+                        
                             </div>
-                    
-
-
-                            <!-- ผลการลงพื้นที่ ครั้งที่ 2 -->
-                            <div class="tab-pane fade" id="tab-visit-2">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <p class="text-muted mb-0">ยังไม่มีการลงพื้นที่ครั้งที่ 2</p>
-                                    </div>
-                                </div>
-                            </div>
+                     
 
                             <!-- รูปถ่ายและเอกสาร -->
                             <div class="tab-pane fade" id="tab-files">
@@ -285,79 +404,15 @@
                                     </div>
                                 </div>
 
-                                <div class="card">
+                                <div class="card mb-3">
                                     <div class="card-header">ลายเซ็นนายจ้าง</div>
                                     <div class="card-body text-center">
                                         <img src="https://png.pngtree.com/png-vector/20240628/ourmid/pngtree-signature-isolated-the-signature-is-neatly-written-in-black-ink-the-png-image_12728547.png"
                                             class="img-fluid border rounded w-25">
                                     </div>
                                 </div>
-                                
-                            </div>
 
-                            <!-- ทีมลงพื้นที่ -->
-                            <div class="tab-pane fade" id="tab-team">
-                                
-                                <div class="card mt-3">
-                                    <div class="card-header d-flex justify-content-between align-items-center">
-                                        <span>ทีมลงพื้นที่</span>
-                                        <span class="badge bg-primary">ทั้งหมด 12 คน</span>
-                                    </div>
-                                    <div class="card-body p-0">
-                                        <table class="table table-sm mb-0 align-middle team-table">
-                                            <thead>
-                                            <tr>
-                                                <th>ชื่อ - สกุล</th>
-                                                <th>ตำแหน่ง</th>
-                                                <th class="text-center">เบอร์ติดต่อ</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td>
-                                                <div class="fw-medium">นายสมศักดิ์ ใจกล้า</div>
-                                                </td>
-                                                <td>
-                                                <span class="role-badge leader">หัวหน้าทีม</span>
-                                                </td>
-                                                <td class="text-center">
-                                                <a class="phone-link" href="tel:0812345678">081-234-5678</a>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                <div class="fw-medium">นางสาวปวีณา แสนดี</div>
-                                                </td>
-                                                <td>
-                                                <span class="role-badge staff">เจ้าหน้าที่ตรวจสอบ</span>
-                                                </td>
-                                                <td class="text-center">
-                                                <a class="phone-link" href="tel:0898765432">089-876-5432</a>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>
-                                                <div class="fw-medium">นายธีรพล ว่องไว</div>
-                                                </td>
-                                                <td>
-                                                <span class="role-badge field">เจ้าหน้าที่ภาคสนาม</span>
-                                                </td>
-                                                <td class="text-center">
-                                                <a class="phone-link" href="tel:0823456789">082-345-6789</a>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <!-- แผนที่ -->
-                            <div class="tab-pane fade" id="tab-map">
-                                <div class="card">
+                                <div class="card mb-3">
                                     <div class="card-body p-0">
                                         <iframe
                                             src="https://www.google.com/maps?q=18.7883,98.9853&hl=th&z=15&output=embed"
@@ -368,15 +423,24 @@
                                         </iframe>
                                     </div>
                                 </div>
+                                
                             </div>
-
+ 
+           
                         </div>
  
 
-                        <div class="text-end mt-3">
-                            <button class="btn btn-outline-secondary">
-                                แก้ไขข้อมูล
-                            </button>
+                        <div class="row justify-content-between mt-3">
+                            <div class="col-6">
+                                <button class="btn btn-outline-secondary">
+                                    <i class="fas fa-chevron-left"></i> รายการก่อนหน้า
+                                </button> 
+                            </div>
+                            <div class="col-6 text-end"> 
+                                <button class="btn btn-outline-primary">
+                                    รายการถัดไป <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
                         </div>
 
                     </div>

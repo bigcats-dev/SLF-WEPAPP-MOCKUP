@@ -617,6 +617,25 @@ h3 {
 .cursor-pointer {
   cursor: pointer;
 }
+.tablexx tbody tr td:nth-child(4) span{
+  min-width: 65px;
+}
+.menutx .dropdown li a{
+  color: #000 !important; 
+}
+.menutx .dropdown li:hover a{
+  color: #000 !important; 
+}
+.menutx .dropdown li:hover a{
+  background-color: #1F3C88;
+  color: #fff !important; 
+} 
+.menutx .dropdown-menu.show{ 
+  background-color: #fff;
+  color: #000; 
+}
+
+
 
 /*  
   transition: 0.3s;  

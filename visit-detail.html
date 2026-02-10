@@ -53,7 +53,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
                         <div class="mb-3">
-                            <h4>Field Visit : รอบตรวจนายจ้าง ไตรมาส 1/2569</h4> 
+                            <h4>รอบลงพื้นที่เยี่ยมนายจ้าง 01/69</h4> 
                             <div class="row mb-3">
                                 <div class="col-md-3 text-muted">จังหวัดที่ลงพื้นที่</div>
                                 <div class="col-md-9">
@@ -91,28 +91,20 @@
 
                                 <div class="row g-2 mb-2">
                                     <div class="col-md-3">
-                                        <label class="label">สถานะการติดต่อ</label>
+                                        <label class="label">สถานะ</label>
                                         <select class="form-select form-select-sm"
-                                                onchange="filterByStatus(this.value)">
-                                            <option value="">ทั้งหมด</option>
-                                            <option value="pending">ยังไม่ติดต่อ</option>
-                                            <option value="contacted">ติดต่อได้แล้ว</option>
-                                            <option value="waiting">รอเข้าพบ</option>
-                                            <option value="prepared">เตรียมการลงพื้นที่แล้ว</option>
-                                            <option value="failed">ไม่สามารถติดต่อได้</option>
-                                            <option value="reject">ปฏิเสธการลงพื้นที่</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <label class="label">สถานะลงพื้นที่</label>
-                                        <select class="form-select form-select-sm"
-                                                onchange="filterByStatus(this.value)">
-                                            <option value="">ทั้งหมด</option>
-                                            <option value="pending">สถานะลงพื้นที่</option>
-                                            <option value="contacted">ยังไม่ลงพื้นที่</option>
-                                            <option value="waiting">ยกเลิก</option> 
-                                        </select>
-                                    </div>
+                                            onchange="filterByStatus(this.value)">
+                                        <option value="">ทั้งหมด</option>
+                                        <option value="waiting_schedule">รอนัด</option>
+                                        <option value="scheduled">นัดหมายแล้ว</option>
+                                        <option value="no_appointment">ไม่รับนัด</option>
+                                        <option value="unreachable">ติดต่อไม่ได้</option>
+                                        <option value="waiting_visit">รอเข้าพบ</option>
+                                        <option value="visited">เข้าพบแล้ว</option>
+                                        <option value="cancelled">ยกเลิก</option>
+                                    </select>
+
+                                    </div> 
                                 </div>
 
                                 <!-- <ul class="nav nav-tabs  " id="areaTab" role="tablist">
@@ -162,42 +154,30 @@
                                                         data-bs-parent="#provinceAccordion">
                                                         <div class="accordion-body">
                                                             <div class="table-responsive">
-                                                                <table class="table table-sm align-middle mt-2">
+                                                                <table class="table table-sm align-middle mt-2 tablexx">
                                                                     <thead class="table-light">
-                                                                        <tr>
-                                                                            <th>สถานที่ / นายจ้าง</th>
-                                                                            <th class="text-center">ทีม</th>
-                                                                            <th class="text-center">วันที่นัดหมาย</th>
-                                                                            <th class="text-center">เวลานัด</th>
-                                                                            <th class="text-center">วันที่ลงพื้นที่จริง</th>
-                                                                            <th class="text-center">เวลาจริง</th>
-                                                                            <th class="text-center">สถานะการติดต่อ</th>
-                                                                            <th class="text-center">สถานะลงพื้นที่</th>
-                                                                            <th class="text-center">จัดการ</th>
+                                                                        <tr class="text-center">
+                                                                            <th style="width:60px;">ลำดับ</th>
+                                                                            <th class="text-start">บริษัท / หน่วยงาน</th>
+                                                                            <th>ทีม</th>
+                                                                            <th>สถานะ</th>
+                                                                            <th>วันที่นัดหมาย</th>
+                                                                            <th>เวลานัด</th>
+                                                                            <th>จัดการ</th>
                                                                         </tr>
                                                                     </thead>
-                                                                    <tbody>
-
-                                                                        <!-- ติดต่อได้ + ลงพื้นที่แล้ว -->
+                                                                    <tbody> 
                                                                         <tr>
+                                                                            <td class="text-center">1</td>
                                                                             <td>บ. ABC จำกัด</td>
                                                                             <td class="text-center"><span class="badge bg-primary">ทีม A</span></td>
-                                                                            <td class="text-center">12/01/2569</td>
-                                                                            <td class="text-center">09:00</td>
-                                                                            <td class="text-center">12/01/2569</td>
-                                                                            <td class="text-center">09:10</td>
                                                                             <td class="text-center">
-                                                                                <span class="badge bg-info cursor-pointer"
-                                                                                    data-bs-toggle="modal"
-                                                                                    data-bs-target="#contactHistoryModal">
-                                                                                    ติดต่อได้แล้ว
-                                                                                    <i class="bi bi-clock-history ms-1"></i>
+                                                                                <span class="badge bg-success">
+                                                                                    เข้าพบแล้ว
                                                                                 </span>
                                                                             </td>
-
-                                                                            <td class="text-center">
-                                                                                <span class="badge bg-success">ลงพื้นที่แล้ว</span>
-                                                                            </td>
+                                                                            <td class="text-center">12/01/2569</td>
+                                                                            <td class="text-center">09:00</td>
                                                                             <td class="text-center">
                                                                                 <a href="visit-company-detail.html" class="btn btn-sm btn-outline-primary">
                                                                                     ดูรายละเอียด
@@ -205,20 +185,17 @@
                                                                             </td>
                                                                         </tr>
 
-                                                                        <!-- รอเข้าพบ -->
                                                                         <tr>
+                                                                            <td class="text-center">2</td>
                                                                             <td>บ. XYZ จำกัด</td>
                                                                             <td class="text-center"><span class="badge bg-primary">ทีม A</span></td>
+                                                                            <td class="text-center">
+                                                                                <span class="badge bg-warning text-dark">
+                                                                                    รอเข้าพบ
+                                                                                </span>
+                                                                            </td>
                                                                             <td class="text-center">15/01/2569</td>
                                                                             <td class="text-center">11:00</td>
-                                                                            <td class="text-center">-</td>
-                                                                            <td class="text-center">-</td>
-                                                                            <td class="text-center">
-                                                                                <span class="badge bg-primary">รอเข้าพบ</span>
-                                                                            </td>
-                                                                            <td class="text-center">
-                                                                                <span class="badge bg-warning text-dark">ยังไม่ลงพื้นที่</span>
-                                                                            </td>
                                                                             <td class="text-center">
                                                                                 <a href="visit-company-detail.html" class="btn btn-sm btn-outline-primary">
                                                                                     ดูรายละเอียด
@@ -226,20 +203,17 @@
                                                                             </td>
                                                                         </tr>
 
-                                                                        <!-- เตรียมการลงพื้นที่แล้ว -->
                                                                         <tr>
+                                                                            <td class="text-center">3</td>
                                                                             <td>หจก. 123</td>
                                                                             <td class="text-center"><span class="badge bg-secondary">ทีม B</span></td>
+                                                                            <td class="text-center">
+                                                                                <span class="badge bg-primary">
+                                                                                    นัดหมาย
+                                                                                </span>
+                                                                            </td>
                                                                             <td class="text-center">16/01/2569</td>
                                                                             <td class="text-center">14:00</td>
-                                                                            <td class="text-center">-</td>
-                                                                            <td class="text-center">-</td>
-                                                                            <td class="text-center">
-                                                                                <span class="badge bg-success">เตรียมการลงพื้นที่แล้ว</span>
-                                                                            </td>
-                                                                            <td class="text-center">
-                                                                                <span class="badge bg-warning text-dark">ยังไม่ลงพื้นที่</span>
-                                                                            </td>
                                                                             <td class="text-center">
                                                                                 <a href="visit-company-detail.html" class="btn btn-sm btn-outline-primary">
                                                                                     ดูรายละเอียด
@@ -247,20 +221,17 @@
                                                                             </td>
                                                                         </tr>
 
-                                                                        <!-- ยังไม่ติดต่อ -->
                                                                         <tr>
+                                                                            <td class="text-center">4</td>
                                                                             <td>หจก. 456</td>
                                                                             <td class="text-center"><span class="badge bg-secondary">ทีม B</span></td>
-                                                                            <td class="text-center">-</td>
-                                                                            <td class="text-center">-</td>
-                                                                            <td class="text-center">-</td>
-                                                                            <td class="text-center">-</td>
                                                                             <td class="text-center">
-                                                                                <span class="badge bg-secondary">ยังไม่ติดต่อ</span>
+                                                                                <span class="badge bg-secondary">
+                                                                                    รอนัด
+                                                                                </span>
                                                                             </td>
-                                                                            <td class="text-center">
-                                                                                <span class="badge bg-warning text-dark">ยังไม่ลงพื้นที่</span>
-                                                                            </td>
+                                                                            <td class="text-center">-</td>
+                                                                            <td class="text-center">-</td>
                                                                             <td class="text-center">
                                                                                 <a href="visit-company-detail.html" class="btn btn-sm btn-outline-primary">
                                                                                     ดูรายละเอียด
@@ -268,20 +239,17 @@
                                                                             </td>
                                                                         </tr>
 
-                                                                        <!-- ติดต่อไม่ได้ -->
                                                                         <tr>
+                                                                            <td class="text-center">5</td>
                                                                             <td>บ. DEF จำกัด</td>
                                                                             <td class="text-center"><span class="badge bg-secondary">ทีม C</span></td>
-                                                                            <td class="text-center">-</td>
-                                                                            <td class="text-center">-</td>
-                                                                            <td class="text-center">-</td>
-                                                                            <td class="text-center">-</td>
                                                                             <td class="text-center">
-                                                                                <span class="badge bg-danger">ไม่สามารถติดต่อได้</span>
+                                                                                <span class="badge bg-danger">
+                                                                                    ติดต่อไม่ได้
+                                                                                </span>
                                                                             </td>
-                                                                            <td class="text-center">
-                                                                                <span class="badge bg-warning text-dark">ยังไม่ลงพื้นที่</span>
-                                                                            </td>
+                                                                            <td class="text-center">-</td>
+                                                                            <td class="text-center">-</td>
                                                                             <td class="text-center">
                                                                                 <a href="visit-company-detail.html" class="btn btn-sm btn-outline-primary">
                                                                                     ดูรายละเอียด
@@ -289,20 +257,35 @@
                                                                             </td>
                                                                         </tr>
 
-                                                                        <!-- ปฏิเสธการลงพื้นที่ -->
                                                                         <tr>
+                                                                            <td class="text-center">6</td>
                                                                             <td>บ. GHI จำกัด</td>
                                                                             <td class="text-center"><span class="badge bg-secondary">ทีม C</span></td>
-                                                                            <td class="text-center">-</td>
-                                                                            <td class="text-center">-</td>
+                                                                            <td class="text-center">
+                                                                                <span class="badge bg-dark">
+                                                                                    ไม่รับนัด
+                                                                                </span>
+                                                                            </td>
                                                                             <td class="text-center">-</td>
                                                                             <td class="text-center">-</td>
                                                                             <td class="text-center">
-                                                                                <span class="badge bg-dark">ปฏิเสธการลงพื้นที่</span>
+                                                                                <a href="visit-company-detail.html" class="btn btn-sm btn-outline-primary">
+                                                                                    ดูรายละเอียด
+                                                                                </a>
                                                                             </td>
+                                                                        </tr>
+
+                                                                        <tr>
+                                                                            <td class="text-center">7</td>
+                                                                            <td>บ. JKL จำกัด</td>
+                                                                            <td class="text-center"><span class="badge bg-secondary">ทีม D</span></td>
                                                                             <td class="text-center">
-                                                                                <span class="badge bg-secondary">ยกเลิก</span>
+                                                                                <span class="badge bg-light text-muted border">
+                                                                                    ยกเลิก
+                                                                                </span>
                                                                             </td>
+                                                                            <td class="text-center">-</td>
+                                                                            <td class="text-center">-</td>
                                                                             <td class="text-center">
                                                                                 <a href="visit-company-detail.html" class="btn btn-sm btn-outline-primary">
                                                                                     ดูรายละเอียด
@@ -312,6 +295,7 @@
 
                                                                     </tbody>
                                                                 </table>
+
 
                                                             </div> 
                                                         </div>
