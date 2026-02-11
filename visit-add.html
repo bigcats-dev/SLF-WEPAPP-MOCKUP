@@ -154,14 +154,14 @@
                                                 20 กุมภาพันธ์ 2569
                                             </div>
                                         </div>
-                                        <div class="row">
+                                        <!-- <div class="row">
                                             <div class="col-md-3 text-muted">จังหวัดที่ลงพื้นที่</div>
                                             <div class="col-md-9">
                                                 <span class="badge bg-secondary me-1">กรุงเทพมหานคร</span>
                                                 <span class="badge bg-secondary me-1">นนทบุรี</span>
                                                 <span class="badge bg-secondary me-1">ปทุมธานี</span>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                             
                                     <div class="row g-3">
@@ -390,7 +390,7 @@
                                                 20 กุมภาพันธ์ 2569
                                             </div>
                                         </div> 
-                                        <div class="row mb-2 align-items-start">
+                                        <!-- <div class="row mb-2 align-items-start">
                                             <div class="col-md-3 text-muted">จังหวัดที่ลงพื้นที่</div>
                                             <div class="col-md-9">
                                                 <span class="badge bg-secondary me-1">กรุงเทพมหานคร</span>
@@ -400,315 +400,97 @@
                                                     (รวม 3 จังหวัด)
                                                 </span>
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                         <div class="row">
                                             <div class="col-md-3 text-muted">รวมทั้งหมด บริษัท/องค์กร</div>
                                             <div class="col-md-9 fw-semibold text-primary">
-                                                28 แห่ง
+                                                <u style="cursor: pointer;">28 แห่ง</u>
                                             </div>
                                         </div>
                                     </div>
                                     <hr>
                                     <div class="row g-3">
-                                        <!-- ทีม A -->
-                                        <div class="col-md-4">
-                                            <div class="card h-100 shadow-sm">
-                                                <div class="card-header bg-light">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input team-check" type="checkbox" data-team="teamA" id="teamA">
-                                                        <label class="form-check-label fw-semibold" for="teamA">
-                                                        ทีม A (ภาคกลาง)
-                                                        </label>
-                                                    </div>
+                                        <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#createTeamModal">
+                                            <i class="fal fa-plus"></i> สร้างทีม
+                                        </button>
+
+                                        <div class="modal fade" id="createTeamModal" tabindex="-1">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">สร้างทีมใหม่</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                                 </div>
-                                                <div class="card-body team-members" data-team="teamA"> 
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="a1">
-                                                        <label class="form-check-label" for="a1">
-                                                            สมชาย ใจดี <br>
-                                                            <small class="text-muted">
-                                                                หัวหน้าทีม | 📞 081-234-5678
-                                                            </small>
-                                                        </label>
-                                                    </div>
-
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="a2">
-                                                        <label class="form-check-label" for="a2">
-                                                            สุดา พรหมดี <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่ตรวจสอบ | 📞 089-111-2233
-                                                            </small>
-                                                        </label>
-                                                    </div>
-
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="a3">
-                                                        <label class="form-check-label" for="a3">
-                                                            วิชัย มั่นคง <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่ภาคสนาม | 📞 082-987-6543
-                                                            </small>
-                                                        </label>
-                                                    </div>
-
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="a4">
-                                                        <label class="form-check-label" for="a4">
-                                                            รัตนา บุญมี <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่ภาคสนาม | 📞 086-555-4443
-                                                            </small>
-                                                        </label>
-                                                    </div>
-
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="a5">
-                                                        <label class="form-check-label" for="a5">
-                                                            ธนา พูนทรัพย์ <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่ประสานงาน | 📞 080-222-9988
-                                                            </small>
-                                                        </label>
-                                                    </div>
-
+                                                <div class="modal-body">
+                                                    <label class="form-label">ชื่อทีม</label>
+                                                    <input type="text" id="teamNameInput" class="form-control" placeholder="เช่น ทีมภาคตะวันออก">
                                                 </div>
-
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
+                                                    <button class="btn btn-primary" onclick="createTeam()">สร้างทีม</button>
+                                                </div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <!-- ทีม B -->
-                                        <div class="col-md-4">
-                                            <div class="card h-100 shadow-sm">
-                                                <div class="card-header bg-light">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input team-check" type="checkbox" data-team="teamB" id="teamB">
-                                                        <label class="form-check-label fw-semibold" for="teamB">
-                                                        ทีม B (ภาคเหนือ)
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body team-members" data-team="teamB"> 
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="b1">
-                                                        <label class="form-check-label" for="b1">
-                                                            สุเมธ แสงทอง <br>
-                                                            <small class="text-muted">
-                                                                หัวหน้าทีม | 📞 081-345-7788
-                                                            </small>
-                                                        </label>
-                                                    </div>
 
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="b2">
-                                                        <label class="form-check-label" for="b2">
-                                                            พรทิพย์ ศรีสุข <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่ตรวจสอบ | 📞 089-556-1122
-                                                            </small>
-                                                        </label>
-                                                    </div>
+                                        <div class="row g-3" id="teamContainer"></div>
+                                        <h6 class="mt-4">เลือกบุคลากร</h6>
 
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="b3">
-                                                        <label class="form-check-label" for="b3">
-                                                            ชัยวัฒน์ ทองสุข <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่ภาคสนาม | 📞 082-444-9900
-                                                            </small>
-                                                        </label>
-                                                    </div>
+                                        <div id="memberList">
+                                            <div class="form-check">
+                                                <input class="form-check-input member-check" type="checkbox" value="สมชาย ใจดี">
+                                                <label class="form-check-label">สมชาย ใจดี <small class="text-secondary">เจ้าหน้าที่บริหารงานทั่วไป (ฝ่ายบริหารหนี้) </small> </label>
+                                            </div>
 
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="b4">
-                                                        <label class="form-check-label" for="b4">
-                                                            ธวัชชัย แก้วคำ <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่ภาคสนาม | 📞 086-223-7788
-                                                            </small>
-                                                        </label>
-                                                    </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input member-check" type="checkbox" value="สุดา พรหมดี">
+                                                <label class="form-check-label">สุดา พรหมดี <small class="text-secondary">เจ้าหน้าที่บริหารงานทั่วไป (ฝ่ายบริหารหนี้)</small></label>
+                                            </div>
 
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="b5">
-                                                        <label class="form-check-label" for="b5">
-                                                            มนตรี ใจกล้า <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่ประสานงาน | 📞 080-998-4411
-                                                            </small>
-                                                        </label>
-                                                    </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input member-check" type="checkbox" value="วิชัย มั่นคง">
+                                                <label class="form-check-label">วิชัย มั่นคง <small class="text-secondary">เจ้าหน้าที่บังคับคดี (ฝ่ายบังคับคดี)</small></label>
+                                            </div>
 
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="b6">
-                                                        <label class="form-check-label" for="b6">
-                                                            กฤษณะ ชาญชัย <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่ภาคสนาม | 📞 084-321-5566
-                                                            </small>
-                                                        </label>
-                                                    </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input member-check" type="checkbox" value="รัตนา บุญมี">
+                                                <label class="form-check-label">รัตนา บุญมี <small class="text-secondary">เจ้าหน้าที่บังคับคดี (ฝ่ายบังคับคดี)</small></label>
+                                            </div>
 
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="b7">
-                                                        <label class="form-check-label" for="b7">
-                                                            สุรชัย ปัญญา <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่ภาคสนาม | 📞 087-654-3322
-                                                            </small>
-                                                        </label>
-                                                    </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input member-check" type="checkbox" value="ธนา พูนทรัพย์">
+                                                <label class="form-check-label">ธนา พูนทรัพย์ <small class="text-secondary">เจ้าหน้าที่บริหารงานทั่วไป (ฝ่ายบริหารหนี้)</small></label>
+                                            </div>
 
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="b8">
-                                                        <label class="form-check-label" for="b8">
-                                                            นภัสสร แสงเงิน <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่เอกสาร | 📞 088-777-2211
-                                                            </small>
-                                                        </label>
-                                                    </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input member-check" type="checkbox" value="สุเมธ แสงทอง">
+                                                <label class="form-check-label">สุเมธ แสงทอง <small class="text-secondary">เจ้าหน้าที่บังคับคดี (ฝ่ายบังคับคดี)</small></label>
+                                            </div>
 
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="b9">
-                                                        <label class="form-check-label" for="b9">
-                                                            ชุติมา สุขใจ <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่เอกสาร | 📞 083-888-4455
-                                                            </small>
-                                                        </label>
-                                                    </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input member-check" type="checkbox" value="พรทิพย์ ศรีสุข">
+                                                <label class="form-check-label">พรทิพย์ ศรีสุข <small class="text-secondary">เจ้าหน้าที่บริหารงานทั่วไป (ฝ่ายบริหารหนี้)</small></label>
+                                            </div>
 
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="b10">
-                                                        <label class="form-check-label" for="b10">
-                                                            อาทิตย์ คำดี <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่ภาคสนาม | 📞 081-999-6677
-                                                            </small>
-                                                        </label>
-                                                    </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input member-check" type="checkbox" value="ชัยวัฒน์ ทองสุข">
+                                                <label class="form-check-label">ชัยวัฒน์ ทองสุข <small class="text-secondary">เจ้าหน้าที่บังคับคดี (ฝ่ายบังคับคดี)</small></label>
+                                            </div>
 
-                                                </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input member-check" type="checkbox" value="ธวัชชัย แก้วคำ">
+                                                <label class="form-check-label">ธวัชชัย แก้วคำ <small class="text-secondary">เจ้าหน้าที่บังคับคดี (ฝ่ายบังคับคดี)</small></label>
+                                            </div>
 
+                                            <div class="form-check">
+                                                <input class="form-check-input member-check" type="checkbox" value="มนตรี ใจกล้า">
+                                                <label class="form-check-label">มนตรี ใจกล้า <small class="text-secondary">เจ้าหน้าที่บริหารงานทั่วไป (ฝ่ายบริหารหนี้)</small></label>
                                             </div>
                                         </div>
-                                        <!-- ทีม C -->
-                                        <div class="col-md-4">
-                                            <div class="card h-100 shadow-sm">
-                                                <div class="card-header bg-light">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input team-check" type="checkbox" data-team="teamC" id="teamC">
-                                                        <label class="form-check-label fw-semibold" for="teamC">
-                                                        ทีม C (ภาคอีสาน)
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="card-body team-members" data-team="teamC"> 
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="c1">
-                                                        <label class="form-check-label" for="c1">
-                                                            ธนพล คงมั่น <br>
-                                                            <small class="text-muted">
-                                                                หัวหน้าทีม | 📞 081-234-5566
-                                                            </small>
-                                                        </label>
-                                                    </div>
 
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="c2">
-                                                        <label class="form-check-label" for="c2">
-                                                            วราภรณ์ มีสุข <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่ตรวจสอบ | 📞 089-345-2211
-                                                            </small>
-                                                        </label>
-                                                    </div>
 
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="c3">
-                                                        <label class="form-check-label" for="c3">
-                                                            กิตติชัย พรหมมา <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่ภาคสนาม | 📞 082-998-7744
-                                                            </small>
-                                                        </label>
-                                                    </div>
 
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="c4">
-                                                        <label class="form-check-label" for="c4">
-                                                            ประเสริฐ ใจมั่น <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่ภาคสนาม | 📞 086-111-3322
-                                                            </small>
-                                                        </label>
-                                                    </div>
-
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="c5">
-                                                        <label class="form-check-label" for="c5">
-                                                            อดิศักดิ์ บุญช่วย <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่ประสานงาน | 📞 080-445-6677
-                                                            </small>
-                                                        </label>
-                                                    </div>
-
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="c6">
-                                                        <label class="form-check-label" for="c6">
-                                                            ณัฐวุฒิ ศรีสุข <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่ภาคสนาม | 📞 084-556-9988
-                                                            </small>
-                                                        </label>
-                                                    </div>
-
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="c7">
-                                                        <label class="form-check-label" for="c7">
-                                                            ปิยะพร แก้วทอง <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่เอกสาร | 📞 088-112-3344
-                                                            </small>
-                                                        </label>
-                                                    </div>
-
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="c8">
-                                                        <label class="form-check-label" for="c8">
-                                                            สมปอง แสงจันทร์ <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่ภาคสนาม | 📞 083-778-8899
-                                                            </small>
-                                                        </label>
-                                                    </div>
-
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="c9">
-                                                        <label class="form-check-label" for="c9">
-                                                            สุรินทร์ ใจมั่น <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่ภาคสนาม | 📞 081-667-4455
-                                                            </small>
-                                                        </label>
-                                                    </div>
-
-                                                    <div class="form-check mb-1">
-                                                        <input class="form-check-input" type="checkbox" id="c10">
-                                                        <label class="form-check-label" for="c10">
-                                                            พัชรี วัฒนะ <br>
-                                                            <small class="text-muted">
-                                                                เจ้าหน้าที่เอกสาร | 📞 087-990-2233
-                                                            </small>
-                                                        </label>
-                                                    </div>
-
-                                                </div>
-
-                                            </div>
-                                        </div>
                                     </div>
 
                                     <div class="d-flex justify-content-between mt-4">
@@ -750,253 +532,79 @@
                                             รวมทั้งหมด บริษัท/องค์กร
                                         </div>
                                         <div class="col-md-8 fw-semibold text-primary">
-                                            28 แห่ง
+                                            <u style="cursor: pointer;">28 แห่ง</u>
                                         </div>
                                     </div>
-                                    <!-- ทีม -->
-                                    <div class="row mt-3">
-                                        <div class="col-md-4 text-muted">
-                                            รายชื่อทีมที่ลงพื้นที่
+                                    <div class="row g-3"> 
+                                        <div class="col-md-4">
+                                            <h6 class="mb-2">ทีมลงพื้นที่</h6>
+
+                                            <div id="teamAssignContainer">
+                                                <div class="card mb-2">
+                                                    <div class="card-header fw-semibold">
+                                                        ทีม A
+                                                    </div>
+                                                    <div class="card-body team-drop" data-team="ทีม A">
+                                                        <small class="text-muted">ยังไม่มีสถานที่</small>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card mb-2">
+                                                    <div class="card-header fw-semibold">
+                                                        ทีม B
+                                                    </div>
+                                                    <div class="card-body team-drop" data-team="ทีม B">
+                                                        <small class="text-muted">ยังไม่มีสถานที่</small>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
 
+                                        <!-- ฝั่งขวา : นายจ้าง + Map -->
                                         <div class="col-md-8">
+                                            <h6 class="mb-2">รายชื่อนายจ้างตามพื้นที่</h6>
 
-                                            <!-- ทีม A -->
-                                            <div class="mb-2">
-                                                <span class="badge bg-primary">ทีม A</span>
-                                                <button class="btn btn-sm btn-link"
-                                                        data-bs-toggle="collapse"
-                                                        data-bs-target="#teamA">
-                                                    ดูรายชื่อ
-                                                </button>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <ul class="list-group" id="employerList">
+                                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                            บริษัท ABC จำกัด
+                                                            <button class="btn btn-sm btn-outline-primary"
+                                                                    onclick="selectEmployer('บริษัท ABC จำกัด')">
+                                                                เลือก
+                                                            </button>
+                                                        </li>
 
-                                                <div class="collapse mt-2" id="teamA">
-                                                    <div class="border rounded p-2 bg-light">
-                                                        <ul class="mb-0">
-                                                            <li>
-                                                                นายสมชาย ใจดี  
-                                                                <small class="text-muted d-block">
-                                                                    หัวหน้าทีม | 📞 081-234-5678
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นางสาวสุภา แสงทอง  
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่ตรวจสอบ | 📞 089-345-6789
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นายวิชัย พรมมา  
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่ภาคสนาม | 📞 082-456-7890
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นางสาวรัตนา บุญมี  
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่ภาคสนาม | 📞 086-567-8901
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นายเกรียงศักดิ์ มั่นคง  
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่ประสานงาน | 📞 080-678-9012
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นางสาวชไมพร ศรีสุข  
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่เอกสาร | 📞 088-789-0123
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นายธนากร วัฒนะ  
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่ภาคสนาม | 📞 084-890-1234
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นายประเสริฐ ใจมั่น  
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่ภาคสนาม | 📞 081-901-2345
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นางสาวสุดา แก้วคำ  
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่เอกสาร | 📞 087-012-3456
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นายอนันต์ ทองดี  
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่ภาคสนาม | 📞 083-123-4567
-                                                                </small>
-                                                            </li>
-                                                        </ul>
+                                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                            บริษัท XYZ จำกัด
+                                                            <button class="btn btn-sm btn-outline-primary"
+                                                                    onclick="selectEmployer('บริษัท XYZ จำกัด')">
+                                                                เลือก
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
 
+                                                <div class="col-md-6">
+                                                    <div id="mapBox" class="border rounded text-center p-3"
+                                                        style="height:300px">
+                                                        🗺️ Map (Mock)
+                                                        <br><br>
+                                                        <button class="btn btn-sm btn-danger"
+                                                                onclick="selectEmployer('บริษัท ABC จำกัด')">
+                                                            📍 Pin : ABC
+                                                        </button>
+                                                        <button class="btn btn-sm btn-danger ms-2"
+                                                                onclick="selectEmployer('บริษัท XYZ จำกัด')">
+                                                            📍 Pin : XYZ
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <!-- ทีม B -->
-                                            <div class="mb-2">
-                                                <span class="badge bg-success">ทีม B</span>
-                                                <button class="btn btn-sm btn-link"
-                                                        data-bs-toggle="collapse"
-                                                        data-bs-target="#teamB">
-                                                    ดูรายชื่อ
-                                                </button>
-
-                                                <div class="collapse mt-2" id="teamB">
-                                                    <div class="border rounded p-2 bg-light">
-                                                        <ul class="mb-0">
-                                                            <li>
-                                                                นายอดิศักดิ์ คงมั่น
-                                                                <small class="text-muted d-block">
-                                                                    หัวหน้าทีม | 📞 081-345-6789
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นางสาวปิยะนุช สุวรรณ
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่ตรวจสอบ | 📞 089-456-7890
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นายสุรชัย อินทร์
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่ภาคสนาม | 📞 082-567-8901
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นางสาวอรทัย ศรีสุข
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่ภาคสนาม | 📞 086-678-9012
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นายพงษ์ศักดิ์ ใจกล้า
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่ประสานงาน | 📞 080-789-0123
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นางสาวนฤมล แก้วใส
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่เอกสาร | 📞 088-890-1234
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นายจักรกฤษณ์ ชนะภัย
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่ภาคสนาม | 📞 084-901-2345
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นายวิทยา สมบูรณ์
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่ภาคสนาม | 📞 081-012-3456
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นางสาวพรทิพย์ จันทร์ดี
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่เอกสาร | 📞 087-123-4567
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นายอาคม มั่นใจ
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่ภาคสนาม | 📞 083-234-5678
-                                                                </small>
-                                                            </li>
-                                                        </ul>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- ทีม C -->
-                                            <div>
-                                                <span class="badge bg-warning text-dark">ทีม C</span>
-                                                <button class="btn btn-sm btn-link"
-                                                        data-bs-toggle="collapse"
-                                                        data-bs-target="#teamC">
-                                                    ดูรายชื่อ
-                                                </button>
-
-                                                <div class="collapse mt-2" id="teamC">
-                                                    <div class="border rounded p-2 bg-light">
-                                                        <ul class="mb-0">
-                                                            <li>
-                                                                นายธวัชชัย เรืองเดช
-                                                                <small class="text-muted d-block">
-                                                                    หัวหน้าทีม | 📞 081-456-7890
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นางสาวกัญญารัตน์ พูลสุข
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่ตรวจสอบ | 📞 089-567-8901
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นายมนตรี ใจซื่อ
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่ภาคสนาม | 📞 082-678-9012
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นางสาวศิริพร แก้วทอง
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่ภาคสนาม | 📞 086-789-0123
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นายสุรศักดิ์ แสนดี
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่ประสานงาน | 📞 080-890-1234
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นางสาววาสนา คำแพง
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่เอกสาร | 📞 088-901-2345
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นายชัยวัฒน์ อินทร์ทอง
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่ภาคสนาม | 📞 084-012-3456
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นายณัฐพล วัฒนะ
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่ภาคสนาม | 📞 081-123-4567
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นางสาวเบญจมาศ ศรีงาม
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่เอกสาร | 📞 087-234-5678
-                                                                </small>
-                                                            </li>
-                                                            <li>
-                                                                นายอาทิตย์ แสงสว่าง
-                                                                <small class="text-muted d-block">
-                                                                    เจ้าหน้าที่ภาคสนาม | 📞 083-345-6789
-                                                                </small>
-                                                            </li>
-                                                        </ul>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
                                         </div>
+
                                     </div>
+
 
                                 </div>
                                 <!-- ปุ่ม Action -->
@@ -1169,6 +777,116 @@
                 members.forEach(cb => cb.checked = this.checked)
                 })
             })
+        </script>
+        <script>
+        let teamIndex = 0;
+
+        function createTeam() {
+            const teamName = document.getElementById('teamNameInput').value.trim();
+            if (!teamName) {
+                alert('กรุณาใส่ชื่อทีม');
+                return;
+            }
+
+            teamIndex++;
+            const teamId = 'team_' + teamIndex;
+
+            const teamHTML = `
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header fw-semibold">
+                        ${teamName}
+                    </div>
+                    <div class="card-body team-box" id="${teamId}">
+                        <small class="text-muted">ยังไม่มีสมาชิก</small>
+                    </div>
+                    <div class="card-footer text-end">
+                        <button class="btn btn-sm btn-outline-primary" onclick="assignMembers('${teamId}')">
+                            ➕ เพิ่มสมาชิก
+                        </button>
+                    </div>
+                </div>
+            </div>
+            `;
+
+            document
+                .getElementById('teamContainer')
+                .insertAdjacentHTML('beforeend', teamHTML);
+
+            document.getElementById('teamNameInput').value = '';
+            bootstrap.Modal.getInstance(
+                document.getElementById('createTeamModal')
+            ).hide();
+        }
+
+        function assignMembers(teamId) {
+            const teamBox = document.getElementById(teamId);
+
+            // ลบข้อความ "ยังไม่มีสมาชิก"
+            if (teamBox.querySelector('small')) {
+                teamBox.innerHTML = '';
+            }
+
+            const checkedMembers = document.querySelectorAll('.member-check:checked');
+
+            checkedMembers.forEach(cb => {
+                const memberItem = cb.closest('.form-check');
+                const memberLabel = memberItem.querySelector('label').innerText;
+
+                // เพิ่มเข้า team
+                const div = document.createElement('div');
+                div.className = 'mb-1';
+                div.innerHTML = `• ${memberLabel}`;
+                teamBox.appendChild(div);
+
+                // 🔥 เอาออกจาก memberList
+                memberItem.remove();
+            });
+
+            if (!teamBox.children.length) {
+                teamBox.innerHTML = '<small class="text-muted">ยังไม่มีสมาชิก</small>';
+            }
+        }
+        </script>
+
+        <script>
+        let selectedEmployer = null;
+
+        function selectEmployer(name) {
+            selectedEmployer = name;
+            const teamName = prompt(
+                `เลือกทีมสำหรับ "${name}"\nเช่น: ทีม A หรือ ทีม B`
+            );
+
+            if (!teamName) return;
+
+            const teamBox = document.querySelector(
+                `.team-drop[data-team="${teamName}"]`
+            );
+
+            if (!teamBox) {
+                alert('ไม่พบทีม');
+                return;
+            }
+
+            // ลบข้อความว่าง
+            const empty = teamBox.querySelector('small');
+            if (empty) empty.remove();
+
+            // เพิ่มสถานที่เข้าใต้ทีม
+            const div = document.createElement('div');
+            div.className = 'badge bg-primary me-1 mb-1 d-inline-block';
+            div.innerText = name;
+
+            teamBox.appendChild(div);
+
+            // ลบออกจากฝั่งขวา
+            document
+                .querySelectorAll('#employerList li')
+                .forEach(li => {
+                    if (li.innerText.includes(name)) li.remove();
+                });
+        }
         </script>
 
 
