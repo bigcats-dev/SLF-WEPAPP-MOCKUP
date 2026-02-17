@@ -166,8 +166,15 @@
 
                         <div class="mb-3">
                             <label class="form-label">สรุปผลการลงพื้นที่</label>
-                            <textarea class="form-control" rows="3"
-                                placeholder="สรุปผลการตรวจสอบ สภาพสถานที่ หรือข้อสังเกต"></textarea>
+                            <select class="form-select" required>
+                                <option value="">-- กรุณาเลือกผลการลงพื้นที่ --</option>
+                                <option value="pass">สถานที่ตรงตามข้อมูลที่แจ้ง</option>
+                                <option value="pass_live">พบการใช้งานจริง</option>
+                                <option value="pass_person">พบผู้อยู่อาศัยตามข้อมูล</option>
+                                <option value="warning">ข้อมูลไม่ตรง / มีข้อสงสัย</option>
+                                <option value="fail">ไม่พบผู้อยู่อาศัย</option>
+                                <option value="other">อื่น ๆ (ระบุ)</option>
+                            </select>
                         </div>
 
                         <div class="mb-3">
@@ -217,9 +224,75 @@
                     บันทึกสถานที่นี้
                     </button> 
                 </div>
+                <div class="d-grid gap-2 mb-4">
+                    <button 
+                        class="btn btn-outline-danger btn-sm"
+                        data-bs-toggle="modal"
+                        data-bs-target="#cancelModal">
+                        ยกเลิกการลงพื้นที่
+                    </button> 
+                </div>
+
             </div>
         </main>    
- 
+        <div class="modal fade" id="cancelModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+                <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">
+                    ยืนยันการยกเลิกการลงพื้นที่
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form id="cancelForm">
+
+                    <!-- เหตุผล -->
+                    <div class="mb-3">
+                        <label class="form-label">เหตุผลในการยกเลิก</label>
+                        <select class="form-select" required>
+                            <option value="">-- กรุณาเลือก --</option>
+                            <option>ผู้รับบริการไม่สะดวก</option>
+                            <option>สภาพอากาศไม่เอื้ออำนวย</option>
+                            <option>เจ้าหน้าที่ไม่พร้อม</option>
+                            <option>ข้อมูลไม่ครบ</option>
+                            <option>อื่น ๆ</option>
+                        </select>
+                    </div>
+
+                    <!-- รายละเอียดเพิ่มเติม -->
+                    <div class="mb-3">
+                        <label class="form-label">รายละเอียดเพิ่มเติม</label>
+                        <textarea 
+                        class="form-control" 
+                        rows="4" 
+                        placeholder="พิมพ์อธิบายเพิ่มเติม (ถ้ามี)">
+                        </textarea>
+                    </div> 
+
+                    </form>
+                </div>
+
+                <div class="modal-footer  ">
+                    <button 
+                    type="button" 
+                    class="btn btn-danger btn-sm">
+                    ยืนยันยกเลิก
+                    </button>
+                    <button 
+                    type="button" 
+                    class="btn btn-outline-secondary btn-sm"
+                    data-bs-dismiss="modal">
+                    ปิด
+                    </button>
+                </div>
+
+                </div>
+            </div>
+        </div>
+
 
         <script src="js/jquery.min.js"></script> 
         <script src="js/popper.min.js" ></script>

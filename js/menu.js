@@ -6,7 +6,7 @@ const menus = [
     label: "การตั้งค่า",
     dropdown: true,
     items: [
-      { label: "สร้างทีมลงพื้นที่", href: "visit-add.html" },
+      { label: "สร้างรอบลงพื้นที่", href: "visit-add.html" },
       { label: "การตั้งค่าระบบ", href: "#" }
     ]
   }

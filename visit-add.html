@@ -16,7 +16,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" /> 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>  
 
-	<link href="css/style.css" rel="stylesheet">      
+	<link href="css/style.css" rel="stylesheet">    
+
+    <style>
+        .employer-item { cursor: pointer; }
+        .employer-item:hover { background: #f8f9fa; }
+    </style>  
 
    
     </head>
@@ -148,7 +153,7 @@
                                                 10 กุมภาพันธ์ 2569
                                             </div>
                                         </div>
-                                        <div class="row mb-2">
+                                        <div class="row ">
                                             <div class="col-md-3 text-muted">วันที่สิ้นสุด</div>
                                             <div class="col-md-9">
                                                 20 กุมภาพันธ์ 2569
@@ -162,18 +167,97 @@
                                                 <span class="badge bg-secondary me-1">ปทุมธานี</span>
                                             </div>
                                         </div> -->
-                                    </div>
-                            
+                                    </div> 
+                                    <hr>
                                     <div class="row g-3">
+                                        <!-- ชื่อนายจ้าง -->
                                         <div class="col-md-3">
                                             <label class="form-label">ชื่อนายจ้าง</label>
                                             <input type="text" class="form-control" placeholder="ค้นหาชื่อบริษัท">
-                                        </div> 
-                                        <div class="col-md-3 d-flex align-items-end">
-                                            <button class="btn btn-primary me-2">ค้นหา</button>
-                                            <button class="btn btn-outline-secondary">ล้างค่า</button>
+                                        </div>
+                                        <!-- TAX ID -->
+                                        <div class="col-md-3">
+                                            <label class="form-label">TAX ID</label>
+                                            <input type="text" class="form-control" placeholder="เลขผู้เสียภาษี">
+                                        </div>
+                                        <!-- ภาค -->
+                                        <div class="col-md-3">
+                                            <label class="form-label">ภาค</label>
+                                            <select class="form-select" id="regionSelect">
+                                                <option value="">ทั้งหมด</option>
+                                                <option value="north">ภาคเหนือ</option>
+                                                <option value="northeast">ภาคตะวันออกเฉียงเหนือ</option>
+                                                <option value="central">ภาคกลาง</option>
+                                                <option value="east">ภาคตะวันออก</option>
+                                                <option value="west">ภาคตะวันตก</option>
+                                                <option value="south">ภาคใต้</option>
+                                            </select>
+                                        </div>
+                                        <!-- จังหวัด -->
+                                        <div class="col-md-3">
+                                            <label class="form-label">จังหวัด</label>
+                                            <select class="form-select" id="provinceSelect" disabled>
+                                                <option value="">ทั้งหมด</option>
+                                            </select>
+                                        </div>
+                                        <!-- สถานะนายจ้าง -->
+                                        <div class="col-md-2">
+                                            <label class="form-label">สถานะนายจ้าง</label>
+                                            <select class="form-select">
+                                                <option value="">ทั้งหมด</option>
+                                                <option value="inactive">ไม่เข้าระบบ</option>
+                                                <option value="pending">ค้างชำระ</option>
+                                                <option value="default">ผิดนัด</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- สถานะการเข้าพบ -->
+                                        <div class="col-md-2">
+                                            <label class="form-label">สถานะการเข้าพบ</label>
+                                            <select class="form-select">
+                                                <option value="">ทั้งหมด</option>
+                                                <option value="visited">มีการเข้าพบ</option>
+                                                <option value="not_visited">ไม่มีการเข้าพบ</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- ลงพื้นที่ซ้ำ -->
+                                        <div class="col-md-2">
+                                            <label class="form-label">การลงพื้นที่</label>
+                                            <select class="form-select">
+                                                <option value="">ทั้งหมด</option>
+                                                <option value="never">ไม่เคยเยี่ยม</option>
+                                                <option value="repeat">เคยเยี่ยม</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- จำนวนเงิน -->
+                                        <div class="col-md-3">
+                                            <label class="form-label">จำนวนเงิน (บาท)</label>
+                                            <div class="d-flex gap-2">
+                                                <input type="number" class="form-control" placeholder="ต่ำสุด">
+                                                <input type="number" class="form-control" placeholder="สูงสุด">
+                                            </div>
+                                        </div>
+                                        <!-- จำนวนผู้กู้ -->
+                                        <div class="col-md-3">
+                                            <label class="form-label">จำนวนผู้กู้</label>
+                                            <div class="d-flex gap-2">
+                                                <input type="number" class="form-control" placeholder="ต่ำสุด">
+                                                <input type="number" class="form-control" placeholder="สูงสุด">
+                                            </div>
+                                        </div>
+                                        <!-- ปุ่ม -->
+                                        <div class="col-md-12 d-flex justify-content-end gap-2">
+                                            <button class="btn btn-primary">
+                                            ค้นหา
+                                            </button>
+                                            <button class="btn btn-outline-secondary">
+                                            ล้างค่า
+                                            </button>
                                         </div>
                                     </div>
+                                  
                                     <hr>
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-hover align-middle">
@@ -184,6 +268,7 @@
                                                     </th>
                                                     <th width="60">ลำดับ</th>
                                                     <th>ชื่อนายจ้าง</th>
+                                                    <th>TAX ID</th>
                                                     <th>ชื่อผู้ติดต่อ</th>
                                                     <th>เบอร์โทร</th>
                                                     <th>ที่อยู่</th>
@@ -197,6 +282,7 @@
                                                     <td><input type="checkbox"></td>
                                                     <td>1</td>
                                                     <td>บริษัท ไทยรุ่งเรือง จำกัด</td>
+                                                    <td>0105551234567</td>
                                                     <td>123 ถ.สุขุมวิท</td>
                                                     <td>กรุงเทพฯ</td>
                                                     <td>กลาง</td>
@@ -212,6 +298,7 @@
                                                     <td><input type="checkbox"></td>
                                                     <td>2</td>
                                                     <td>อยุธยาอุตสาหกรรม</td>
+                                                    <td>0105551234567</td>
                                                     <td>199 ถ.โรจนะ</td>
                                                     <td>พระนครศรีอยุธยา</td>
                                                     <td>กลาง</td>
@@ -227,6 +314,7 @@
                                                     <td><input type="checkbox"></td>
                                                     <td>3</td>
                                                     <td>ลพบุรีเกษตร</td>
+                                                    <td>0105551234567</td>
                                                     <td>77 ถ.พหลโยธิน</td>
                                                     <td>ลพบุรี</td>
                                                     <td>กลาง</td>
@@ -242,6 +330,7 @@
                                                     <td><input type="checkbox"></td>
                                                     <td>4</td>
                                                     <td>ปทุมธานีพลาสติก</td>
+                                                    <td>0105551234567</td>
                                                     <td>45 ถ.รังสิต-นครนายก</td>
                                                     <td>ปทุมธานี</td>
                                                     <td>กลาง</td>
@@ -257,6 +346,7 @@
                                                     <td><input type="checkbox"></td>
                                                     <td>5</td>
                                                     <td>สมุทรปราการโลจิสติกส์</td>
+                                                    <td>0105551234567</td>
                                                     <td>88 ถ.เทพารักษ์</td>
                                                     <td>สมุทรปราการ</td>
                                                     <td>กลาง</td>
@@ -272,6 +362,7 @@
                                                     <td><input type="checkbox"></td>
                                                     <td>6</td>
                                                     <td>นครปฐมฟาร์ม</td>
+                                                    <td>0105551234567</td>
                                                     <td>12 ถ.มาลัยแมน</td>
                                                     <td>นครปฐม</td>
                                                     <td>กลาง</td>
@@ -287,6 +378,7 @@
                                                     <td><input type="checkbox"></td>
                                                     <td>7</td>
                                                     <td>นนทบุรีเทค</td>
+                                                    <td>0105551234567</td>
                                                     <td>66 ถ.งามวงศ์วาน</td>
                                                     <td>นนทบุรี</td>
                                                     <td>กลาง</td>
@@ -302,6 +394,7 @@
                                                     <td><input type="checkbox"></td>
                                                     <td>8</td>
                                                     <td>สระบุรีซีเมนต์</td>
+                                                    <td>0105551234567</td>
                                                     <td>101 ถ.มิตรภาพ</td>
                                                     <td>สระบุรี</td>
                                                     <td>กลาง</td>
@@ -317,6 +410,7 @@
                                                     <td><input type="checkbox"></td>
                                                     <td>9</td>
                                                     <td>ราชบุรีฟู้ดโปรดักส์</td>
+                                                    <td>0105551234567</td>
                                                     <td>55 ถ.เพชรเกษม</td>
                                                     <td>ราชบุรี</td>
                                                     <td>กลาง</td>
@@ -332,6 +426,7 @@
                                                     <td><input type="checkbox"></td>
                                                     <td>10</td>
                                                     <td>สุพรรณบุรีการเกษตร</td>
+                                                    <td>0105551234567</td>
                                                     <td>9 ถ.มาลัยแมน</td>
                                                     <td>สุพรรณบุรี</td>
                                                     <td>กลาง</td>
@@ -535,74 +630,164 @@
                                             <u style="cursor: pointer;">28 แห่ง</u>
                                         </div>
                                     </div>
-                                    <div class="row g-3"> 
-                                        <div class="col-md-4">
+                                    <div class="row g-3">
+                                        <!-- 🔝 ทีมลงพื้นที่ (ด้านบน) -->
+                                        <div class="col-12">
                                             <h6 class="mb-2">ทีมลงพื้นที่</h6>
-
-                                            <div id="teamAssignContainer">
-                                                <div class="card mb-2">
-                                                    <div class="card-header fw-semibold">
-                                                        ทีม A
-                                                    </div>
-                                                    <div class="card-body team-drop" data-team="ทีม A">
-                                                        <small class="text-muted">ยังไม่มีสถานที่</small>
+                                            <div class="row mt-4" id="teamBasket">
+                                                <div class="col-md-3" data-team="ทีม A 01/69 ภาคกลาง">
+                                                    <div class="card">
+                                                        <div class="card-header fw-semibold">ทีม A 01/69 ภาคกลาง</div>
+                                                        <div class="card-body team-drop">
+                                                            <small class="text-muted">ยังไม่มีสถานที่</small>
+                                                        </div>
                                                     </div>
                                                 </div>
 
-                                                <div class="card mb-2">
-                                                    <div class="card-header fw-semibold">
-                                                        ทีม B
+                                                <div class="col-md-3" data-team="ทีม B 01/69 ภาคกลาง">
+                                                    <div class="card">
+                                                        <div class="card-header fw-semibold">ทีม B 01/69 ภาคกลาง</div>
+                                                        <div class="card-body team-drop">
+                                                            <small class="text-muted">ยังไม่มีสถานที่</small>
+                                                        </div>
                                                     </div>
-                                                    <div class="card-body team-drop" data-team="ทีม B">
-                                                        <small class="text-muted">ยังไม่มีสถานที่</small>
+                                                </div>
+
+                                                <div class="col-md-3" data-team="ทีม C 01/69 ภาคกลาง">
+                                                    <div class="card">
+                                                        <div class="card-header fw-semibold">ทีม C 01/69 ภาคกลาง</div>
+                                                        <div class="card-body team-drop">
+                                                            <small class="text-muted">ยังไม่มีสถานที่</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-3" data-team="ทีม D 01/69 ภาคกลาง">
+                                                    <div class="card">
+                                                        <div class="card-header fw-semibold">ทีม D 01/69 ภาคกลาง</div>
+                                                        <div class="card-body team-drop">
+                                                            <small class="text-muted">ยังไม่มีสถานที่</small>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                        <!-- ฝั่งขวา : นายจ้าง + Map -->
-                                        <div class="col-md-8">
+                                        </div>
+                                        <!-- ⬅️ รายชื่อนายจ้าง -->
+                                        <div class="col-lg-4">
                                             <h6 class="mb-2">รายชื่อนายจ้างตามพื้นที่</h6>
+                                            <ul class="list-group" id="employerList">
 
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <ul class="list-group" id="employerList">
-                                                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                            บริษัท ABC จำกัด
-                                                            <button class="btn btn-sm btn-outline-primary"
-                                                                    onclick="selectEmployer('บริษัท ABC จำกัด')">
-                                                                เลือก
-                                                            </button>
-                                                        </li>
+                                                <li class="list-group-item employer-item"
+                                                    data-name="บริษัท ABC จำกัด"
+                                                    data-address="123 ถ.สุขุมวิท กรุงเทพฯ"
+                                                    data-status="pending"
+                                                    onclick="openTeamModal(this)">
+                                                    <div class="fw-semibold">บริษัท ABC จำกัด</div>
+                                                    <small class="text-muted">123 ถ.สุขุมวิท กรุงเทพฯ</small><br>
+                                                    <small class="status text-warning">รอเลือกทีม</small>
+                                                </li>
 
-                                                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                            บริษัท XYZ จำกัด
-                                                            <button class="btn btn-sm btn-outline-primary"
-                                                                    onclick="selectEmployer('บริษัท XYZ จำกัด')">
-                                                                เลือก
-                                                            </button>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                                <li class="list-group-item employer-item"
+                                                    data-name="บริษัท XYZ จำกัด"
+                                                    data-address="88 ถ.พหลโยธิน กรุงเทพฯ"
+                                                    data-status="pending"
+                                                    onclick="openTeamModal(this)">
+                                                    <div class="fw-semibold">บริษัท XYZ จำกัด</div>
+                                                    <small class="text-muted">88 ถ.พหลโยธิน กรุงเทพฯ</small><br>
+                                                    <small class="status text-warning">รอเลือกทีม</small>
+                                                </li>
 
-                                                <div class="col-md-6">
-                                                    <div id="mapBox" class="border rounded text-center p-3"
-                                                        style="height:300px">
-                                                        🗺️ Map (Mock)
-                                                        <br><br>
-                                                        <button class="btn btn-sm btn-danger"
-                                                                onclick="selectEmployer('บริษัท ABC จำกัด')">
-                                                            📍 Pin : ABC
-                                                        </button>
-                                                        <button class="btn btn-sm btn-danger ms-2"
-                                                                onclick="selectEmployer('บริษัท XYZ จำกัด')">
-                                                            📍 Pin : XYZ
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                <li class="list-group-item employer-item"
+                                                    data-name="บริษัท ไทยรุ่งเรือง จำกัด"
+                                                    data-address="55 ถ.พระราม 2 กรุงเทพฯ"
+                                                    data-status="pending"
+                                                    onclick="openTeamModal(this)">
+                                                    <div class="fw-semibold">บริษัท ไทยรุ่งเรือง จำกัด</div>
+                                                    <small class="text-muted">55 ถ.พระราม 2 กรุงเทพฯ</small><br>
+                                                    <small class="status text-warning">รอเลือกทีม</small>
+                                                </li>
+
+                                                <li class="list-group-item employer-item"
+                                                    data-name="อยุธยาอุตสาหกรรม จำกัด"
+                                                    data-address="99 นิคมอุตสาหกรรมโรจนะ อยุธยา"
+                                                    data-status="pending"
+                                                    onclick="openTeamModal(this)">
+                                                    <div class="fw-semibold">อยุธยาอุตสาหกรรม จำกัด</div>
+                                                    <small class="text-muted">99 นิคมอุตสาหกรรมโรจนะ อยุธยา</small><br>
+                                                    <small class="status text-warning">รอเลือกทีม</small>
+                                                </li>
+
+                                                <li class="list-group-item employer-item"
+                                                    data-name="ลพบุรีเกษตร จำกัด"
+                                                    data-address="12 ถ.พหลโยธิน ลพบุรี"
+                                                    data-status="pending"
+                                                    onclick="openTeamModal(this)">
+                                                    <div class="fw-semibold">ลพบุรีเกษตร จำกัด</div>
+                                                    <small class="text-muted">12 ถ.พหลโยธิน ลพบุรี</small><br>
+                                                    <small class="status text-warning">รอเลือกทีม</small>
+                                                </li>
+
+                                                <li class="list-group-item employer-item"
+                                                    data-name="ปทุมธานีพลาสติก จำกัด"
+                                                    data-address="45 ถ.รังสิต-นครนายก ปทุมธานี"
+                                                    data-status="pending"
+                                                    onclick="openTeamModal(this)">
+                                                    <div class="fw-semibold">ปทุมธานีพลาสติก จำกัด</div>
+                                                    <small class="text-muted">45 ถ.รังสิต-นครนายก ปทุมธานี</small><br>
+                                                    <small class="status text-warning">รอเลือกทีม</small>
+                                                </li>
+
+                                                <li class="list-group-item employer-item"
+                                                    data-name="สมุทรปราการโลจิสติกส์ จำกัด"
+                                                    data-address="77 ถ.เทพารักษ์ สมุทรปราการ"
+                                                    data-status="pending"
+                                                    onclick="openTeamModal(this)">
+                                                    <div class="fw-semibold">สมุทรปราการโลจิสติกส์ จำกัด</div>
+                                                    <small class="text-muted">77 ถ.เทพารักษ์ สมุทรปราการ</small><br>
+                                                    <small class="status text-warning">รอเลือกทีม</small>
+                                                </li>
+
+                                                <li class="list-group-item employer-item"
+                                                    data-name="นครปฐมฟาร์ม จำกัด"
+                                                    data-address="101 ถ.เพชรเกษม นครปฐม"
+                                                    data-status="pending"
+                                                    onclick="openTeamModal(this)">
+                                                    <div class="fw-semibold">นครปฐมฟาร์ม จำกัด</div>
+                                                    <small class="text-muted">101 ถ.เพชรเกษม นครปฐม</small><br>
+                                                    <small class="status text-warning">รอเลือกทีม</small>
+                                                </li>
+
+                                                <li class="list-group-item employer-item"
+                                                    data-name="สระบุรีซีเมนต์ จำกัด"
+                                                    data-address="66 ถ.มิตรภาพ สระบุรี"
+                                                    data-status="pending"
+                                                    onclick="openTeamModal(this)">
+                                                    <div class="fw-semibold">สระบุรีซีเมนต์ จำกัด</div>
+                                                    <small class="text-muted">66 ถ.มิตรภาพ สระบุรี</small><br>
+                                                    <small class="status text-warning">รอเลือกทีม</small>
+                                                </li>
+
+                                                <li class="list-group-item employer-item"
+                                                    data-name="ราชบุรีฟู้ดโปรดักส์ จำกัด"
+                                                    data-address="39 ถ.เพชรเกษม ราชบุรี"
+                                                    data-status="pending"
+                                                    onclick="openTeamModal(this)">
+                                                    <div class="fw-semibold">ราชบุรีฟู้ดโปรดักส์ จำกัด</div>
+                                                    <small class="text-muted">39 ถ.เพชรเกษม ราชบุรี</small><br>
+                                                    <small class="status text-warning">รอเลือกทีม</small>
+                                                </li>
+
+                                            </ul>
+
+
+
                                         </div>
-
+                                        <!-- ➡️ Google Map (ใหญ่) -->
+                                        <div class="col-lg-8">
+                                            <h6 class="mb-2">แผนที่พื้นที่</h6>
+                                            <div id="map" class="rounded border" style="height:500px;"></div>
+                                        </div>
                                     </div>
 
 
@@ -612,7 +797,7 @@
                                     <button class="btn btn-secondary me-2" onclick="changeStep(3)">
                                     ← กลับไปแก้ไข
                                     </button>
-                                    <button class="btn btn-primary">
+                                    <button class="btn btn-primary" onclick="changeStep(4)">
                                     ยืนยันและบันทึก
                                     </button>
                                 </div>
@@ -623,7 +808,26 @@
                 </div>
             </div>
         </main>    
- 
+        <div class="modal fade" id="teamModal" tabindex="-1">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">เลือกทีม</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <button class="btn btn-outline-primary w-100 mb-2" onclick="assignTeam('ทีม A')">ทีม A 01/69 ภาคกลาง</button>
+                    <button class="btn btn-outline-primary w-100 mb-2" onclick="assignTeam('ทีม B')">ทีม B 01/69 ภาคกลาง</button>
+                    <button class="btn btn-outline-primary w-100 mb-2" onclick="assignTeam('ทีม C')">ทีม C 01/69 ภาคกลาง</button>
+                    <button class="btn btn-outline-primary w-100" onclick="assignTeam('ทีม D')">ทีม D 01/69 ภาคกลาง</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+
         <div class="modal fade" id="companyDetailModal" tabindex="-1">
             <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
                 <div class="modal-content">
@@ -723,6 +927,8 @@
                 </div>
             </div>
         </div>
+
+
         <script src="js/jquery.min.js"></script> 
         <script src="js/popper.min.js" ></script>
         <script src="js/bootstrap.bundle.min.js"></script>   
@@ -778,6 +984,8 @@
                 })
             })
         </script>
+        
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao"></script>
         <script>
         let teamIndex = 0;
 
@@ -849,48 +1057,177 @@
         }
         </script>
 
+        
+
         <script>
+        const provinces = {
+            north: [
+                'เชียงใหม่','เชียงราย','ลำพูน','ลำปาง','แพร่','น่าน',
+                'พะเยา','แม่ฮ่องสอน','อุตรดิตถ์','สุโขทัย',
+                'พิษณุโลก','พิจิตร','กำแพงเพชร','ตาก','เพชรบูรณ์'
+            ],
+
+            northeast: [
+                'นครราชสีมา','บุรีรัมย์','สุรินทร์','ศรีสะเกษ','อุบลราชธานี',
+                'ยโสธร','ชัยภูมิ','อำนาจเจริญ','หนองบัวลำภู',
+                'ขอนแก่น','อุดรธานี','เลย','หนองคาย','บึงกาฬ',
+                'มหาสารคาม','ร้อยเอ็ด','กาฬสินธุ์','สกลนคร',
+                'นครพนม','มุกดาหาร'
+            ],
+
+            central: [
+                'กรุงเทพมหานคร','นนทบุรี','ปทุมธานี','สมุทรปราการ',
+                'พระนครศรีอยุธยา','อ่างทอง','ลพบุรี','สิงห์บุรี',
+                'ชัยนาท','สระบุรี','สุพรรณบุรี','นครปฐม',
+                'สมุทรสาคร','สมุทรสงคราม'
+            ],
+
+            east: [
+                'ชลบุรี','ระยอง','จันทบุรี','ตราด',
+                'ฉะเชิงเทรา','ปราจีนบุรี','สระแก้ว'
+            ],
+
+            west: [
+                'กาญจนบุรี','ราชบุรี','เพชรบุรี','ประจวบคีรีขันธ์'
+            ],
+
+            south: [
+                'ชุมพร','ระนอง','สุราษฎร์ธานี','พังงา','ภูเก็ต','กระบี่',
+                'นครศรีธรรมราช','ตรัง','พัทลุง','สตูล',
+                'สงขลา','ปัตตานี','ยะลา','นราธิวาส'
+            ]
+        };
+
+
+        const region = document.getElementById('regionSelect');
+        const province = document.getElementById('provinceSelect');
+
+        region.addEventListener('change', () => {
+            province.innerHTML = '<option value="">ทั้งหมด</option>';
+            const list = provinces[region.value];
+
+            if (list) {
+            province.disabled = false;
+            list.forEach(p => {
+                const opt = document.createElement('option');
+                opt.value = p;
+                opt.textContent = p;
+                province.appendChild(opt);
+            });
+            } else {
+            province.disabled = true;
+            }
+        });
+        </script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao"></script>
+
+        <script>
+        let map;
         let selectedEmployer = null;
 
-        function selectEmployer(name) {
+        const locations = {
+            'บริษัท ABC จำกัด': { lat: 13.7563, lng: 100.5018 },
+            'บริษัท XYZ จำกัด': { lat: 14.0208, lng: 100.5250 },
+            'บริษัท ไทยรุ่งเรือง จำกัด': { lat: 14.6000, lng: 100.7333 },
+            'อยุธยาอุตสาหกรรม': { lat: 14.3550, lng: 100.5684 },
+            'ลพบุรีเกษตร': { lat: 14.7995, lng: 100.6534 },
+            'ปทุมธานีพลาสติก': { lat: 14.0208, lng: 100.5250 },
+            'สมุทรปราการโลจิสติกส์': { lat: 13.5991, lng: 100.5998 },
+            'นครปฐมฟาร์ม': { lat: 13.8199, lng: 100.0622 },
+            'สระบุรีซีเมนต์': { lat: 14.5289, lng: 100.9101 },
+            'ราชบุรีฟู้ดโปรดักส์': { lat: 13.5283, lng: 99.8134 }
+        };
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 14.0, lng: 100.5 },
+            zoom: 8
+            });
+
+            Object.keys(locations).forEach(name => {
+            const marker = new google.maps.Marker({
+                position: locations[name],
+                map,
+                title: name
+            });
+
+            marker.addListener('click', () => {
+                openTeamModal(name);
+            });
+            });
+        }
+
+        function openTeamModal(name) {
             selectedEmployer = name;
-            const teamName = prompt(
-                `เลือกทีมสำหรับ "${name}"\nเช่น: ทีม A หรือ ทีม B`
-            );
+            document.getElementById('selectedEmployerName').innerText = name;
 
-            if (!teamName) return;
+            new bootstrap.Modal(
+            document.getElementById('teamSelectModal')
+            ).show();
+        }
 
-            const teamBox = document.querySelector(
-                `.team-drop[data-team="${teamName}"]`
-            );
+        function assignTeam(team) {
+            alert(`มอบหมาย ${selectedEmployer} ให้ ${team}`);
+            // ต่อ logic จริงได้ตรงนี้
+            bootstrap.Modal.getInstance(
+            document.getElementById('teamSelectModal')
+            ).hide();
+        }
 
-            if (!teamBox) {
-                alert('ไม่พบทีม');
-                return;
+        window.onload = initMap;
+        </script>
+
+        <script>
+        let selectedEmployerEl = null;
+        const teamModal = new bootstrap.Modal(document.getElementById('teamModal'));
+
+        function openTeamModal(el) {
+            selectedEmployerEl = el;
+            teamModal.show();
+        }
+
+        // เลือกทีม
+        function assignTeam(teamName) {
+            const name = selectedEmployerEl.dataset.name;
+            const address = selectedEmployerEl.dataset.address;
+
+            // เปลี่ยนสถานะ
+            selectedEmployerEl.dataset.status = 'assigned';
+            selectedEmployerEl.querySelector('.status').textContent = 'มีทีมแล้ว';
+            selectedEmployerEl.querySelector('.status').className = 'status text-success';
+
+            // ใส่ในตะกร้าทีม
+            const teamBox = document.querySelector(`[data-team="${teamName}"] .team-drop`);
+            teamBox.innerHTML = `
+                <div class="border rounded p-2 mb-2">
+                    <div class="fw-semibold">${name}</div>
+                    <small class="text-muted">${address}</small><br>
+                    <button class="btn btn-sm btn-outline-danger mt-1"
+                        onclick="removeFromTeam(this, '${name}')">
+                        เลือกทีมใหม่
+                    </button>
+                </div>
+            `;
+
+            teamModal.hide();
+        }
+
+        // เอาออกจากทีม
+        function removeFromTeam(btn, employerName) {
+            btn.closest('.border').remove();
+
+            // คืนสถานะบริษัท
+            const employerEl = [...document.querySelectorAll('.employer-item')]
+                .find(el => el.dataset.name === employerName);
+
+            if (employerEl) {
+                employerEl.dataset.status = 'pending';
+                employerEl.querySelector('.status').textContent = 'รอเลือกทีม';
+                employerEl.querySelector('.status').className = 'status text-warning';
             }
-
-            // ลบข้อความว่าง
-            const empty = teamBox.querySelector('small');
-            if (empty) empty.remove();
-
-            // เพิ่มสถานที่เข้าใต้ทีม
-            const div = document.createElement('div');
-            div.className = 'badge bg-primary me-1 mb-1 d-inline-block';
-            div.innerText = name;
-
-            teamBox.appendChild(div);
-
-            // ลบออกจากฝั่งขวา
-            document
-                .querySelectorAll('#employerList li')
-                .forEach(li => {
-                    if (li.innerText.includes(name)) li.remove();
-                });
         }
         </script>
 
 
-      
-
-    </body>
 </html>
