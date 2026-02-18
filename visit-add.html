@@ -630,161 +630,53 @@
                                             <u style="cursor: pointer;">28 แห่ง</u>
                                         </div>
                                     </div>
-                                    <div class="row g-3">
-                                        <!-- 🔝 ทีมลงพื้นที่ (ด้านบน) -->
+                                    <div class="row g-3"> 
                                         <div class="col-12">
                                             <h6 class="mb-2">ทีมลงพื้นที่</h6>
-                                            <div class="row mt-4" id="teamBasket">
-                                                <div class="col-md-3" data-team="ทีม A 01/69 ภาคกลาง">
-                                                    <div class="card">
-                                                        <div class="card-header fw-semibold">ทีม A 01/69 ภาคกลาง</div>
+                                            <div class="row mt-4" id="teamBasket"> 
+                                                <div class="col-md-3">
+                                                    <div class="card team-card" data-team="ทีม A 01/69 ภาคกลาง"
+                                                        onclick="selectTeam(this)">
+                                                        <div class="card-header fw-semibold">
+                                                            ทีม A 01/69 ภาคกลาง
+                                                        </div>
                                                         <div class="card-body team-drop">
-                                                            <small class="text-muted">ยังไม่มีสถานที่</small>
+                                                            <small class="text-muted team-empty">ยังไม่มีสถานที่</small>
                                                         </div>
                                                     </div>
-                                                </div>
-
-                                                <div class="col-md-3" data-team="ทีม B 01/69 ภาคกลาง">
-                                                    <div class="card">
+                                                </div> 
+                                                <div class="col-md-3">
+                                                    <div class="card team-card" data-team="ทีม B 01/69 ภาคกลาง"
+                                                        onclick="selectTeam(this)">
                                                         <div class="card-header fw-semibold">ทีม B 01/69 ภาคกลาง</div>
                                                         <div class="card-body team-drop">
-                                                            <small class="text-muted">ยังไม่มีสถานที่</small>
+                                                            <small class="text-muted team-empty">ยังไม่มีสถานที่</small>
                                                         </div>
                                                     </div>
-                                                </div>
-
-                                                <div class="col-md-3" data-team="ทีม C 01/69 ภาคกลาง">
-                                                    <div class="card">
+                                                </div> 
+                                                <div class="col-md-3">
+                                                    <div class="card team-card" data-team="ทีม C 01/69 ภาคกลาง"
+                                                        onclick="selectTeam(this)">
                                                         <div class="card-header fw-semibold">ทีม C 01/69 ภาคกลาง</div>
                                                         <div class="card-body team-drop">
-                                                            <small class="text-muted">ยังไม่มีสถานที่</small>
+                                                            <small class="text-muted team-empty">ยังไม่มีสถานที่</small>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-3" data-team="ทีม D 01/69 ภาคกลาง">
-                                                    <div class="card">
+                                                <div class="col-md-3">
+                                                    <div class="card team-card" data-team="ทีม D 01/69 ภาคกลาง"
+                                                        onclick="selectTeam(this)">
                                                         <div class="card-header fw-semibold">ทีม D 01/69 ภาคกลาง</div>
                                                         <div class="card-body team-drop">
-                                                            <small class="text-muted">ยังไม่มีสถานที่</small>
+                                                            <small class="text-muted team-empty">ยังไม่มีสถานที่</small>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-
+                                                </div> 
+                                            </div> 
                                         </div>
-                                        <!-- ⬅️ รายชื่อนายจ้าง -->
-                                        <div class="col-lg-4">
-                                            <h6 class="mb-2">รายชื่อนายจ้างตามพื้นที่</h6>
-                                            <ul class="list-group" id="employerList">
-
-                                                <li class="list-group-item employer-item"
-                                                    data-name="บริษัท ABC จำกัด"
-                                                    data-address="123 ถ.สุขุมวิท กรุงเทพฯ"
-                                                    data-status="pending"
-                                                    onclick="openTeamModal(this)">
-                                                    <div class="fw-semibold">บริษัท ABC จำกัด</div>
-                                                    <small class="text-muted">123 ถ.สุขุมวิท กรุงเทพฯ</small><br>
-                                                    <small class="status text-warning">รอเลือกทีม</small>
-                                                </li>
-
-                                                <li class="list-group-item employer-item"
-                                                    data-name="บริษัท XYZ จำกัด"
-                                                    data-address="88 ถ.พหลโยธิน กรุงเทพฯ"
-                                                    data-status="pending"
-                                                    onclick="openTeamModal(this)">
-                                                    <div class="fw-semibold">บริษัท XYZ จำกัด</div>
-                                                    <small class="text-muted">88 ถ.พหลโยธิน กรุงเทพฯ</small><br>
-                                                    <small class="status text-warning">รอเลือกทีม</small>
-                                                </li>
-
-                                                <li class="list-group-item employer-item"
-                                                    data-name="บริษัท ไทยรุ่งเรือง จำกัด"
-                                                    data-address="55 ถ.พระราม 2 กรุงเทพฯ"
-                                                    data-status="pending"
-                                                    onclick="openTeamModal(this)">
-                                                    <div class="fw-semibold">บริษัท ไทยรุ่งเรือง จำกัด</div>
-                                                    <small class="text-muted">55 ถ.พระราม 2 กรุงเทพฯ</small><br>
-                                                    <small class="status text-warning">รอเลือกทีม</small>
-                                                </li>
-
-                                                <li class="list-group-item employer-item"
-                                                    data-name="อยุธยาอุตสาหกรรม จำกัด"
-                                                    data-address="99 นิคมอุตสาหกรรมโรจนะ อยุธยา"
-                                                    data-status="pending"
-                                                    onclick="openTeamModal(this)">
-                                                    <div class="fw-semibold">อยุธยาอุตสาหกรรม จำกัด</div>
-                                                    <small class="text-muted">99 นิคมอุตสาหกรรมโรจนะ อยุธยา</small><br>
-                                                    <small class="status text-warning">รอเลือกทีม</small>
-                                                </li>
-
-                                                <li class="list-group-item employer-item"
-                                                    data-name="ลพบุรีเกษตร จำกัด"
-                                                    data-address="12 ถ.พหลโยธิน ลพบุรี"
-                                                    data-status="pending"
-                                                    onclick="openTeamModal(this)">
-                                                    <div class="fw-semibold">ลพบุรีเกษตร จำกัด</div>
-                                                    <small class="text-muted">12 ถ.พหลโยธิน ลพบุรี</small><br>
-                                                    <small class="status text-warning">รอเลือกทีม</small>
-                                                </li>
-
-                                                <li class="list-group-item employer-item"
-                                                    data-name="ปทุมธานีพลาสติก จำกัด"
-                                                    data-address="45 ถ.รังสิต-นครนายก ปทุมธานี"
-                                                    data-status="pending"
-                                                    onclick="openTeamModal(this)">
-                                                    <div class="fw-semibold">ปทุมธานีพลาสติก จำกัด</div>
-                                                    <small class="text-muted">45 ถ.รังสิต-นครนายก ปทุมธานี</small><br>
-                                                    <small class="status text-warning">รอเลือกทีม</small>
-                                                </li>
-
-                                                <li class="list-group-item employer-item"
-                                                    data-name="สมุทรปราการโลจิสติกส์ จำกัด"
-                                                    data-address="77 ถ.เทพารักษ์ สมุทรปราการ"
-                                                    data-status="pending"
-                                                    onclick="openTeamModal(this)">
-                                                    <div class="fw-semibold">สมุทรปราการโลจิสติกส์ จำกัด</div>
-                                                    <small class="text-muted">77 ถ.เทพารักษ์ สมุทรปราการ</small><br>
-                                                    <small class="status text-warning">รอเลือกทีม</small>
-                                                </li>
-
-                                                <li class="list-group-item employer-item"
-                                                    data-name="นครปฐมฟาร์ม จำกัด"
-                                                    data-address="101 ถ.เพชรเกษม นครปฐม"
-                                                    data-status="pending"
-                                                    onclick="openTeamModal(this)">
-                                                    <div class="fw-semibold">นครปฐมฟาร์ม จำกัด</div>
-                                                    <small class="text-muted">101 ถ.เพชรเกษม นครปฐม</small><br>
-                                                    <small class="status text-warning">รอเลือกทีม</small>
-                                                </li>
-
-                                                <li class="list-group-item employer-item"
-                                                    data-name="สระบุรีซีเมนต์ จำกัด"
-                                                    data-address="66 ถ.มิตรภาพ สระบุรี"
-                                                    data-status="pending"
-                                                    onclick="openTeamModal(this)">
-                                                    <div class="fw-semibold">สระบุรีซีเมนต์ จำกัด</div>
-                                                    <small class="text-muted">66 ถ.มิตรภาพ สระบุรี</small><br>
-                                                    <small class="status text-warning">รอเลือกทีม</small>
-                                                </li>
-
-                                                <li class="list-group-item employer-item"
-                                                    data-name="ราชบุรีฟู้ดโปรดักส์ จำกัด"
-                                                    data-address="39 ถ.เพชรเกษม ราชบุรี"
-                                                    data-status="pending"
-                                                    onclick="openTeamModal(this)">
-                                                    <div class="fw-semibold">ราชบุรีฟู้ดโปรดักส์ จำกัด</div>
-                                                    <small class="text-muted">39 ถ.เพชรเกษม ราชบุรี</small><br>
-                                                    <small class="status text-warning">รอเลือกทีม</small>
-                                                </li>
-
-                                            </ul>
-
-
-
-                                        </div>
-                                        <!-- ➡️ Google Map (ใหญ่) -->
-                                        <div class="col-lg-8">
+                                        
+                                        <div class="col-lg-12">
                                             <h6 class="mb-2">แผนที่พื้นที่</h6>
                                             <div id="map" class="rounded border" style="height:500px;"></div>
                                         </div>
@@ -792,7 +684,6 @@
 
 
                                 </div>
-                                <!-- ปุ่ม Action -->
                                 <div class="card-footer text-end">
                                     <button class="btn btn-secondary me-2" onclick="changeStep(3)">
                                     ← กลับไปแก้ไข
@@ -1030,7 +921,6 @@
         function assignMembers(teamId) {
             const teamBox = document.getElementById(teamId);
 
-            // ลบข้อความ "ยังไม่มีสมาชิก"
             if (teamBox.querySelector('small')) {
                 teamBox.innerHTML = '';
             }
@@ -1041,13 +931,11 @@
                 const memberItem = cb.closest('.form-check');
                 const memberLabel = memberItem.querySelector('label').innerText;
 
-                // เพิ่มเข้า team
                 const div = document.createElement('div');
                 div.className = 'mb-1';
                 div.innerHTML = `• ${memberLabel}`;
                 teamBox.appendChild(div);
 
-                // 🔥 เอาออกจาก memberList
                 memberItem.remove();
             });
 
@@ -1119,115 +1007,121 @@
             }
         });
         </script>
-
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao"></script>
-
+ 
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao&callback=initMap"
+            async
+            defer>
+        </script>
+       
         <script>
         let map;
-        let selectedEmployer = null;
-
-        const locations = {
-            'บริษัท ABC จำกัด': { lat: 13.7563, lng: 100.5018 },
-            'บริษัท XYZ จำกัด': { lat: 14.0208, lng: 100.5250 },
-            'บริษัท ไทยรุ่งเรือง จำกัด': { lat: 14.6000, lng: 100.7333 },
-            'อยุธยาอุตสาหกรรม': { lat: 14.3550, lng: 100.5684 },
-            'ลพบุรีเกษตร': { lat: 14.7995, lng: 100.6534 },
-            'ปทุมธานีพลาสติก': { lat: 14.0208, lng: 100.5250 },
-            'สมุทรปราการโลจิสติกส์': { lat: 13.5991, lng: 100.5998 },
-            'นครปฐมฟาร์ม': { lat: 13.8199, lng: 100.0622 },
-            'สระบุรีซีเมนต์': { lat: 14.5289, lng: 100.9101 },
-            'ราชบุรีฟู้ดโปรดักส์': { lat: 13.5283, lng: 99.8134 }
-        };
-
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-            center: { lat: 14.0, lng: 100.5 },
-            zoom: 8
-            });
-
-            Object.keys(locations).forEach(name => {
-            const marker = new google.maps.Marker({
-                position: locations[name],
-                map,
-                title: name
-            });
-
-            marker.addListener('click', () => {
-                openTeamModal(name);
-            });
-            });
-        }
-
-        function openTeamModal(name) {
-            selectedEmployer = name;
-            document.getElementById('selectedEmployerName').innerText = name;
-
-            new bootstrap.Modal(
-            document.getElementById('teamSelectModal')
-            ).show();
-        }
-
-        function assignTeam(team) {
-            alert(`มอบหมาย ${selectedEmployer} ให้ ${team}`);
-            // ต่อ logic จริงได้ตรงนี้
-            bootstrap.Modal.getInstance(
-            document.getElementById('teamSelectModal')
-            ).hide();
-        }
-
-        window.onload = initMap;
+        let activeTeamCard = null;
+        let markerMap = {}; // { companyName: marker }
+        let infoWindow;
         </script>
 
         <script>
-        let selectedEmployerEl = null;
-        const teamModal = new bootstrap.Modal(document.getElementById('teamModal'));
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 13.7563, lng: 100.5018 },
+                zoom: 7
+            });
 
-        function openTeamModal(el) {
-            selectedEmployerEl = el;
-            teamModal.show();
-        }
+            infoWindow = new google.maps.InfoWindow();
 
-        // เลือกทีม
-        function assignTeam(teamName) {
-            const name = selectedEmployerEl.dataset.name;
-            const address = selectedEmployerEl.dataset.address;
+            const employers = [
+                { name: "บริษัท ABC จำกัด", lat: 13.7563, lng: 100.5018 },
+                { name: "บริษัท XYZ จำกัด", lat: 13.7367, lng: 100.5231 },
+                { name: "ไทยรุ่งเรือง จำกัด", lat: 14.0208, lng: 100.5250 },
+                { name: "อยุธยาอุตสาหกรรม", lat: 14.3532, lng: 100.5689 },
+                { name: "ลพบุรีเกษตร", lat: 14.7995, lng: 100.6534 },
+                { name: "ปทุมธานีพลาสติก", lat: 14.0208, lng: 100.5250 },
+                { name: "สมุทรปราการโลจิสติกส์", lat: 13.5991, lng: 100.5998 },
+                { name: "นครปฐมฟาร์ม", lat: 13.8199, lng: 100.0622 },
+                { name: "สระบุรีซีเมนต์", lat: 14.5289, lng: 100.9101 },
+                { name: "ราชบุรีฟู้ดโปรดักส์", lat: 13.5283, lng: 99.8134 }
+            ];
 
-            // เปลี่ยนสถานะ
-            selectedEmployerEl.dataset.status = 'assigned';
-            selectedEmployerEl.querySelector('.status').textContent = 'มีทีมแล้ว';
-            selectedEmployerEl.querySelector('.status').className = 'status text-success';
+            employers.forEach(emp => {
+                const marker = new google.maps.Marker({
+                    position: { lat: emp.lat, lng: emp.lng },
+                    map,
+                    title: emp.name
+                });
 
-            // ใส่ในตะกร้าทีม
-            const teamBox = document.querySelector(`[data-team="${teamName}"] .team-drop`);
-            teamBox.innerHTML = `
-                <div class="border rounded p-2 mb-2">
-                    <div class="fw-semibold">${name}</div>
-                    <small class="text-muted">${address}</small><br>
-                    <button class="btn btn-sm btn-outline-danger mt-1"
-                        onclick="removeFromTeam(this, '${name}')">
-                        เลือกทีมใหม่
-                    </button>
-                </div>
-            `;
+                // Hover
+                marker.addListener("mouseover", () => {
+                    infoWindow.setContent(`<strong>${emp.name}</strong>`);
+                    infoWindow.open(map, marker);
+                });
 
-            teamModal.hide();
-        }
+                marker.addListener("mouseout", () => {
+                    infoWindow.close();
+                });
 
-        // เอาออกจากทีม
-        function removeFromTeam(btn, employerName) {
-            btn.closest('.border').remove();
+                // Click = assign
+                marker.addListener("click", () => {
+                    assignToTeam(emp.name);
+                });
 
-            // คืนสถานะบริษัท
-            const employerEl = [...document.querySelectorAll('.employer-item')]
-                .find(el => el.dataset.name === employerName);
-
-            if (employerEl) {
-                employerEl.dataset.status = 'pending';
-                employerEl.querySelector('.status').textContent = 'รอเลือกทีม';
-                employerEl.querySelector('.status').className = 'status text-warning';
-            }
+                markerMap[emp.name] = marker;
+            });
         }
         </script>
+
+        <script>
+
+        function selectTeam(card) {
+            document.querySelectorAll('.team-card')
+                .forEach(c => c.classList.remove('active'));
+
+            card.classList.add('active');
+            activeTeamCard = card;
+        }
+        function assignToTeam(name) {
+            if (!activeTeamCard) {
+                alert("กรุณาเลือกทีมก่อน");
+                return;
+            }
+
+            const body = activeTeamCard.querySelector(".team-drop");
+            body.querySelector(".team-empty")?.remove();
+
+            const item = document.createElement("div");
+            item.className = "d-flex justify-content-between align-items-center mb-1";
+            item.dataset.name = name;
+            item.innerHTML = `
+                <span>${name}</span>
+                <button class="btn btn-sm btn-outline-danger"
+                    onclick="undoAssign('${name}', this)">
+                    เอาออก
+                </button>
+            `;
+
+            body.appendChild(item);
+
+            // เอา marker ออกจาก map
+            markerMap[name].setMap(null);
+        }
+        </script>
+        <script>
+        function undoAssign(name, btn) {
+            const item = btn.closest("div");
+            const teamBody = item.parentElement;
+
+            item.remove();
+
+            // ถ้าทีมว่าง → แสดงข้อความเดิม
+            if (teamBody.children.length === 0) {
+                teamBody.innerHTML = `<small class="text-muted team-empty">ยังไม่มีสถานที่</small>`;
+            }
+
+            // เอา marker กลับ map
+            markerMap[name].setMap(map);
+        }
+        </script>
+
 
 
 </html>
