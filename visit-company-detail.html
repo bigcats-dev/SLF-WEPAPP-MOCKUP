@@ -185,62 +185,173 @@
                                 <div class="card shadow-sm border-0">
                                     <div class="card-body">
 
-                                        <!-- ข้อมูลนายจ้าง -->
-                                        <h6 class="section-title mb-3">ข้อมูลนายจ้าง</h6>
-
-                                        <div class="info-row">
-                                            <span class="label">ชื่อนายจ้าง</span>
-                                            <span class="value">นายสมชาย ใจดี</span>
+                                        <div class="row">
+                                            <div class="col-lg-6" style="font-size: 14px;">
+                                                <div class="row mb-2">
+                                                    <div class="col-lg-6 text-end">
+                                                        <label>เลขประจำตัวผู้เสียภาษีอากร</label>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label><b>0994000160135</b></label>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-lg-6 text-end">
+                                                        <label>เบอร์โทรศัพท์</label>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label><b></b></label>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-lg-6 text-end">
+                                                        <label>การมีหน้าที่หักเงินนำส่ง</label>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label><b>ไม่มี</b></label>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-lg-6 text-end">
+                                                        <label>Admin บริษัทนายจ้าง</label>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label><b>ณัฐธิกา อาคะมา</b><br><b>วิภาวรรณ รักสกุล</b></label>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-lg-6 text-end">
+                                                        <label>ตำแหน่งผู้บริหารสูงสุด</label>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label><b>กรรมการผู้จัดการ22</b></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="row mb-2">
+                                                    <div class="col-lg-6 text-end">
+                                                        <label>ชื่อองค์กรบริษัท</label>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label><b>กรมการปกครอง</b></label>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-lg-6 text-end">
+                                                        <label>ที่อยู่</label>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label><b>ถนน อัษฎางค์ ตำบล/แขวง วัดราชบพิธ อำเภอ/เขต พระนคร จังหวัด กรุงเทพมหานคร 10200</b></label>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-lg-6 text-end">
+                                                        <label>ประเภทบริษัท</label>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label><b>องค์กรปกครองส่วนท้องถิ่น</b></label>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-lg-6 text-end">
+                                                        <label>หมายเหตุ</label>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label><b></b></label>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <br>
+                                        <ul class="nav nav-tabs " id="datacompanyTab" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link active"
+                                                        data-bs-toggle="tab"
+                                                        data-bs-target="#tab-general"
+                                                        type="button">
+                                                    ข้อมูลทั่วไป
+                                                </button>
+                                            </li>
 
-                                        <div class="info-row">
-                                            <span class="label">TAX ID</span>
-                                            <span class="value">0105551234567</span>
-                                        </div>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link"
+                                                        data-bs-toggle="tab"
+                                                        data-bs-target="#tab-branch"
+                                                        type="button">
+                                                    ข้อมูลสาขา
+                                                </button>
+                                            </li>
 
-                                        <div class="info-row">
-                                            <span class="label">ที่ตั้งบริษัท</span>
-                                            <span class="value">
-                                            123 หมู่ 4 ต.สุเทพ อ.เมือง จ.เชียงใหม่
-                                            </span>
-                                        </div>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link"
+                                                        data-bs-toggle="tab"
+                                                        data-bs-target="#tab-debtor"
+                                                        type="button">
+                                                    ข้อมูลลูกหนี้สังกัดนายจ้าง
+                                                </button>
+                                            </li>
 
-                                        <hr class="my-4">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link"
+                                                        data-bs-toggle="tab"
+                                                        data-bs-target="#tab-deduction"
+                                                        type="button">
+                                                    ข้อมูลการหักเงินนำส่ง
+                                                </button>
+                                            </li>
 
-                                        <!-- ข้อมูลผู้ติดต่อ --> 
-                                        <h6 class="section-title mb-3">ข้อมูลผู้ติดต่อ</h6>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link"
+                                                        data-bs-toggle="tab"
+                                                        data-bs-target="#tab-request-history"
+                                                        type="button">
+                                                    ประวัติการยื่นคำขอ
+                                                </button>
+                                            </li>
 
-                                        <div class="info-row">
-                                            <span class="label">ชื่อ–สกุล</span>
-                                            <span class="value">นางสาวสุดา ใจงาม</span>
-                                        </div>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link"
+                                                        data-bs-toggle="tab"
+                                                        data-bs-target="#tab-letter-history"
+                                                        type="button">
+                                                    ประวัติการส่งจดหมาย
+                                                </button>
+                                            </li>
 
-                                        <div class="info-row">
-                                            <span class="label">ตำแหน่ง</span>
-                                            <span class="value">ธุรการฝ่ายบุคคล</span>
-                                        </div>
+                                        </ul>
+                                        <div class="tab-content border border-top-0 p-4" id="datacompanyTabContent">
 
-                                        <div class="info-row">
-                                            <span class="label">เบอร์โทรศัพท์</span>
-                                            <span class="value">
-                                                <i class="bi bi-telephone me-1"></i>
-                                                081-234-5678
-                                            </span>
-                                        </div>
+                                            <div class="tab-pane fade show active" id="tab-general">
+                                                <!-- ข้อมูลทั่วไป -->
+                                                <p class="text-muted">เนื้อหาข้อมูลทั่วไป</p>
+                                            </div>
 
-                                        <div class="info-row">
-                                            <span class="label">อีเมล</span>
-                                            <span class="value">
-                                                <i class="bi bi-envelope me-1"></i>
-                                                suda.j@example.com
-                                            </span>
-                                        </div>
+                                            <div class="tab-pane fade" id="tab-branch">
+                                                <!-- ข้อมูลสาขา -->
+                                                <p class="text-muted">เนื้อหาข้อมูลสาขา</p>
+                                            </div>
 
-                                        <div class="info-row">
-                                            <span class="label">รายละเอียดเพิ่มเติม</span>
-                                            <span class="value">
-                                                ติดต่อสะดวกช่วงวันทำการ 09:00–16:00 น.
-                                            </span>
+                                            <div class="tab-pane fade" id="tab-debtor">
+                                                <!-- ข้อมูลลูกหนี้สังกัดนายจ้าง -->
+                                                <p class="text-muted">เนื้อหาข้อมูลลูกหนี้สังกัดนายจ้าง</p>
+                                            </div>
+
+                                            <div class="tab-pane fade" id="tab-deduction">
+                                                <!-- ข้อมูลการหักเงินนำส่ง -->
+                                                <p class="text-muted">เนื้อหาข้อมูลการหักเงินนำส่ง</p>
+                                            </div>
+
+                                            <div class="tab-pane fade" id="tab-request-history">
+                                                <!-- ประวัติการยื่นคำขอ -->
+                                                <p class="text-muted">เนื้อหาประวัติการยื่นคำขอ</p>
+                                            </div>
+
+                                            <div class="tab-pane fade" id="tab-letter-history">
+                                                <!-- ประวัติการส่งจดหมาย -->
+                                                <p class="text-muted">เนื้อหาประวัติการส่งจดหมาย</p>
+                                            </div>
+
                                         </div>
 
 
