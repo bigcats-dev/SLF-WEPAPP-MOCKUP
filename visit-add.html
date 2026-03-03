@@ -102,7 +102,7 @@
                                             <input type="date" class="form-control">
                                         </div>
                                     </div>
-                                    <!-- <div class="row mb-3">
+                                    <div class="row mb-3">
                                         <div class="col-md-4">
                                             <label class="form-label">ภาค</label>
                                             <select class="form-select" id="regionSelect">
@@ -122,7 +122,7 @@
                                             <label class="form-label">จังหวัดที่เลือก</label>
                                             <div id="selectedProvinces" class="d-flex flex-wrap gap-2"></div>
                                         </div>
-                                    </div>  -->
+                                    </div> 
                                     <hr> 
                                     <div class="d-flex justify-content-between mt-4">
                                         <button class="btn btn-outline-primary">บันทึกร่าง</button>
@@ -159,20 +159,20 @@
                                                 20 กุมภาพันธ์ 2569
                                             </div>
                                         </div>
-                                        <!-- <div class="row">
+                                        <div class="row">
                                             <div class="col-md-3 text-muted">จังหวัดที่ลงพื้นที่</div>
                                             <div class="col-md-9">
                                                 <span class="badge bg-secondary me-1">กรุงเทพมหานคร</span>
                                                 <span class="badge bg-secondary me-1">นนทบุรี</span>
                                                 <span class="badge bg-secondary me-1">ปทุมธานี</span>
                                             </div>
-                                        </div> -->
+                                        </div>
                                     </div> 
                                     <hr>
                                     <div class="row g-3">
                                         <!-- ชื่อนายจ้าง -->
                                         <div class="col-md-3">
-                                            <label class="form-label">ชื่อนายจ้าง</label>
+                                            <label class="form-label">ชื่อองค์กรนายจ้าง</label>
                                             <input type="text" class="form-control" placeholder="ค้นหาชื่อบริษัท">
                                         </div>
                                         <!-- TAX ID -->
@@ -248,9 +248,9 @@
                                             </div>
                                         </div>
                                         <!-- ปุ่ม -->
-                                        <div class="col-md-12 d-flex justify-content-end gap-2">
-                                            <button class="btn btn-primary">
-                                            ค้นหา
+                                        <div class="col-md-12 d-flex justify-content-center gap-2">
+                                            <button class="btn btn-primary" id="searchBtn">
+                                            ค้นหารายชื่อ
                                             </button>
                                             <button class="btn btn-outline-secondary">
                                             ล้างค่า
@@ -259,189 +259,217 @@
                                     </div>
                                   
                                     <hr>
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered table-hover align-middle">
-                                            <thead class="table-light text-center">
-                                                <tr>
-                                                    <th width="40">
-                                                        <input type="checkbox">
-                                                    </th>
-                                                    <th width="60">ลำดับ</th>
-                                                    <th>ชื่อนายจ้าง</th>
-                                                    <th>TAX ID</th>
-                                                    <th>ชื่อผู้ติดต่อ</th>
-                                                    <th>เบอร์โทร</th>
-                                                    <th>ที่อยู่</th>
-                                                    <th>จังหวัด</th>
-                                                    <th>ภาค</th>
-                                                    <th>&nbsp;</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td><input type="checkbox"></td>
-                                                    <td>1</td>
-                                                    <td>บริษัท ไทยรุ่งเรือง จำกัด</td>
-                                                    <td>0105551234567</td>
-                                                    <td>123 ถ.สุขุมวิท</td>
-                                                    <td>กรุงเทพฯ</td>
-                                                    <td>กลาง</td>
-                                                    <td>สมชาย ใจดี</td>
-                                                    <td>081-234-5678</td>
-                                                    <td class="text-center">
-                                                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#companyDetailModal">
-                                                        ดูรายละเอียด
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><input type="checkbox"></td>
-                                                    <td>2</td>
-                                                    <td>อยุธยาอุตสาหกรรม</td>
-                                                    <td>0105551234567</td>
-                                                    <td>199 ถ.โรจนะ</td>
-                                                    <td>พระนครศรีอยุธยา</td>
-                                                    <td>กลาง</td>
-                                                    <td>ประเสริฐ ใจมั่น</td>
-                                                    <td>081-777-4444</td>
-                                                    <td class="text-center">
-                                                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#companyDetailModal">
-                                                        ดูรายละเอียด
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><input type="checkbox"></td>
-                                                    <td>3</td>
-                                                    <td>ลพบุรีเกษตร</td>
-                                                    <td>0105551234567</td>
-                                                    <td>77 ถ.พหลโยธิน</td>
-                                                    <td>ลพบุรี</td>
-                                                    <td>กลาง</td>
-                                                    <td>รัตนา บุญมี</td>
-                                                    <td>084-222-3344</td>
-                                                    <td class="text-center">
-                                                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#companyDetailModal">
-                                                        ดูรายละเอียด
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><input type="checkbox"></td>
-                                                    <td>4</td>
-                                                    <td>ปทุมธานีพลาสติก</td>
-                                                    <td>0105551234567</td>
-                                                    <td>45 ถ.รังสิต-นครนายก</td>
-                                                    <td>ปทุมธานี</td>
-                                                    <td>กลาง</td>
-                                                    <td>ชัยวัฒน์ ทองสุข</td>
-                                                    <td>086-123-8899</td>
-                                                    <td class="text-center">
-                                                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#companyDetailModal">
-                                                        ดูรายละเอียด
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><input type="checkbox"></td>
-                                                    <td>5</td>
-                                                    <td>สมุทรปราการโลจิสติกส์</td>
-                                                    <td>0105551234567</td>
-                                                    <td>88 ถ.เทพารักษ์</td>
-                                                    <td>สมุทรปราการ</td>
-                                                    <td>กลาง</td>
-                                                    <td>ธนา พูนทรัพย์</td>
-                                                    <td>089-555-1111</td>
-                                                    <td class="text-center">
-                                                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#companyDetailModal">
-                                                        ดูรายละเอียด
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><input type="checkbox"></td>
-                                                    <td>6</td>
-                                                    <td>นครปฐมฟาร์ม</td>
-                                                    <td>0105551234567</td>
-                                                    <td>12 ถ.มาลัยแมน</td>
-                                                    <td>นครปฐม</td>
-                                                    <td>กลาง</td>
-                                                    <td>วรชัย แสงดี</td>
-                                                    <td>082-888-2233</td>
-                                                    <td class="text-center">
-                                                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#companyDetailModal">
-                                                        ดูรายละเอียด
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><input type="checkbox"></td>
-                                                    <td>7</td>
-                                                    <td>นนทบุรีเทค</td>
-                                                    <td>0105551234567</td>
-                                                    <td>66 ถ.งามวงศ์วาน</td>
-                                                    <td>นนทบุรี</td>
-                                                    <td>กลาง</td>
-                                                    <td>ศิริชัย มั่นคง</td>
-                                                    <td>081-999-6677</td>
-                                                    <td class="text-center">
-                                                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#companyDetailModal">
-                                                        ดูรายละเอียด
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><input type="checkbox"></td>
-                                                    <td>8</td>
-                                                    <td>สระบุรีซีเมนต์</td>
-                                                    <td>0105551234567</td>
-                                                    <td>101 ถ.มิตรภาพ</td>
-                                                    <td>สระบุรี</td>
-                                                    <td>กลาง</td>
-                                                    <td>อนุชา เกษมสุข</td>
-                                                    <td>087-444-2211</td>
-                                                    <td class="text-center">
-                                                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#companyDetailModal">
-                                                        ดูรายละเอียด
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><input type="checkbox"></td>
-                                                    <td>9</td>
-                                                    <td>ราชบุรีฟู้ดโปรดักส์</td>
-                                                    <td>0105551234567</td>
-                                                    <td>55 ถ.เพชรเกษม</td>
-                                                    <td>ราชบุรี</td>
-                                                    <td>กลาง</td>
-                                                    <td>พิมพ์ใจ สุขสันต์</td>
-                                                    <td>085-333-7788</td>
-                                                    <td class="text-center">
-                                                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#companyDetailModal">
-                                                        ดูรายละเอียด
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><input type="checkbox"></td>
-                                                    <td>10</td>
-                                                    <td>สุพรรณบุรีการเกษตร</td>
-                                                    <td>0105551234567</td>
-                                                    <td>9 ถ.มาลัยแมน</td>
-                                                    <td>สุพรรณบุรี</td>
-                                                    <td>กลาง</td>
-                                                    <td>ธีรพล วัฒนะ</td>
-                                                    <td>083-666-9090</td>
-                                                    <td class="text-center">
-                                                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#companyDetailModal">
-                                                        ดูรายละเอียด
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                    
+                                    <div class="row">
+                                        <div class="col-lg-5">
+                                            <h5>ผลการค้นหา <b>10</b> รายการ</h5> 
+                                            <div class="table-org d-none" id="resultTable">
+                                                <hr>
+                                                <div class="table-responsive"> 
+                                                    <table class="table table-bordered table-hover align-middle">
+                                                        <thead class="table-light text-center">
+                                                            <tr>
+                                                                <th width="40">
+                                                                    <input type="checkbox">
+                                                                </th> 
+                                                                <th>ชื่อนายจ้าง</th>
+                                                                <th width="160">TAX ID</th>
+                                                                <th>ที่อยู่</th>
+                                                                <th width="120">&nbsp;</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+
+                                                            <tr>
+                                                                <td><input type="checkbox"></td> 
+                                                                <td>บริษัท ไทยรุ่งเรือง จำกัด</td>
+                                                                <td>0105551234567</td>
+                                                                <td>123 ถ.สุขุมวิท แขวงคลองตัน เขตคลองเตย กรุงเทพมหานคร 10110</td>
+                                                                <td class="text-center">
+                                                                    <button class="btn btn-sm btn-outline-primary"
+                                                                            data-bs-toggle="modal"
+                                                                            data-bs-target="#companyDetailModal">
+                                                                        <i class="far fa-eye"></i>
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td><input type="checkbox"></td> 
+                                                                <td>อยุธยาอุตสาหกรรม</td>
+                                                                <td>0105552234567</td>
+                                                                <td>199 ถ.โรจนะ ต.คานหาม อ.อุทัย พระนครศรีอยุธยา 13210</td>
+                                                                <td class="text-center">
+                                                                    <button class="btn btn-sm btn-outline-primary"
+                                                                            data-bs-toggle="modal"
+                                                                            data-bs-target="#companyDetailModal">
+                                                                        <i class="far fa-eye"></i>
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td><input type="checkbox"></td> 
+                                                                <td>ลพบุรีเกษตร</td>
+                                                                <td>0105553234567</td>
+                                                                <td>77 ถ.พหลโยธิน ต.ท่าศาลา อ.เมืองลพบุรี ลพบุรี 15000</td>
+                                                                <td class="text-center">
+                                                                    <button class="btn btn-sm btn-outline-primary"
+                                                                            data-bs-toggle="modal"
+                                                                            data-bs-target="#companyDetailModal">
+                                                                        <i class="far fa-eye"></i>
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td><input type="checkbox"></td> 
+                                                                <td>ปทุมธานีพลาสติก</td>
+                                                                <td>0105554234567</td>
+                                                                <td>45 ถ.รังสิต-นครนายก ต.ประชาธิปัตย์ อ.ธัญบุรี ปทุมธานี 12130</td>
+                                                                <td class="text-center">
+                                                                    <button class="btn btn-sm btn-outline-primary"
+                                                                            data-bs-toggle="modal"
+                                                                            data-bs-target="#companyDetailModal">
+                                                                        <i class="far fa-eye"></i>
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td><input type="checkbox"></td> 
+                                                                <td>สมุทรปราการโลจิสติกส์</td>
+                                                                <td>0105555234567</td>
+                                                                <td>88 ถ.เทพารักษ์ ต.บางพลีใหญ่ อ.บางพลี สมุทรปราการ 10540</td>
+                                                                <td class="text-center">
+                                                                    <button class="btn btn-sm btn-outline-primary"
+                                                                            data-bs-toggle="modal"
+                                                                            data-bs-target="#companyDetailModal">
+                                                                        <i class="far fa-eye"></i>
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td><input type="checkbox"></td> 
+                                                                <td>นครปฐมฟาร์ม</td>
+                                                                <td>0105556234567</td>
+                                                                <td>12 ถ.มาลัยแมน ต.พระปฐมเจดีย์ อ.เมืองนครปฐม นครปฐม 73000</td>
+                                                                <td class="text-center">
+                                                                    <button class="btn btn-sm btn-outline-primary"
+                                                                            data-bs-toggle="modal"
+                                                                            data-bs-target="#companyDetailModal">
+                                                                        <i class="far fa-eye"></i>
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td><input type="checkbox"></td> 
+                                                                <td>นนทบุรีเทค</td>
+                                                                <td>0105557234567</td>
+                                                                <td>66 ถ.งามวงศ์วาน ต.บางเขน อ.เมืองนนทบุรี นนทบุรี 11000</td>
+                                                                <td class="text-center">
+                                                                    <button class="btn btn-sm btn-outline-primary"
+                                                                            data-bs-toggle="modal"
+                                                                            data-bs-target="#companyDetailModal">
+                                                                        <i class="far fa-eye"></i>
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td><input type="checkbox"></td> 
+                                                                <td>สระบุรีซีเมนต์</td>
+                                                                <td>0105558234567</td>
+                                                                <td>101 ถ.มิตรภาพ ต.ปากเพรียว อ.เมืองสระบุรี สระบุรี 18000</td>
+                                                                <td class="text-center">
+                                                                    <button class="btn btn-sm btn-outline-primary"
+                                                                            data-bs-toggle="modal"
+                                                                            data-bs-target="#companyDetailModal">
+                                                                        <i class="far fa-eye"></i>
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td><input type="checkbox"></td> 
+                                                                <td>ราชบุรีฟู้ดโปรดักส์</td>
+                                                                <td>0105559234567</td>
+                                                                <td>55 ถ.เพชรเกษม ต.หน้าเมือง อ.เมืองราชบุรี ราชบุรี 70000</td>
+                                                                <td class="text-center">
+                                                                    <button class="btn btn-sm btn-outline-primary"
+                                                                            data-bs-toggle="modal"
+                                                                            data-bs-target="#companyDetailModal">
+                                                                        <i class="far fa-eye"></i>
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td><input type="checkbox"></td> 
+                                                                <td>สุพรรณบุรีการเกษตร</td>
+                                                                <td>0105560234567</td>
+                                                                <td>9 ถ.มาลัยแมน ต.ท่าพี่เลี้ยง อ.เมืองสุพรรณบุรี สุพรรณบุรี 72000</td>
+                                                                <td class="text-center">
+                                                                    <button class="btn btn-sm btn-outline-primary"
+                                                                            data-bs-toggle="modal"
+                                                                            data-bs-target="#companyDetailModal">
+                                                                        <i class="far fa-eye"></i>
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-1 pt-5">
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <button class="btn btn-sm btn-primary" id="addToBucket">
+                                                <i class="fas fa-long-arrow-alt-right"></i> เพิ่มเข้า Bucket
+                                            </button>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+
+                                            <button class="btn btn-sm btn-danger" id="removeFromBucket">
+                                                นำออกจาก Bucket
+                                            </button>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h5>รายชื่อใน Bucket เลือกแล้ว  <span><b id="bucketCount">0</b></span> รายชื่อ</h5> 
+                                            <div class="table-org ">
+                                                <hr>
+                                                <div class="table-responsive"> 
+                                                    <table class="table table-bordered table-hover align-middle">
+                                                        <thead class="table-light text-center">
+                                                            <tr>
+                                                                <th width="40">
+                                                                    <input type="checkbox">
+                                                                </th>
+                                                                <th width="60">ลำดับ</th>
+                                                                <th>ชื่อนายจ้าง</th>
+                                                                <th width="160">TAX ID</th>
+                                                                <th>ที่อยู่</th>
+                                                                <th width="120">&nbsp;</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="bucketBody"> </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     </div>
-                                    <hr>
+                               
 
                                     <div class="d-flex justify-content-between mt-4">
                                         <button class="btn btn-outline-secondary" onclick="prevStep(1)">
@@ -485,7 +513,7 @@
                                                 20 กุมภาพันธ์ 2569
                                             </div>
                                         </div> 
-                                        <!-- <div class="row mb-2 align-items-start">
+                                        <div class="row mb-2 align-items-start">
                                             <div class="col-md-3 text-muted">จังหวัดที่ลงพื้นที่</div>
                                             <div class="col-md-9">
                                                 <span class="badge bg-secondary me-1">กรุงเทพมหานคร</span>
@@ -495,7 +523,7 @@
                                                     (รวม 3 จังหวัด)
                                                 </span>
                                             </div>
-                                        </div> -->
+                                        </div>
 
                                         <div class="row">
                                             <div class="col-md-3 text-muted">รวมทั้งหมด บริษัท/องค์กร</div>
@@ -688,13 +716,162 @@
                                     <button class="btn btn-secondary me-2" onclick="changeStep(3)">
                                     ← กลับไปแก้ไข
                                     </button>
-                                    <button class="btn btn-primary" onclick="changeStep(4)">
+                                    <button class="btn btn-primary" onclick="changeStep(5)">
                                     ยืนยันและบันทึก
                                     </button>
                                 </div>
                             </div>
                         </div>
-                       
+                        <div id="step-5" class="step-content d-none">
+                            <div class="card shadow-sm"> 
+                                <div class="card-header fw-semibold">
+                                    สรุปการสร้างรอบลงพื้นที่
+                                </div>
+                                <div class="card-body">
+
+                                    <h6 class="fw-bold">ข้อมูลรอบลงพื้นที่</h6>
+                                    <hr>
+
+                                    <div class="row mb-2">
+                                        <div class="col-md-3 fw-bold">ชื่อรอบ</div>
+                                        <div class="col-md-9">รอบตรวจนายจ้าง ไตรมาส 1/2569</div>
+                                    </div>
+
+                                    <div class="row mb-2">
+                                        <div class="col-md-3 fw-bold">วันที่เริ่ม</div>
+                                        <div class="col-md-9">10 กุมภาพันธ์ 2569</div>
+                                    </div>
+
+                                    <div class="row mb-2">
+                                        <div class="col-md-3 fw-bold">วันที่สิ้นสุด</div>
+                                        <div class="col-md-9">20 กุมภาพันธ์ 2569</div>
+                                    </div>
+
+                                    <div class="row mb-2">
+                                        <div class="col-md-3 fw-bold">จังหวัดที่ลงพื้นที่</div>
+                                        <div class="col-md-9">
+                                            กรุงเทพมหานคร, นนทบุรี, ปทุมธานี
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-4">
+                                        <div class="col-md-3 fw-bold">รวมทั้งหมด</div>
+                                        <div class="col-md-9 text-primary fw-bold">
+                                            28 แห่ง
+                                        </div>
+                                    </div>
+
+                                    <h6 class="fw-bold">การแจกจ่ายงานให้แต่ละทีม</h6>
+                                    <hr>
+
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered align-middle">
+                                            <thead class="table-light text-center">
+                                                <tr>
+                                                    <th width="60">ลำดับ</th>
+                                                    <th width="180">ชื่อทีม</th>
+                                                    <th>รายชื่อบริษัทที่รับผิดชอบ</th>
+                                                    <th width="120">จำนวน</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td>
+                                                        ทีม A
+                                                        <div class="mt-1">
+                                                            <button class="btn btn-sm btn-outline-info"
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#teamDetailModal"
+                                                                    onclick="loadTeamDetail('ทีม A')">
+                                                                ดูข้อมูลทีม
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <strong>บริษัท ไทยรุ่งเรือง จำกัด</strong><br>
+                                                        123 ถ.สุขุมวิท กรุงเทพมหานคร<br><br>
+
+                                                        <strong>อยุธยาอุตสาหกรรม</strong><br>
+                                                        199 ถ.โรจนะ พระนครศรีอยุธยา<br><br>
+
+                                                        <strong>ลพบุรีเกษตร</strong><br>
+                                                        77 ถ.พหลโยธิน ลพบุรี
+                                                    </td>
+                                                    <td class="text-center">3</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td>
+                                                        ทีม B
+                                                        <div class="mt-1">
+                                                            <button class="btn btn-sm btn-outline-info"
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#teamDetailModal"
+                                                                    onclick="loadTeamDetail('ทีม B')">
+                                                                ดูข้อมูลทีม
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <strong>ปทุมธานีพลาสติก</strong><br>
+                                                        45 ถ.รังสิต-นครนายก ปทุมธานี<br><br>
+
+                                                        <strong>สมุทรปราการโลจิสติกส์</strong><br>
+                                                        88 ถ.เทพารักษ์ สมุทรปราการ<br><br>
+
+                                                        <strong>นครปฐมฟาร์ม</strong><br>
+                                                        12 ถ.มาลัยแมน นครปฐม
+                                                    </td>
+                                                    <td class="text-center">3</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center">3</td>
+                                                    <td>
+                                                        ทีม C
+                                                        <div class="mt-1">
+                                                            <button class="btn btn-sm btn-outline-info"
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#teamDetailModal"
+                                                                    onclick="loadTeamDetail('ทีม C')">
+                                                                ดูข้อมูลทีม
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <strong>นนทบุรีเทค</strong><br>
+                                                        66 ถ.งามวงศ์วาน นนทบุรี<br><br>
+
+                                                        <strong>สระบุรีซีเมนต์</strong><br>
+                                                        101 ถ.มิตรภาพ สระบุรี<br><br>
+
+                                                        <strong>ราชบุรีฟู้ดโปรดักส์</strong><br>
+                                                        55 ถ.เพชรเกษม ราชบุรี<br><br>
+
+                                                        <strong>สุพรรณบุรีการเกษตร</strong><br>
+                                                        9 ถ.มาลัยแมน สุพรรณบุรี
+                                                    </td>
+                                                    <td class="text-center">4</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                                <div class="card-footer text-end">
+                                    <button class="btn btn-success">
+                                        พิมพ์ / Export PDF
+                                    </button>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -818,7 +995,22 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="teamDetailModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
 
+                    <div class="modal-header">
+                        <h5 class="modal-title">ข้อมูลทีม</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body" id="teamDetailContent">
+                        <!-- JS จะใส่ข้อมูลตรงนี้ -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
 
         <script src="js/jquery.min.js"></script> 
         <script src="js/popper.min.js" ></script>
@@ -891,7 +1083,7 @@
             const teamId = 'team_' + teamIndex;
 
             const teamHTML = `
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="card shadow-sm h-100">
                     <div class="card-header fw-semibold">
                         ${teamName}
@@ -1121,7 +1313,126 @@
             markerMap[name].setMap(map);
         }
         </script>
+        <script>
+            document.getElementById('searchBtn').addEventListener('click', function () {
+                document.getElementById('resultTable').classList.remove('d-none');
+            });
 
+            document.getElementById('resetBtn').addEventListener('click', function () {
+                document.getElementById('resultTable').classList.add('d-none');
+            });
+        </script>
+        <script>
+            const addBtn = document.getElementById('addToBucket');
+            const removeBtn = document.getElementById('removeFromBucket');
+            const bucketBody = document.getElementById('bucketBody');
 
+            addBtn.addEventListener('click', function () {
+                const checkedRows = document.querySelectorAll(
+                    '#resultTable tbody input[type="checkbox"]:checked'
+                );
 
+                checkedRows.forEach((checkbox) => {
+                    const row = checkbox.closest('tr');
+                    const name = row.children[1].innerText;
+                    const tax = row.children[2].innerText;
+                    const address = row.children[3].innerText;
+
+                    // กันเพิ่มซ้ำ
+                    if ([...bucketBody.children].some(r => r.dataset.tax === tax)) {
+                        checkbox.checked = false;
+                        return;
+                    }
+
+                    const newRow = document.createElement('tr');
+                    newRow.dataset.tax = tax;
+
+                    newRow.innerHTML = `
+                        <td><input type="checkbox"></td>
+                        <td class="text-center"></td>
+                        <td>${name}</td>
+                        <td>${tax}</td>
+                        <td>${address}</td>
+                        <td class="text-center">
+                            <button class="btn btn-sm btn-outline-danger removeRow">ลบ</button>
+                        </td>
+                    `;
+
+                    bucketBody.appendChild(newRow);
+                    checkbox.checked = false;
+                });
+
+                updateIndex();
+            });
+
+            removeBtn.addEventListener('click', function () {
+                const checkedBucket = bucketBody.querySelectorAll(
+                    'input[type="checkbox"]:checked'
+                );
+
+                checkedBucket.forEach((checkbox) => {
+                    checkbox.closest('tr').remove();
+                });
+
+                updateIndex();
+            });
+
+            // ลบทีละแถวจากปุ่มในแถว
+            bucketBody.addEventListener('click', function (e) {
+                if (e.target.classList.contains('removeRow')) {
+                    e.target.closest('tr').remove();
+                    updateIndex();
+                }
+            });
+
+            function updateIndex() {
+                [...bucketBody.children].forEach((row, index) => {
+                    row.children[1].innerText = index + 1;
+                });
+            }
+        </script>
+        <script>
+        const bucketCount = document.getElementById('bucketCount');
+
+        function updateIndex() {
+            const rows = [...bucketBody.children];
+
+            rows.forEach((row, index) => {
+                row.children[1].innerText = index + 1;
+            });
+
+            bucketCount.innerText = rows.length;
+        }
+        </script>
+        <script>
+        function loadTeamDetail(teamName) {
+
+            const teamData = {
+                "ทีม A": {
+                    leader: "นายสมชาย ใจดี",
+                    phone: "081-111-1111",
+                    members: 5
+                },
+                "ทีม B": {
+                    leader: "นางสาวอรทัย พรชัย",
+                    phone: "082-222-2222",
+                    members: 4
+                },
+                "ทีม C": {
+                    leader: "นายประสิทธิ์ แสงทอง",
+                    phone: "083-333-3333",
+                    members: 6
+                }
+            };
+
+            const data = teamData[teamName];
+
+            document.getElementById("teamDetailContent").innerHTML = `
+                <p><strong>ชื่อทีม:</strong> ${teamName}</p>
+                <p><strong>หัวหน้าทีม:</strong> ${data.leader}</p>
+                <p><strong>เบอร์โทร:</strong> ${data.phone}</p>
+                <p><strong>จำนวนสมาชิก:</strong> ${data.members} คน</p>
+            `;
+        }
+        </script>
 </html>

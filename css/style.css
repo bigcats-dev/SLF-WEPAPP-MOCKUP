@@ -726,9 +726,9 @@ h3 {
   .pc-x{
     display: none !important;
   }   
-  .table-responsive .btn i{
+  /* .table-responsive .btn i{
     display: none;
-  }  
+  }   */
   .table-responsive .btn i.trashx{
     display: block;
   }
