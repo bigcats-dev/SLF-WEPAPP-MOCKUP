@@ -102,7 +102,7 @@
                                             <input type="date" class="form-control">
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
+                                    <div class="row mb-3"> 
                                         <div class="col-md-4">
                                             <label class="form-label">ภาค</label>
                                             <select class="form-select" id="regionSelect">
@@ -169,92 +169,165 @@
                                         </div>
                                     </div> 
                                     <hr>
-                                    <div class="row g-3">
+                                    <button type="button" class="btn btn-sm btn-success"><i class="fal fa-file-excel"></i> Importรายชื่อองค์กรนายจ้าง</button>
+                                    <button type="button" class="btn btn-sm btn-outline-success"><i class="fal fa-file-excel"></i> Export รายชื่อองค์กรนายจ้าง</button>
+                                    <div class="row g-3 mt-2">
                                         <!-- ชื่อนายจ้าง -->
-                                        <div class="col-md-3">
-                                            <label class="form-label">ชื่อองค์กรนายจ้าง</label>
-                                            <input type="text" class="form-control" placeholder="ค้นหาชื่อบริษัท">
-                                        </div>
-                                        <!-- TAX ID -->
-                                        <div class="col-md-3">
-                                            <label class="form-label">TAX ID</label>
-                                            <input type="text" class="form-control" placeholder="เลขผู้เสียภาษี">
-                                        </div>
-                                        <!-- ภาค -->
-                                        <div class="col-md-3">
-                                            <label class="form-label">ภาค</label>
-                                            <select class="form-select" id="regionSelect">
-                                                <option value="">ทั้งหมด</option>
-                                                <option value="north">ภาคเหนือ</option>
-                                                <option value="northeast">ภาคตะวันออกเฉียงเหนือ</option>
-                                                <option value="central">ภาคกลาง</option>
-                                                <option value="east">ภาคตะวันออก</option>
-                                                <option value="west">ภาคตะวันตก</option>
-                                                <option value="south">ภาคใต้</option>
-                                            </select>
-                                        </div>
-                                        <!-- จังหวัด -->
-                                        <div class="col-md-3">
-                                            <label class="form-label">จังหวัด</label>
-                                            <select class="form-select" id="provinceSelect" disabled>
-                                                <option value="">ทั้งหมด</option>
-                                            </select>
-                                        </div>
-                                        <!-- สถานะนายจ้าง -->
-                                        <div class="col-md-2">
-                                            <label class="form-label">สถานะนายจ้าง</label>
-                                            <select class="form-select">
-                                                <option value="">ทั้งหมด</option>
-                                                <option value="inactive">ไม่เข้าระบบ</option>
-                                                <option value="pending">ค้างชำระ</option>
-                                                <option value="default">ผิดนัด</option>
-                                            </select>
-                                        </div>
 
-                                        <!-- สถานะการเข้าพบ -->
-                                        <div class="col-md-2">
-                                            <label class="form-label">สถานะการเข้าพบ</label>
-                                            <select class="form-select">
-                                                <option value="">ทั้งหมด</option>
-                                                <option value="visited">มีการเข้าพบ</option>
-                                                <option value="not_visited">ไม่มีการเข้าพบ</option>
-                                            </select>
-                                        </div>
-
-                                        <!-- ลงพื้นที่ซ้ำ -->
-                                        <div class="col-md-2">
-                                            <label class="form-label">การลงพื้นที่</label>
-                                            <select class="form-select">
-                                                <option value="">ทั้งหมด</option>
-                                                <option value="never">ไม่เคยเยี่ยม</option>
-                                                <option value="repeat">เคยเยี่ยม</option>
-                                            </select>
-                                        </div>
-
-                                        <!-- จำนวนเงิน -->
-                                        <div class="col-md-3">
-                                            <label class="form-label">จำนวนเงิน (บาท)</label>
-                                            <div class="d-flex gap-2">
-                                                <input type="number" class="form-control" placeholder="ต่ำสุด">
-                                                <input type="number" class="form-control" placeholder="สูงสุด">
+                                        
+                                        <div class="row  ">
+                                            <div class="col-md-3">
+                                                <label class="form-label">การมีหน้าที่</label>
+                                                <select class="form-select" id="dutiesType">
+                                                    <option value="">กรุณาเลือก</option>
+                                                    <option value="duties">มีหน้าที่</option>
+                                                    <option value="noduties">ไม่มีหน้าที่</option>
+                                                </select>
+                                            </div> 
+                                            <div class="col-lg-6" id="dutiesSection" style="display:none;">
+                                                <div class="row" > 
+                                                    <div class="col-md-6">
+                                                        <label class="form-label">สถานะการทำข้อมูลบนระบบ</label>
+                                                        <select class="form-select">
+                                                            <option>ทั้งหมด</option>
+                                                            <option>รอยืนยัน</option>
+                                                            <option>ยืนยันข้อมูลแล้ว</option>
+                                                            <option>รอชำระเงิน</option>
+                                                            <option>ชำระเงินแล้ว</option>
+                                                            <option>ไม่มีจำนวนเงินต้องนำส่ง (ยืนยันนำส่ง 0 บาท)</option>
+                                                        </select>
+                                                    </div> 
+                                                    <div class="col-md-6">
+                                                        <label class="form-label">สถานะการนำส่งเงิน</label>
+                                                        <select class="form-select">
+                                                            <option>ทั้งหมด</option>
+                                                            <option>นำส่งปกติ (แสดงจำนวนเงินที่รับชำระ)</option>
+                                                            <option>ค้างชำระ 1 งวด</option>
+                                                            <option>ค้างชำระ 2 งวด</option>
+                                                            <option>ค้างชำระ 3 งวด</option>
+                                                            <option>ค้างชำระ 4 งวด</option>
+                                                            <option>ค้างชำระ 5 งวด</option>
+                                                            <option>ค้างชำระ 6 งวด</option>
+                                                            <option>ค้างชำระ 7 งวด</option>
+                                                            <option>ค้างชำระ 8 งวด</option>
+                                                            <option>ค้างชำระ 9 งวด</option>
+                                                            <option>ค้างชำระ 10 งวด</option>
+                                                            <option>ค้างชำระ 11 งวด</option>
+                                                            <option>ค้างชำระ 12 งวด</option>
+                                                            <option>ค้างชำระ 13 งวดขึ้นไป</option>
+                                                        </select>
+                                                    </div> 
+                                                </div> 
+                                            </div>
+                                            <div class="col-lg-6" id="noDutiesSection" style="display:none;">
+                                                <div class="row"> 
+                                                    <div class="col-md-6">
+                                                        <label class="form-label">จำนวนเงินได้</label>
+                                                        <input type="text" class="form-control">
+                                                    </div> 
+                                                    <div class="col-md-6">
+                                                        <label class="form-label">ประเภทหน่วยงาน</label>
+                                                        <select class="form-select">
+                                                            <option>ทั้งหมด</option>
+                                                            <option>หน่วยงานรัฐ</option>
+                                                            <option>ธนาคารไทยพาณิชย์ไทย</option>
+                                                            <option>องค์การปกครองส่วนท้องถิ่น</option>
+                                                            <option>รัฐวิสาหกิจ</option>
+                                                            <option>หน่วยงานเอกชน</option>
+                                                            <option>สถานศึกษา</option>
+                                                            <option>องค์กรอิสระ</option>
+                                                            <option>หน่วยงานรัฐ/สถานศึกษา</option>
+                                                        </select>
+                                                    </div>  
+                                                </div>
                                             </div>
                                         </div>
-                                        <!-- จำนวนผู้กู้ -->
-                                        <div class="col-md-3">
-                                            <label class="form-label">จำนวนผู้กู้</label>
-                                            <div class="d-flex gap-2">
-                                                <input type="number" class="form-control" placeholder="ต่ำสุด">
-                                                <input type="number" class="form-control" placeholder="สูงสุด">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <label class="form-label">ชื่อองค์กรนายจ้าง</label>
+                                                <input type="text" class="form-control" placeholder="ค้นหาชื่อบริษัท">
                                             </div>
-                                        </div>
-                                        <!-- ปุ่ม -->
-                                        <div class="col-md-12 d-flex justify-content-center gap-2">
-                                            <button class="btn btn-primary" id="searchBtn">
-                                            ค้นหารายชื่อ
-                                            </button>
-                                            <button class="btn btn-outline-secondary">
-                                            ล้างค่า
-                                            </button>
+                                            <!-- TAX ID -->
+                                            <div class="col-md-3">
+                                                <label class="form-label">TAX ID</label>
+                                                <input type="text" class="form-control" placeholder="เลขผู้เสียภาษี">
+                                            </div>
+                                            <!-- ภาค -->
+                                            <div class="col-md-3">
+                                                <label class="form-label">ภาค</label>
+                                                <select class="form-select" id="regionSelect">
+                                                    <option value="">ทั้งหมด</option>
+                                                    <option value="north">ภาคเหนือ</option>
+                                                    <option value="northeast">ภาคตะวันออกเฉียงเหนือ</option>
+                                                    <option value="central">ภาคกลาง</option>
+                                                    <option value="east">ภาคตะวันออก</option>
+                                                    <option value="west">ภาคตะวันตก</option>
+                                                    <option value="south">ภาคใต้</option>
+                                                </select>
+                                            </div>
+                                            <!-- จังหวัด -->
+                                            <div class="col-md-3">
+                                                <label class="form-label">จังหวัด</label>
+                                                <select class="form-select" id="provinceSelect" disabled>
+                                                    <option value="">ทั้งหมด</option>
+                                                </select>
+                                            </div>
+                                            <!-- สถานะนายจ้าง -->
+                                            <div class="col-md-2">
+                                                <label class="form-label">สถานะนายจ้าง</label>
+                                                <select class="form-select">
+                                                    <option value="">ทั้งหมด</option>
+                                                    <option value="inactive">ไม่เข้าระบบ</option>
+                                                    <option value="pending">ค้างชำระ</option>
+                                                    <option value="default">ผิดนัด</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- สถานะการเข้าพบ -->
+                                            <div class="col-md-2">
+                                                <label class="form-label">สถานะการเข้าพบ</label>
+                                                <select class="form-select">
+                                                    <option value="">ทั้งหมด</option>
+                                                    <option value="visited">มีการเข้าพบ</option>
+                                                    <option value="not_visited">ไม่มีการเข้าพบ</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- ลงพื้นที่ซ้ำ -->
+                                            <div class="col-md-2">
+                                                <label class="form-label">การลงพื้นที่</label>
+                                                <select class="form-select">
+                                                    <option value="">ทั้งหมด</option>
+                                                    <option value="never">ไม่เคยเยี่ยม</option>
+                                                    <option value="repeat">เคยเยี่ยม</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- จำนวนเงิน -->
+                                            <div class="col-md-3">
+                                                <label class="form-label">จำนวนเงิน (บาท)</label>
+                                                <div class="d-flex gap-2">
+                                                    <input type="number" class="form-control" placeholder="ต่ำสุด">
+                                                    <input type="number" class="form-control" placeholder="สูงสุด">
+                                                </div>
+                                            </div>
+                                            <!-- จำนวนผู้กู้ -->
+                                            <div class="col-md-3">
+                                                <label class="form-label">จำนวนผู้กู้</label>
+                                                <div class="d-flex gap-2">
+                                                    <input type="number" class="form-control" placeholder="ต่ำสุด">
+                                                    <input type="number" class="form-control" placeholder="สูงสุด">
+                                                </div>
+                                            </div>
+                                            <!-- ปุ่ม -->
+                                            <div class="col-md-12 d-flex justify-content-center gap-2">
+                                                <button class="btn btn-primary" id="searchBtn">
+                                                ค้นหารายชื่อ
+                                                </button>
+                                                <button class="btn btn-outline-secondary">
+                                                ล้างค่า
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                   
@@ -1434,5 +1507,27 @@
                 <p><strong>จำนวนสมาชิก:</strong> ${data.members} คน</p>
             `;
         }
+        </script>
+
+        <script>
+        document.getElementById("dutiesType").addEventListener("change", function () {
+
+            const duties = document.getElementById("dutiesSection");
+            const noduties = document.getElementById("noDutiesSection");
+
+            if (this.value === "duties") {
+                duties.style.display = "block";
+                noduties.style.display = "none";
+            } 
+            else if (this.value === "noduties") {
+                duties.style.display = "none";
+                noduties.style.display = "block";
+            } 
+            else {
+                duties.style.display = "none";
+                noduties.style.display = "none";
+            }
+
+        });
         </script>
 </html>
