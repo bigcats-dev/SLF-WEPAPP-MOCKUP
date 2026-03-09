@@ -175,7 +175,7 @@
                                         <!-- ชื่อนายจ้าง -->
 
                                         
-                                        <div class="row  ">
+                                        <div class="row mb-2">
                                             <div class="col-md-3">
                                                 <label class="form-label">การมีหน้าที่</label>
                                                 <select class="form-select" id="dutiesType">
@@ -199,9 +199,10 @@
                                                     </div> 
                                                     <div class="col-md-6">
                                                         <label class="form-label">สถานะการนำส่งเงิน</label>
-                                                        <select class="form-select">
+                                                        <select class="form-select" id="paymentStatus">
                                                             <option>ทั้งหมด</option>
-                                                            <option>นำส่งปกติ (แสดงจำนวนเงินที่รับชำระ)</option>
+                                                            <option>นำส่งปกติ  </option>
+                                                            <option>นำส่งเกินกำหนด  </option>
                                                             <option>ค้างชำระ 1 งวด</option>
                                                             <option>ค้างชำระ 2 งวด</option>
                                                             <option>ค้างชำระ 3 งวด</option>
@@ -219,30 +220,39 @@
                                                     </div> 
                                                 </div> 
                                             </div>
+                                            <div class="col-md-3" id="lateGroup" style="display:none;">
+                                                <label class="form-label">กลุ่มความล่าช้า</label>
+                                                <select class="form-select">
+                                                    <option value="">กรุณาเลือก</option>
+                                                    <option value="30">กลุ่มล่าช้าไม่เกิน 30 วัน</option>
+                                                    <option value="60">กลุ่มล่าช้าไม่เกิน 60 วัน</option>
+                                                    <option value="90">กลุ่มล่าช้า 90+ วัน</option>
+                                                </select>
+                                            </div> 
                                             <div class="col-lg-6" id="noDutiesSection" style="display:none;">
                                                 <div class="row"> 
                                                     <div class="col-md-6">
                                                         <label class="form-label">จำนวนเงินได้</label>
                                                         <input type="text" class="form-control">
                                                     </div> 
-                                                    <div class="col-md-6">
-                                                        <label class="form-label">ประเภทหน่วยงาน</label>
-                                                        <select class="form-select">
-                                                            <option>ทั้งหมด</option>
-                                                            <option>หน่วยงานรัฐ</option>
-                                                            <option>ธนาคารไทยพาณิชย์ไทย</option>
-                                                            <option>องค์การปกครองส่วนท้องถิ่น</option>
-                                                            <option>รัฐวิสาหกิจ</option>
-                                                            <option>หน่วยงานเอกชน</option>
-                                                            <option>สถานศึกษา</option>
-                                                            <option>องค์กรอิสระ</option>
-                                                            <option>หน่วยงานรัฐ/สถานศึกษา</option>
-                                                        </select>
-                                                    </div>  
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
+                                        <div class="row mb-2">
+                                            <div class="col-md-3">
+                                                <label class="form-label">ประเภทหน่วยงาน</label>
+                                                <select class="form-select">
+                                                    <option>ทั้งหมด</option>
+                                                    <option>หน่วยงานรัฐ</option>
+                                                    <option>ธนาคารไทยพาณิชย์ไทย</option>
+                                                    <option>องค์การปกครองส่วนท้องถิ่น</option>
+                                                    <option>รัฐวิสาหกิจ</option>
+                                                    <option>หน่วยงานเอกชน</option>
+                                                    <option>สถานศึกษา</option>
+                                                    <option>องค์กรอิสระ</option>
+                                                    <option>หน่วยงานรัฐ/สถานศึกษา</option>
+                                                </select>
+                                            </div>  
                                             <div class="col-md-3">
                                                 <label class="form-label">ชื่อองค์กรนายจ้าง</label>
                                                 <input type="text" class="form-control" placeholder="ค้นหาชื่อบริษัท">
@@ -250,30 +260,72 @@
                                             <!-- TAX ID -->
                                             <div class="col-md-3">
                                                 <label class="form-label">TAX ID</label>
-                                                <input type="text" class="form-control" placeholder="เลขผู้เสียภาษี">
-                                            </div>
-                                            <!-- ภาค -->
+                                                <input type="text" class="form-control" placeholder="TAX ID">
+                                            </div>  
                                             <div class="col-md-3">
-                                                <label class="form-label">ภาค</label>
-                                                <select class="form-select" id="regionSelect">
-                                                    <option value="">ทั้งหมด</option>
-                                                    <option value="north">ภาคเหนือ</option>
-                                                    <option value="northeast">ภาคตะวันออกเฉียงเหนือ</option>
-                                                    <option value="central">ภาคกลาง</option>
-                                                    <option value="east">ภาคตะวันออก</option>
-                                                    <option value="west">ภาคตะวันตก</option>
-                                                    <option value="south">ภาคใต้</option>
-                                                </select>
+                                                <label class="form-label">ชื่อผู้ประสานงาน</label>
+                                                <input type="text" class="form-control" placeholder="ชื่อผู้ประสานงาน">
                                             </div>
-                                            <!-- จังหวัด -->
                                             <div class="col-md-3">
-                                                <label class="form-label">จังหวัด</label>
-                                                <select class="form-select" id="provinceSelect" disabled>
-                                                    <option value="">ทั้งหมด</option>
+                                                <label class="form-label">ประเภทการติดตาม</label>
+                                                <select class="form-select">
+                                                    <option>ทั้งหมด</option>
+                                                    <option>โทรศัพท์</option>
+                                                    <option>จดหมาย</option>
+                                                    <option>อีเมล</option>
+                                                    <option>SMS</option>
+                                                    <option>ลงพื้นที่</option> 
                                                 </select>
+                                            </div>  
+                                            <div class="col-lg-3">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label class="form-label">เดือน</label> 
+                                                        <select class="form-select form-select-sm">
+                                                            <option value="">เลือกเดือน</option>
+                                                            <option value="01">มกราคม</option>
+                                                            <option value="02">กุมภาพันธ์</option>
+                                                            <option value="03">มีนาคม</option>
+                                                            <option value="04">เมษายน</option>
+                                                            <option value="05">พฤษภาคม</option>
+                                                            <option value="06">มิถุนายน</option>
+                                                            <option value="07">กรกฎาคม</option>
+                                                            <option value="08">สิงหาคม</option>
+                                                            <option value="09">กันยายน</option>
+                                                            <option value="10">ตุลาคม</option>
+                                                            <option value="11">พฤศจิกายน</option>
+                                                            <option value="12">ธันวาคม</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="form-label">เลือกปี</label> 
+                                                        <select class="form-select form-select-sm">
+                                                            <option value="">เลือกปี</option>
+                                                            <option>2569</option>
+                                                            <option>2568</option>
+                                                            <option>2567</option>
+                                                            <option>2566</option>
+                                                            <option>2565</option>
+                                                            <option>2564</option>
+                                                            <option>2563</option>
+                                                            <option>2562</option>
+                                                            <option>2561</option>
+                                                            <option>2560</option>
+                                                            <option>2559</option>
+                                                            <option>2558</option>
+                                                            <option>2557</option>
+                                                            <option>2556</option>
+                                                            <option>2555</option>
+                                                            <option>2554</option>
+                                                            <option>2553</option>
+                                                            <option>2552</option>
+                                                            <option>2551</option>
+                                                            <option>2550</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <!-- สถานะนายจ้าง -->
-                                            <div class="col-md-2">
+                                            <!-- <div class="col-md-2">
                                                 <label class="form-label">สถานะนายจ้าง</label>
                                                 <select class="form-select">
                                                     <option value="">ทั้งหมด</option>
@@ -281,9 +333,7 @@
                                                     <option value="pending">ค้างชำระ</option>
                                                     <option value="default">ผิดนัด</option>
                                                 </select>
-                                            </div>
-
-                                            <!-- สถานะการเข้าพบ -->
+                                            </div> 
                                             <div class="col-md-2">
                                                 <label class="form-label">สถานะการเข้าพบ</label>
                                                 <select class="form-select">
@@ -291,17 +341,15 @@
                                                     <option value="visited">มีการเข้าพบ</option>
                                                     <option value="not_visited">ไม่มีการเข้าพบ</option>
                                                 </select>
-                                            </div>
-
-                                            <!-- ลงพื้นที่ซ้ำ -->
-                                            <div class="col-md-2">
+                                            </div>  -->
+                                            <!-- <div class="col-md-2">
                                                 <label class="form-label">การลงพื้นที่</label>
                                                 <select class="form-select">
                                                     <option value="">ทั้งหมด</option>
                                                     <option value="never">ไม่เคยเยี่ยม</option>
                                                     <option value="repeat">เคยเยี่ยม</option>
                                                 </select>
-                                            </div>
+                                            </div> -->
 
                                             <!-- จำนวนเงิน -->
                                             <div class="col-md-3">
@@ -318,9 +366,9 @@
                                                     <input type="number" class="form-control" placeholder="ต่ำสุด">
                                                     <input type="number" class="form-control" placeholder="สูงสุด">
                                                 </div>
-                                            </div>
-                                            <!-- ปุ่ม -->
-                                            <div class="col-md-12 d-flex justify-content-center gap-2">
+                                            </div> 
+
+                                            <div class="col-md-12 d-flex justify-content-center gap-2 mt-3">
                                                 <button class="btn btn-primary" id="searchBtn">
                                                 ค้นหารายชื่อ
                                                 </button>
@@ -1526,6 +1574,20 @@
             else {
                 duties.style.display = "none";
                 noduties.style.display = "none";
+            }
+
+        });
+        </script>
+       <script>
+        const paymentStatus = document.getElementById("paymentStatus");
+        const lateGroup = document.getElementById("lateGroup");
+
+        paymentStatus.addEventListener("change", function () {
+
+            if (this.value === "นำส่งเกินกำหนด") {
+                lateGroup.style.display = "block";
+            } else {
+                lateGroup.style.display = "none";
             }
 
         });

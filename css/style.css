@@ -649,7 +649,9 @@ h3 {
   background: #0d6efd;
   color: #fff;
 }
-
+.form-select{
+  font-size: 13px;
+}
 
 
 
