@@ -170,7 +170,6 @@
                                     </div> 
                                     <hr>
                                     <button type="button" class="btn btn-sm btn-success"><i class="fal fa-file-excel"></i> Importรายชื่อองค์กรนายจ้าง</button>
-                                    <button type="button" class="btn btn-sm btn-outline-success"><i class="fal fa-file-excel"></i> Export รายชื่อองค์กรนายจ้าง</button>
                                     <div class="row g-3 mt-2">
                                         <!-- ชื่อนายจ้าง -->
 
@@ -566,7 +565,10 @@
                                             </button>
                                         </div>
                                         <div class="col-lg-6">
-                                            <h5>รายชื่อใน Bucket เลือกแล้ว  <span><b id="bucketCount">0</b></span> รายชื่อ</h5> 
+                                            <h5>
+                                                รายชื่อใน Bucket เลือกแล้ว  <span><b id="bucketCount">0</b></span> รายชื่อ 
+                                                <button type="button" class="btn btn-sm btn-outline-success"><i class="fal fa-file-excel"></i> Export รายชื่อองค์กรนายจ้าง</button>
+                                            </h5> 
                                             <div class="table-org ">
                                                 <hr>
                                                 <div class="table-responsive"> 
@@ -1133,6 +1135,426 @@
             </div>
         </div>
 
+
+        <div class="modal fade" id="employerProfileModal" tabindex="-1">
+            <div class="modal-dialog modal-fullscreen modal-dialog-centered">
+                <div class="modal-content">
+
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">
+                        <i class="fas fa-building"></i> บริษัท เอ วัน จำกัด
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="card card-custom">
+                        <div class="card-body">
+
+                            <div class="text-end">
+                                <button class="btn btn-outline-danger btn-sm" onclick="editEmployer()">
+                                    <i class="fas fa-edit"></i> แก้ไขข้อมูล
+                                </button>
+                            </div>
+                            <div class="row justify-content-center"> 
+                                <div class="col-lg-4" style="font-size: 14px;">
+                                    <div class="row mb-2">
+                                        <div class="col-lg-6 text-end">
+                                            <label>เลขประจำตัวผู้เสียภาษีอากร</label>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label><b>0994000160135</b></label>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-lg-6 text-end">
+                                            <label>เบอร์โทรศัพท์</label>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label><b></b></label>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-lg-6 text-end">
+                                            <label>Admin บริษัทนายจ้าง</label>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label><b>ณัฐธิกา อาคะมา</b><br><b>วิภาวรรณ รักสกุล</b></label>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-lg-6 text-end">
+                                            <label>ตำแหน่งผู้บริหารสูงสุด</label>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label><b>กรรมการผู้จัดการ22</b></label>
+                                        </div>
+                                    </div>  
+                                    <div class="row mb-2">
+                                        <div class="col-lg-6 text-end">
+                                            <label>หมายเหตุ</label>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label><b></b></label>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-lg-6 text-end">
+                                            <label>สถานะการมีหน้าที่หักเงินนำส่ง</label>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label><b>ไม่มี</b></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="row mb-2">
+                                        <div class="col-lg-6 text-end">
+                                            <label>ชื่อองค์กรนายจ้าง</label>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label><b>บริษัท เอ วัน จำกัด</b></label>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-lg-6 text-end">
+                                            <label>ที่อยู่</label>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div id="addressView">
+                                                <label>
+                                                    <b id="empAddress">
+                                                        ถนน อัษฎางค์ ตำบล/แขวง วัดราชบพิธ อำเภอ/เขต พระนคร จังหวัด กรุงเทพมหานคร 10200 x
+                                                    </b>
+                                                </label>
+                                            </div>
+
+                                            <div id="addressEdit" style="display:none">
+                                                <textarea class="form-control form-control-sm" id="empAddressInput"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-lg-6 text-end">
+                                            <label>ประเภทบริษัท</label>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label><b>บริษัทเอกชน</b></label>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-lg-6 text-end">
+                                            <label>Lat :</label>
+                                        </div>
+                                        <div class="col-lg-6">
+
+                                            <!-- VIEW -->
+                                            <div id="latView">
+                                                <label><b id="empLat">-</b></label>
+                                            </div>
+
+                                            <!-- EDIT -->
+                                            <div id="latEdit" style="display:none">
+                                                <input type="text" class="form-control form-control-sm" id="empLatInput">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-lg-6 text-end">
+                                            <label>Long :</label>
+                                        </div>
+                                        <div class="col-lg-6">
+
+                                            <!-- VIEW -->
+                                            <div id="longView">
+                                                <label><b id="empLong">-</b></label>
+                                            </div>
+
+                                            <!-- EDIT -->
+                                            <div id="longEdit" style="display:none">
+                                                <input type="text" class="form-control form-control-sm" id="empLongInput">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div id="editButtons" class="text-center mt-3" style="display:none"> 
+                                    <button class="btn btn-success btn-sm" onclick="saveEmployer()">
+                                        บันทึก
+                                    </button> 
+                                    <button class="btn btn-secondary btn-sm" onclick="cancelEditEmployer()">
+                                        ยกเลิก
+                                    </button> 
+                                </div>
+                            </div>
+                            <div class="row"> 
+
+
+                                <ul class="nav nav-tabs mt-3" id="myTab" role="tablist">
+
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#general" type="button">
+                                        ข้อมูลทั่วไป
+                                        </button>
+                                    </li>
+
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#branch" type="button">
+                                        ข้อมูลสาขา
+                                        </button>
+                                    </li>
+
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#debtor" type="button">
+                                        ข้อมูลลูกหนี้สังกัดนายจ้าง
+                                        </button>
+                                    </li>
+
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#deduction" type="button">
+                                        ข้อมูลการหักเงินนำส่ง
+                                        </button>
+                                    </li>
+
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#request" type="button">
+                                        ประวัติการยื่นคำขอ
+                                        </button>
+                                    </li>
+
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#letter" type="button">
+                                        ประวัติการส่งจดหมาย
+                                        </button>
+                                    </li>
+
+                                </ul>
+
+
+                                <div class="tab-content border border-top-0 p-3">
+
+                                    <div class="tab-pane fade show active" id="general">
+                                        <h6 class="mb-3">ข้อมูลผู้แทน/ผู้ติดต่อ</h6>
+                                        
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-hover align-middle text-center">
+
+                                                <thead class="table-primary">
+                                                    <tr>
+                                                        <th>ลำดับ</th>
+                                                        <th>เลขบัตรผู้แทน/ผู้ติดต่อ</th>
+                                                        <th>ชื่อ</th>
+                                                        <th>นามสกุล</th>
+                                                        <th>เบอร์โทร</th>
+                                                        <th>เบอร์มือถือ 1</th>
+                                                        <th>เบอร์มือถือ 2</th>
+                                                        <th>Username</th>
+                                                        <th>e-mail</th>
+                                                        <th>สาขา</th>
+                                                        <th>Role</th>
+                                                        <th>Updated date</th>
+                                                        <th>Updated by</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td></td>
+                                                        <td>วิชุตา</td>
+                                                        <td>สุนทรัตน์</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>wichuda.sai26@gmail.com</td>
+                                                        <td>xxx@xx.com</td>
+                                                        <td>กรมการปกครอง</td>
+                                                        <td>SLF_ADMIN</td>
+                                                        <td>
+                                                            20/08/2564<br>
+                                                            16:31:29
+                                                        </td>
+                                                        <td>1testuat39</td>
+                                                        <td>
+                                                            <button class="btn btn-primary btn-sm">Reset</button>
+                                                            <button class="btn btn-light btn-sm">
+                                                                <i class="bi bi-pencil"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td></td>
+                                                        <td>วีรานันต์</td>
+                                                        <td>โพธิ์พรหม</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>weeranutdao@gmail.com</td>
+                                                        <td>xxx@xx.com</td>
+                                                        <td>กรมการปกครอง</td>
+                                                        <td>SLF_ADMIN</td>
+                                                        <td>
+                                                            07/11/2562<br>
+                                                            00:00:00
+                                                        </td>
+                                                        <td>9167</td>
+                                                        <td>
+                                                            <button class="btn btn-primary btn-sm">Reset</button>
+                                                            <button class="btn btn-light btn-sm">
+                                                                <i class="bi bi-pencil"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td></td>
+                                                        <td>ศิริพร</td>
+                                                        <td>สนแก้ว</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>pop0821155076@gmail.com</td>
+                                                        <td>xxx@xx.com</td>
+                                                        <td>กรมการปกครอง</td>
+                                                        <td>SLF_ADMIN</td>
+                                                        <td>
+                                                            07/11/2562<br>
+                                                            00:00:00
+                                                        </td>
+                                                        <td>0</td>
+                                                        <td>
+                                                            <button class="btn btn-primary btn-sm">Reset</button>
+                                                            <button class="btn btn-light btn-sm">
+                                                                <i class="bi bi-pencil"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+
+                                            </table>
+                                            </div>
+                                    </div>
+
+                                    <div class="tab-pane fade" id="branch">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered text-center align-middle">
+
+                                                <thead>
+                                                    <tr>
+                                                        <th>ลำดับ</th>
+                                                        <th>รหัสสาขา</th>
+                                                        <th>ชื่อสาขา</th>
+                                                        <th>ผู้ดูแล</th>
+                                                        <th>เบอร์โทรติดต่อ 1</th>
+                                                        <th>เบอร์โทรติดต่อ 2</th>
+                                                        <th>แพ็กซ์</th>
+                                                        <th>จำนวนผู้มีรายได้ในสาขา</th>
+                                                        <th>สถานะ</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td colspan="9" class="text-center text-muted">
+                                                            ไม่พบข้อมูล
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+
+                                            </table>
+                                        </div> 
+                                    </div>
+
+                                    <div class="tab-pane fade" id="debtor">
+                                        ชื่อ นามสกุลผู้กู้ 
+                                    </div>
+
+                                    <div class="tab-pane fade" id="deduction">
+                                        รายการหักเงินนำส่ง
+                                    </div>
+
+                                    <div class="tab-pane fade" id="request">
+                                        รายการหักเงินนำส่ง 
+                                    </div>
+
+                                    <div class="tab-pane fade" id="letter">
+                                        <h5>รายการประวัติการส่งจดหมาย</h5>
+                                        <hr>
+                                        <div class="table-responsive">  
+                                            <table id="salaryTable" class="table table-bordered text-center w-100 salary-table">
+                                                <thead>
+                                                    <tr> 
+                                                        <th scope="col" rowspan="2" class="text-center">เลขที่หนังสือ</th>
+                                                        <th scope="col" rowspan="2" class="text-center">วันที่หนังสือ</th>
+                                                        <th scope="col" rowspan="2" class="text-center">ผู้กู้</th>
+                                                        <th scope="col" rowspan="2" class="text-center">สถานะองค์กรนายจ้าง</th>
+                                                        <th colspan="3" class="text-center">ฉบับที่ 1</th>
+                                                        <th colspan="3" class="text-center">ฉบับที่ 2</th>
+                                                        <th colspan="3" class="text-center">ฉบับที่ 3</th> 
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center">วันที่ส่ง</th>
+                                                        <th class="text-center">Tracking</th>
+                                                        <th class="text-center">สถานะจัดส่ง</th>
+
+                                                        <th class="text-center">วันที่ส่ง</th>
+                                                        <th class="text-center">Tracking</th>
+                                                        <th class="text-center">สถานะจัดส่ง</th>
+
+                                                        <th class="text-center">วันที่ส่ง</th>
+                                                        <th class="text-center">Tracking</th>
+                                                        <th class="text-center">สถานะจัดส่ง</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody> 
+                                                    <tr data-round1="true" data-round2="true" data-round3="true"> 
+                                                        <td class="text-center">กค 2569/93801 </td>
+                                                        <td class="text-center">25/12/2568</td>
+                                                        <td class="text-center">15</td>
+                                                        <td class="text-center">ดำเนินกิจการ</td>
+
+                                                        <td class="text-center">10/01/2567</td>
+                                                        <td class="text-center">ED728451906TH</td>
+                                                        <td class="text-center r1-status">ส่งสำเร็จ</td>
+
+                                                        <td class="text-center">20/01/2567</td>
+                                                        <td class="text-center">NM560284913TH</td>
+                                                        <td class="text-center r2-status">ส่งสำเร็จ</td>
+
+                                                        <td class="text-center">30/01/2567</td>
+                                                        <td class="text-center">EG728451906TH</td>
+                                                        <td class="text-center r3-status">ส่งสำเร็จ</td> 
+                                                    </tr>
+                                                </tbody>       
+                                            </table>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">
+                        ปิด
+                    </button>
+                </div>
+
+                </div>
+            </div>
+        </div>
+
         <script src="js/jquery.min.js"></script> 
         <script src="js/popper.min.js" ></script>
         <script src="js/bootstrap.bundle.min.js"></script>   
@@ -1344,16 +1766,66 @@
             infoWindow = new google.maps.InfoWindow();
 
             const employers = [
-                { name: "บริษัท ABC จำกัด", lat: 13.7563, lng: 100.5018 },
-                { name: "บริษัท XYZ จำกัด", lat: 13.7367, lng: 100.5231 },
-                { name: "ไทยรุ่งเรือง จำกัด", lat: 14.0208, lng: 100.5250 },
-                { name: "อยุธยาอุตสาหกรรม", lat: 14.3532, lng: 100.5689 },
-                { name: "ลพบุรีเกษตร", lat: 14.7995, lng: 100.6534 },
-                { name: "ปทุมธานีพลาสติก", lat: 14.0208, lng: 100.5250 },
-                { name: "สมุทรปราการโลจิสติกส์", lat: 13.5991, lng: 100.5998 },
-                { name: "นครปฐมฟาร์ม", lat: 13.8199, lng: 100.0622 },
-                { name: "สระบุรีซีเมนต์", lat: 14.5289, lng: 100.9101 },
-                { name: "ราชบุรีฟู้ดโปรดักส์", lat: 13.5283, lng: 99.8134 }
+                { 
+                    name: "บริษัท ABC จำกัด", 
+                    lat: 13.7563, 
+                    lng: 100.5018, 
+                    address: "99/1 ถนนราชดำเนินกลาง แขวงพระบรมมหาราชวัง เขตพระนคร กรุงเทพมหานคร 10200"
+                },
+                { 
+                    name: "บริษัท XYZ จำกัด", 
+                    lat: 13.7367, 
+                    lng: 100.5231, 
+                    address: "128 ถนนสีลม แขวงสีลม เขตบางรัก กรุงเทพมหานคร 10500"
+                },
+                { 
+                    name: "ไทยรุ่งเรือง จำกัด", 
+                    lat: 14.0208, 
+                    lng: 100.5250, 
+                    address: "55/8 หมู่ 4 ถนนพหลโยธิน ตำบลคลองหนึ่ง อำเภอคลองหลวง จังหวัดปทุมธานี 12120"
+                },
+                { 
+                    name: "อยุธยาอุตสาหกรรม", 
+                    lat: 14.3532, 
+                    lng: 100.5689, 
+                    address: "88 หมู่ 6 ถนนโรจนะ ตำบลธนู อำเภออุทัย จังหวัดพระนครศรีอยุธยา 13210"
+                },
+                { 
+                    name: "ลพบุรีเกษตร", 
+                    lat: 14.7995, 
+                    lng: 100.6534, 
+                    address: "120 หมู่ 3 ตำบลท่าศาลา อำเภอเมืองลพบุรี จังหวัดลพบุรี 15000"
+                },
+                { 
+                    name: "ปทุมธานีพลาสติก", 
+                    lat: 14.0208, 
+                    lng: 100.5250, 
+                    address: "77/2 หมู่ 5 ถนนพหลโยธิน ตำบลคลองสอง อำเภอคลองหลวง จังหวัดปทุมธานี 12120"
+                },
+                { 
+                    name: "สมุทรปราการโลจิสติกส์", 
+                    lat: 13.5991, 
+                    lng: 100.5998, 
+                    address: "199 หมู่ 7 ถนนสุขุมวิท ตำบลบางปูใหม่ อำเภอเมืองสมุทรปราการ จังหวัดสมุทรปราการ 10280"
+                },
+                { 
+                    name: "นครปฐมฟาร์ม", 
+                    lat: 13.8199, 
+                    lng: 100.0622, 
+                    address: "65 หมู่ 2 ถนนเพชรเกษม ตำบลพระปฐมเจดีย์ อำเภอเมืองนครปฐม จังหวัดนครปฐม 73000"
+                },
+                { 
+                    name: "สระบุรีซีเมนต์", 
+                    lat: 14.5289, 
+                    lng: 100.9101, 
+                    address: "333 หมู่ 9 ถนนมิตรภาพ ตำบลทับกวาง อำเภอแก่งคอย จังหวัดสระบุรี 18260"
+                },
+                { 
+                    name: "ราชบุรีฟู้ดโปรดักส์", 
+                    lat: 13.5283, 
+                    lng: 99.8134, 
+                    address: "44/3 หมู่ 1 ถนนเพชรเกษม ตำบลหน้าเมือง อำเภอเมืองราชบุรี จังหวัดราชบุรี 70000"
+                }
             ];
 
             employers.forEach(emp => {
@@ -1365,15 +1837,18 @@
 
                 // Hover
                 marker.addListener("mouseover", () => {
-                    infoWindow.setContent(`<strong>${emp.name}</strong>`);
+                    infoWindow.setContent(`
+                        <div style="font-size:13px;max-width:260px;line-height:1.4">
+                            <div style="font-weight:600">${emp.name}</div>
+                            <div style="color:#666;margin-top:2px">${emp.address}</div>
+                        </div>
+                    `);
                     infoWindow.open(map, marker);
                 });
 
                 marker.addListener("mouseout", () => {
                     infoWindow.close();
-                });
-
-                // Click = assign
+                }); 
                 marker.addListener("click", () => {
                     assignToTeam(emp.name);
                 });
@@ -1406,10 +1881,17 @@
             item.dataset.name = name;
             item.innerHTML = `
                 <span>${name}</span>
-                <button class="btn btn-sm btn-outline-danger"
-                    onclick="undoAssign('${name}', this)">
-                    เอาออก
-                </button>
+                <div>
+                    <button class="btn btn-sm btn-outline-danger"
+                        onclick="undoAssign('${name}', this)">
+                        เอาออก
+                    </button>
+                    <button class="btn btn-sm btn-outline-primary" 
+                            data-bs-toggle="modal" 
+                            data-bs-target="#employerProfileModal">
+                        <i class="fas fa-user-circle"></i>
+                    </button>
+                </div>
             `;
 
             body.appendChild(item);
@@ -1578,18 +2060,57 @@
 
         });
         </script>
-       <script>
-        const paymentStatus = document.getElementById("paymentStatus");
-        const lateGroup = document.getElementById("lateGroup");
+        <script>
 
-        paymentStatus.addEventListener("change", function () {
+            function editEmployer(){   
+                document.getElementById("empLatInput").value =
+                document.getElementById("empLat").innerText;
 
-            if (this.value === "นำส่งเกินกำหนด") {
-                lateGroup.style.display = "block";
-            } else {
-                lateGroup.style.display = "none";
+                document.getElementById("empLongInput").value =
+                document.getElementById("empLong").innerText;
+
+                document.getElementById("latView").style.display = "none";
+                document.getElementById("longView").style.display = "none";
+
+                document.getElementById("latEdit").style.display = "block";
+                document.getElementById("longEdit").style.display = "block"; 
+
+
+                document.getElementById("empAddressInput").value =
+                document.getElementById("empAddress").innerText;
+                
+                document.getElementById("addressView").style.display = "none";
+                document.getElementById("addressEdit").style.display = "block";
+
             }
 
-        });
+            function saveEmployer(){  
+                document.getElementById("empLat").innerText =
+                document.getElementById("empLatInput").value;
+
+                document.getElementById("empLong").innerText =
+                document.getElementById("empLongInput").value; 
+
+                document.getElementById("empAddress").innerText =
+                document.getElementById("empAddressInput").value;
+
+                cancelEditEmployer();
+            }
+
+            function cancelEditEmployer(){
+                document.getElementById("latView").style.display = "block";
+                document.getElementById("longView").style.display = "block";
+
+                document.getElementById("latEdit").style.display = "none";
+                document.getElementById("longEdit").style.display = "none";
+
+
+                document.getElementById("addressView").style.display = "block"; 
+                document.getElementById("addressEdit").style.display = "none";
+
+                document.getElementById("editButtons").style.display = "none";
+
+            }
+
         </script>
 </html>
