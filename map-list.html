@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ระบบติดตามองค์กรนายจ้าง สำหรับการลงพื้นที่</title>
+	<link rel="icon" type="image/x-icon" href="images/icon.jpg">
+	<link href="css/bootstrap.min2.css" rel="stylesheet">  
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" /> 
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>  
+
+	<link href="css/style.css" rel="stylesheet">      
+
+   
+    </head>
+    <body> 
+        <!-- Header -->
+        <header> 
+            <nav class="navbar fixed-top">
+                <div class="w-100 text-white d-flex justify-content-between align-items-center">
+                    <div>
+                        <img src="images/logo.webp" class="me-2 logow" alt=""><strong class="mb-x">ระบบติดตามองค์กรนายจ้าง สำหรับการลงพื้นที่</strong>
+                    </div>
+                    <div class="text-end mb-x">
+                        <i class="far fa-user-circle"></i> วรรณา พาสุข
+                        <br>
+                         <b>Admin</b>
+                    </div>
+                    <div class="pc-x">
+                        <div class="bar-m">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+
+
+        <main>
+            <div class="container-fluid p-0"> 
+                <div id="menu-container"></div>
+            </div>
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <!-- Header -->
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4> ที่อยู่ลงพื้นที่</h4> 
+                        </div>
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                เงื่อนไขค้นหา
+                            </div>
+                            <div class="card-body p-3">
+                                <div class="row g-3">
+                                    <div class="col-lg-3">
+                                        <label class="form-label">เลขประจำตัวผู้เสียภาษีอากร</label>
+                                        <input type="text" class="form-control" placeholder="กรุณาระบุ">
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label class="form-label">ชื่อองค์กร</label>
+                                        <input type="text" class="form-control" placeholder="กรุณาระบุ">
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label class="form-label">การมีหน้าที่หักเงินนำส่ง</label>
+                                        <select class="form-select">
+                                            <option>กรุณาระบุ</option>
+                                            <option>มี</option>
+                                            <option>ไม่มี</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label class="form-label">ประเภทบริษัท</label>
+                                        <select class="form-select">
+                                            <option>กรุณาระบุ</option>
+                                            <option>บริษัทเอกชน</option>
+                                            <option>รัฐวิสาหกิจ</option>
+                                            <option>องค์กรปกครองส่วนท้องถิ่น</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label class="form-label">Admin บริษัทนายจ้าง</label>
+                                        <input type="text" class="form-control" placeholder="กรุณาระบุ">
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label class="form-label">ผู้แทน/ผู้ติดต่อ</label>
+                                        <input type="text" class="form-control" placeholder="กรุณาระบุ">
+                                    </div>
+                                </div>
+                                <div class="text-center mt-4">
+                                    <button class="btn btn-primary">
+                                    <i class="fa fa-search"></i> ค้นหา
+                                    </button>
+                                    <button class="btn btn-outline-secondary">
+                                    <i class="fa fa-xmark"></i> ล้าง
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ผลการค้นหา -->
+                        <div class="card">
+                            <div class="card-header">
+                                ผลการค้นหา
+                            </div>
+                            <div class="card-body p-3">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover mb-0 text-center">
+                                        <thead>
+                                            <tr>
+                                                <th width="60">ลำดับ</th>
+                                                <th>เลขประจำตัวผู้เสียภาษีอากร</th>
+                                                <th>ชื่อองค์กร</th>
+                                                <th width="150">จำนวนลูกจ้างในองค์กร(คน)</th>
+                                                <th width="170">การมีหน้าที่หักเงินนำส่ง</th>
+                                                <th width="200">ประเภทบริษัท</th>
+                                                <th width="200">Admin บริษัทนายจ้าง</th>
+                                                <th width="200">ผู้แทน/ผู้ติดต่อ</th>
+                                                <th width="120">เครื่องมือ</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>0994000515669</td>
+                                                <td class="text-start">
+                                                    BBC ASIA RELAY STATION 123<br>
+                                                    456
+                                                </td>
+                                                <td>1</td>
+                                                <td>ไม่มี</td>
+                                                <td>รัฐวิสาหกิจ</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="tool-btn"> 
+                                                    <a href="map-edit.html" class="btn btn-sm btn-secondary">
+                                                        <i class="fal fa-pen"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>0994000368968</td>
+                                                <td class="text-start">PLAN INTERNATIONAL,INC.</td>
+                                                <td>17</td>
+                                                <td></td>
+                                                <td>องค์กรปกครองส่วนท้องถิ่น</td>
+                                                <td></td>
+                                                <td>test test</td>
+                                                <td class="tool-btn"> 
+                                                    <a href="map-edit.html" class="btn btn-sm btn-secondary">
+                                                        <i class="fal fa-pen"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>0993000353960</td>
+                                                <td class="text-start">
+                                                    TRADE RESOURCES FAREAST PTE LTD<br>
+                                                    (กระทำการแทนในประเทศไทย)
+                                                </td>
+                                                <td>1</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td class="tool-btn"> 
+                                                    <a href="map-edit.html" class="btn btn-sm btn-secondary">
+                                                        <i class="fal fa-pen"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>    
+ 
+
+        <script src="js/jquery.min.js"></script> 
+        <script src="js/popper.min.js" ></script>
+        <script src="js/bootstrap.bundle.min.js"></script>   
+        <script src="js/menu.js"></script>   
+        <script src="js/menu-mobile.js"></script>   
+        <script>
+        renderMenu("menu-container");
+        </script>
+ 
+      
+
+    </body>
+</html>

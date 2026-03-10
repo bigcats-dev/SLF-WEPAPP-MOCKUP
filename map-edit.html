@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ระบบติดตามองค์กรนายจ้าง สำหรับการลงพื้นที่</title>
+	<link rel="icon" type="image/x-icon" href="images/icon.jpg">
+	<link href="css/bootstrap.min2.css" rel="stylesheet">  
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" /> 
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>  
+
+	<link href="css/style.css" rel="stylesheet">      
+
+   
+    </head>
+    <body> 
+        <!-- Header -->
+        <header> 
+            <nav class="navbar fixed-top">
+                <div class="w-100 text-white d-flex justify-content-between align-items-center">
+                    <div>
+                        <img src="images/logo.webp" class="me-2 logow" alt=""><strong class="mb-x">ระบบติดตามองค์กรนายจ้าง สำหรับการลงพื้นที่</strong>
+                    </div>
+                    <div class="text-end mb-x">
+                        <i class="far fa-user-circle"></i> วรรณา พาสุข
+                        <br>
+                         <b>Admin</b>
+                    </div>
+                    <div class="pc-x">
+                        <div class="bar-m">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+
+
+        <main>
+            <div class="container-fluid p-0"> 
+                <div id="menu-container"></div>
+            </div>
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <!-- Header -->
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4> ที่อยู่ลงพื้นที่</h4> 
+                        </div>
+                        
+                        <div class="container mt-3">
+                            <!-- ================= ที่อยู่จดทะเบียน ================= -->
+                            <div class="card shadow-sm mb-4">
+                                
+                                <div class="card-header d-flex justify-content-between align-items-center"> 
+                                    <span class="fw-bold">
+                                    ที่อยู่ที่ใช้จดทะเบียน
+                                    </span>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" 
+                                            name="formAddress"
+                                            id="registerAddress"
+                                            value="register">
+
+                                        <label class="form-check-label" for="registerAddress">
+                                        ใช้เป็นที่อยู่ลงพื้นที่
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label">
+                                        เลือกเป็นที่อยู่ลงพื้นที่
+                                        </label>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-4">
+                                            <label class="form-label">เลขที่/อาคาร/ชั้น *</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">หมู่ที่</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">ตำบล/แขวง *</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-4">
+                                            <label class="form-label">อำเภอ/เขต *</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">จังหวัด *</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">รหัสไปรษณีย์ *</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-4">
+                                            <label class="form-label">เบอร์โทรศัพท์ *</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-3">
+                                            <label class="form-label">Latitude</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="form-label">Longitude</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm">
+                                    บันทึกที่อยู่จดทะเบียน
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- ================= ที่อยู่ติดต่อได้ ================= -->
+                            <div class="card shadow-sm mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center"> 
+                                    <span class="fw-bold">
+                                    ที่อยู่ที่ติดต่อได้
+                                    </span> 
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio"
+                                            name="formAddress"
+                                            id="contactAddress"
+                                            value="contact">
+
+                                        <label class="form-check-label" for="contactAddress">
+                                        ใช้เป็นที่อยู่ลงพื้นที่
+                                        </label>
+                                    </div> 
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label">
+                                        ใช้ที่อยู่เดียวกับที่อยู่ที่ใช้จดทะเบียน
+                                        </label>
+                                    </div> 
+                                    <div class="row mb-3">
+                                        <div class="col-md-4">
+                                            <label class="form-label">เลขที่/อาคาร/ชั้น *</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">หมู่ที่</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">รหัสไปรษณีย์ *</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control form-control-sm">
+                                                <button class="btn btn-outline-primary btn-sm">
+                                                <i class="fa fa-search"></i> ค้นหา
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-4">
+                                            <label class="form-label">จังหวัด *</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">อำเภอ/เขต *</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">ตำบล/แขวง *</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-4">
+                                            <label class="form-label">เบอร์โทรศัพท์ *</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">เบอร์มือถือ</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Fax</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-3">
+                                            <label class="form-label">Latitude</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="form-label">Longitude</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm">
+                                    บันทึกที่อยู่ติดต่อ
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- ================= ที่อยู่ส่งเอกสาร ================= -->
+                            <div class="card shadow-sm mb-4">
+                               
+
+                                <div class="card-header d-flex justify-content-between align-items-center"> 
+                                    <span class="fw-bold">
+                                    ที่อยู่ส่งเอกสาร
+                                    </span>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio"
+                                            name="formAddress"
+                                            id="fieldAddress"
+                                            value="document">
+
+                                        <label class="form-check-label" for="fieldAddress">
+                                        ใช้เป็นที่อยู่ลงพื้นที่
+                                        </label>
+                                    </div> 
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label">
+                                        ใช้ที่อยู่เดียวกับที่อยู่จดทะเบียน
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label">
+                                        ใช้ที่อยู่เดียวกับที่อยู่ติดต่อได้
+                                        </label>
+                                    </div> 
+                                    <div class="row mb-3">
+                                        <div class="col-md-4">
+                                            <label class="form-label">เลขที่/อาคาร/ชั้น *</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">หมู่ที่</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">ตำบล/แขวง *</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-4">
+                                            <label class="form-label">อำเภอ/เขต *</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">จังหวัด *</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">รหัสไปรษณีย์ *</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-4">
+                                            <label class="form-label">เบอร์โทรศัพท์ *</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-3">
+                                            <label class="form-label">Latitude</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="form-label">Longitude</label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary btn-sm">
+                                    บันทึกที่อยู่ส่งเอกสาร
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </main>    
+ 
+
+        <script src="js/jquery.min.js"></script> 
+        <script src="js/popper.min.js" ></script>
+        <script src="js/bootstrap.bundle.min.js"></script>   
+        <script src="js/menu.js"></script>   
+        <script src="js/menu-mobile.js"></script>   
+        <script>
+        renderMenu("menu-container");
+        </script>
+ 
+      
+
+    </body>
+</html>

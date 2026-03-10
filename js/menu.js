@@ -7,7 +7,7 @@ const menus = [
     dropdown: true,
     items: [
       { label: "สร้างรอบลงพื้นที่", href: "visit-add.html" },
-      { label: "การตั้งค่าระบบ", href: "#" }
+      { label: "แก้ไขที่อยู่ลงพื้นที่", href: "map-list.html" }
     ]
   }
 ];
