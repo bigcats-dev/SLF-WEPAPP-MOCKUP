@@ -1,143 +1,192 @@
 <!DOCTYPE html>
 <html lang="th">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-        <style>
-            body{
-            margin:0;
-            background:#f3f3f3;
-            font-family:sans-serif;
-            }
-            .map-container{
-                height:100vh;
-                background:url('images/maxx.jpg');
-                background-size: 100% auto;
-                position:relative;
-            }
-            .bottom-panel{
-            position:absolute;
-            bottom:0;
-            width:100%;
-            background:white;
-            border-radius:20px 20px 0 0;
-            padding:20px;
-            box-shadow:0 -5px 20px rgba(0,0,0,0.15);
-            }
-            .btn-main{
-            height:50px;
-            font-size:16px;
-            border-radius:30px;
-            }
-            .loading-save{
-            display:none;
-            text-align:center;
-            padding:10px;
-            }
-            .spinner-border{
-            width:1.5rem;
-            height:1.5rem;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="map-container">
-            <!-- Bottom Action -->
-            <div class="bottom-panel">
-                <div class="d-grid gap-3">
-                    <button class="btn btn-success btn-main"
-                        onclick="useLocation()">
-                    ใช้ตำแหน่งปัจจุบัน
-                    </button>
-                    <button class="btn btn-outline-primary btn-main"
-                        data-bs-toggle="modal"
-                        data-bs-target="#editAddressModal">
-                    แก้ไขที่อยู่
-                    </button>
-                </div>
-                <div class="loading-save mt-3" id="saveAnim">
-                    <div class="spinner-border text-success"></div>
-                    <div class="mt-2">
-                        กำลังบันทึกตำแหน่ง...
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal แก้ไขที่อยู่ -->
-        <div class="modal fade" id="editAddressModal">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h6 class="modal-title">
-                            แก้ไขที่อยู่
-                        </h6>
-                        <button class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label class="form-label">เลขที่ / อาคาร</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">ตำบล / แขวง</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">อำเภอ / เขต</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">จังหวัด</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">รหัสไปรษณีย์</label>
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-success w-100"
-                            onclick="saveAddress()">
-                        บันทึก
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-        <script>
-            function useLocation(){
-            
-            const anim = document.getElementById("saveAnim");
-            
-            anim.style.display="block";
-            
-            setTimeout(()=>{
-            
-            anim.innerHTML = `
-            <div style="color:green;font-weight:600">
-            ✓ บันทึกตำแหน่งเรียบร้อย
-            </div>
-            `;
-            
-            },1500);
-            
-            }
-            
-            
-            function saveAddress(){
-            
-            const modal = bootstrap.Modal.getInstance(
-            document.getElementById('editAddressModal')
-            );
-            
-            modal.hide();
-            
-            useLocation();
-            
-            }
-            
-        </script>
-    </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:sans-serif;
+}
+
+.map-container{
+height:100vh;
+position:relative;
+}
+
+.map-container iframe{
+width:100%;
+height:100%;
+border:0;
+}
+
+.bottom-panel{
+position:absolute;
+bottom:0;
+width:100%;
+background:white;
+border-radius:20px 20px 0 0;
+padding:20px;
+box-shadow:0 -5px 20px rgba(0,0,0,0.2);
+}
+
+.btn-main{
+height:50px;
+font-size:16px;
+border-radius:30px;
+}
+
+.loading-save{
+display:none;
+text-align:center;
+margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="map-container">
+
+<!-- แผนที่ -->
+<iframe
+src="https://maps.google.com/maps?q=13.668,100.606&z=15&output=embed">
+</iframe>
+
+
+<!-- panel ล่าง -->
+
+<div class="bottom-panel">
+
+<div class="d-grid gap-3">
+
+<button class="btn btn-success btn-main"
+onclick="useLocation()">
+ใช้ตำแหน่งปัจจุบัน
+</button>
+
+<button class="btn btn-outline-primary btn-main"
+data-bs-toggle="modal"
+data-bs-target="#editAddressModal">
+แก้ไขที่อยู่
+</button>
+
+</div>
+
+<div class="loading-save" id="saveAnim">
+
+<div class="spinner-border text-success"></div>
+
+<div class="mt-2">
+กำลังบันทึกตำแหน่ง...
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- Modal -->
+
+<div class="modal fade" id="editAddressModal">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+
+<div class="modal-header">
+<h6 class="modal-title">
+แก้ไขที่อยู่
+</h6>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+
+<div class="modal-body">
+
+<div class="mb-3">
+<label class="form-label">เลขที่ / อาคาร</label>
+<input type="text" class="form-control">
+</div>
+
+<div class="mb-3">
+<label class="form-label">ตำบล / แขวง</label>
+<input type="text" class="form-control">
+</div>
+
+<div class="mb-3">
+<label class="form-label">อำเภอ / เขต</label>
+<input type="text" class="form-control">
+</div>
+
+<div class="mb-3">
+<label class="form-label">จังหวัด</label>
+<input type="text" class="form-control">
+</div>
+
+<div class="mb-3">
+<label class="form-label">รหัสไปรษณีย์</label>
+<input type="text" class="form-control">
+</div>
+
+</div>
+
+<div class="modal-footer">
+
+<button class="btn btn-success w-100"
+onclick="saveAddress()">
+บันทึก
+</button>
+
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+function useLocation(){
+
+const anim = document.getElementById("saveAnim");
+
+anim.style.display="block";
+
+setTimeout(()=>{
+
+anim.innerHTML = `
+<div style="color:green;font-weight:600">
+✓ บันทึกตำแหน่งเรียบร้อย
+</div>
+`;
+
+},1500);
+
+}
+
+function saveAddress(){
+
+const modal = bootstrap.Modal.getInstance(
+document.getElementById('editAddressModal')
+);
+
+modal.hide();
+
+useLocation();
+
+}
+
+</script>
+
+</body>
 </html>
