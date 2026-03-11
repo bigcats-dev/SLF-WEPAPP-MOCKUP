@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>แก้ไขที่อยู่ลงพื้นที่</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <style>
+            body{
+            background:#f4f6f9;
+            font-family:sans-serif;
+            }
+            .header{
+            padding:20px;
+            background:white;
+            border-bottom:1px solid #eee;
+            }
+            .header h5{
+            font-weight:600;
+            }
+            .search-box{
+            padding:15px;
+            background:white;
+            }
+            .employer-list{
+            padding:15px;
+            }
+            .card-employer{
+            border-radius:16px;
+            border:0;
+            box-shadow:0 4px 10px rgba(0,0,0,0.08);
+            margin-bottom:15px;
+            }
+            .company-name{
+            font-weight:600;
+            font-size:15px;
+            }
+            .address{
+            font-size:13px;
+            color:#666;
+            }
+            .btn-map{
+            border-radius:20px;
+            font-size:13px;
+            }
+            .bottom-nav{
+            position:fixed;
+            bottom:0;
+            width:100%;
+            background:white;
+            border-top:1px solid #eee;
+            display:flex;
+            justify-content:space-around;
+            padding:10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <div class="header">
+            <h5>แก้ไขที่อยู่ลงพื้นที่</h5>
+            <small class="text-muted">
+            เลือกบริษัทเพื่อดูหรือแก้ไขตำแหน่งแผนที่
+            </small>
+        </div>
+        <!-- Search -->
+        <div class="search-box">
+            <input
+                type="text"
+                class="form-control"
+                placeholder="🔍 ค้นหาชื่อนายจ้าง / เลขผู้เสียภาษี"
+                >
+        </div>
+        <!-- List -->
+        <div class="employer-list">
+            <!-- card -->
+            <div class="card card-employer">
+                <div class="card-body">
+                    <div class="company-name">
+                        บจก. คิวสตาร์ ไทย
+                    </div>
+                    <div class="text-muted small">
+                        เลขผู้เสียภาษี 0994000515669
+                    </div>
+                    <div class="address mt-2">
+                        📍 ถนนสุขุมวิท กรุงเทพ
+                    </div>
+                    <div class="mt-3 d-flex gap-2"> 
+                        <button class="btn btn-primary btn-sm btn-map"
+                            onclick="editMap()">
+                        แก้ไขตำแหน่ง
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-employer">
+                <div class="card-body">
+                    <div class="company-name">
+                        PLAN INTERNATIONAL INC.
+                    </div>
+                    <div class="text-muted small">
+                        เลขผู้เสียภาษี 0994000368968
+                    </div>
+                    <div class="address mt-2">
+                        📍 กรุงเทพ ประเทศไทย
+                    </div>
+                    <div class="mt-3 d-flex gap-2"> 
+                         <button class="btn btn-primary btn-sm btn-map"
+                            onclick="editMap()">
+                        แก้ไขตำแหน่ง
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bottom nav -->
+        <div class="bottom-nav">
+
+            <div>
+                <i class="fas fa-home"></i>
+            </div>
+
+            <div>
+                <i class="fas fa-clipboard-list"></i>
+            </div>
+
+            <div style="font-size:22px;color:#0d6efd">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+
+            <div>
+                <i class="fas fa-chart-line"></i>
+            </div>
+
+            <div>
+                <i class="fas fa-cog"></i>
+            </div>
+
+        </div>
+        <script>
+            function openMap(){
+            
+            window.location="view-map.html"
+            
+            }
+            
+            function editMap(){
+            
+            window.location="map-edit-m.html"
+            
+            }
+            
+        </script>
+    </body>
+</html>
