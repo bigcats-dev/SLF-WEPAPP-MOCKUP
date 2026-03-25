@@ -83,7 +83,7 @@
 
                             <li class="nav-item">
                                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-company" type="button">
-                                ข้อมูลบริษัท
+                                ข้อมูลบริษัท (API)
                                 </button>
                             </li>
 
@@ -101,13 +101,13 @@
 
                             <li class="nav-item">
                                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-lcs" type="button">
-                                ประวัติการติดตามหนี้
+                                ประวัติการติดตามหนี้ (API)
                                 </button>
                             </li>  
 
                             <li class="nav-item">
                                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-status" type="button">
-                                สถานะการนำส่ง
+                                สถานะการนำส่ง (API)
                                 </button>
                             </li>  
                         </ul>
@@ -177,7 +177,65 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="card mt-4">
+                                    <div class="card-header">
+                                        <strong>ประวัติการนัดหมาย</strong>
+                                    </div>
 
+                                    <div class="card-body pb-3">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover align-middle mb-0">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>วันที่</th>
+                                                        <th>เวลา</th>
+                                                        <th>ผู้ติดต่อ</th>
+                                                        <th>ตำแหน่ง</th>
+                                                        <th>สถานะ</th>
+                                                        <th>หมายเหตุ</th>
+                                                        <th class="text-end">จัดการ</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <!-- ตัวอย่างข้อมูล -->
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>2026-03-25</td>
+                                                        <td>10:30</td>
+                                                        <td>สมชาย ใจดี</td>
+                                                        <td>HR Manager</td>
+                                                        <td>
+                                                            <span class="badge bg-warning text-dark">รอเข้าพบ</span>
+                                                        </td>
+                                                        <td>-</td>
+                                                        <td class="text-end">
+                                                            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+                                                            <button class="btn btn-sm btn-outline-danger">ลบ</button>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>2026-03-24</td>
+                                                        <td>14:00</td>
+                                                        <td>สุดา ดีงาม</td>
+                                                        <td>Admin</td>
+                                                        <td>
+                                                            <span class="badge bg-warning text-danger">ไม่รับนัด</span>
+                                                        </td>
+                                                        <td>เลื่อนนัด</td>
+                                                        <td class="text-end">
+                                                            <button class="btn btn-sm btn-outline-primary">แก้ไข</button>
+                                                            <button class="btn btn-sm btn-outline-danger">ลบ</button>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- ข้อมูลบริษัท -->
